@@ -16,6 +16,8 @@
     --navbar-height: 76px;
     --navbar-padding: 1.25rem;
     --header-blur: 10px;
+    --card-hover-y: -4px;
+    --card-hover-blur: 20px;
 }
 
 /* Layout */
@@ -243,4 +245,156 @@ a {
 
 a:hover {
     color: var(--bs-primary-dark);
+}
+
+/* Homepage Specific Styles */
+.home {
+    padding: 2rem 0;
+}
+
+/* Product Groups Cards */
+.card-columns.home {
+    column-count: 3;
+    gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    .card-columns.home {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-columns.home {
+        column-count: 1;
+    }
+}
+
+.home .card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(var(--card-hover-blur));
+    -webkit-backdrop-filter: blur(var(--card-hover-blur));
+    margin-bottom: 1.5rem;
+}
+
+.home .card:hover {
+    transform: translateY(var(--card-hover-y));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: rgba(85, 153, 255, 0.1);
+}
+
+.home .card-body {
+    padding: 2.5rem;
+}
+
+.home .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--si-primary), var(--si-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home .card p {
+    color: var(--si-gray-600);
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+}
+
+/* Action Icons Section */
+.action-icon-btns {
+    gap: 1.5rem;
+}
+
+.action-icon-btns > div {
+    margin-bottom: 1.5rem;
+}
+
+.action-icon-btns a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--si-gray-600);
+}
+
+.action-icon-btns a:hover {
+    transform: translateY(var(--card-hover-y));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: rgba(85, 153, 255, 0.1);
+    color: var(--si-primary);
+}
+
+.action-icon-btns .ico-container {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background: rgba(85, 153, 255, 0.1);
+    color: var(--si-primary);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.action-icon-btns a:hover .ico-container {
+    transform: scale(1.1);
+    background: var(--si-primary);
+    color: white;
+}
+
+/* Section Headings */
+.home h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 3rem 0;
+    text-align: center;
+    background: linear-gradient(to right, var(--si-primary), var(--si-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Dark Mode Specific */
+.dark-mode .home .card,
+.dark-mode .action-icon-btns a {
+    background: rgba(34, 36, 51, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .home .card:hover,
+.dark-mode .action-icon-btns a:hover {
+    background: rgba(34, 36, 51, 0.9);
+    border-color: rgba(85, 153, 255, 0.2);
+}
+
+.dark-mode .home .card p {
+    color: var(--si-gray-400);
+}
+
+.dark-mode .action-icon-btns .ico-container {
+    background: rgba(85, 153, 255, 0.15);
+}
+
+/* Button Overrides for Homepage */
+.home .btn-outline-primary {
+    border: 2px solid var(--si-primary);
+    color: var(--si-primary);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+}
+
+.home .btn-outline-primary:hover {
+    background: var(--si-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(85, 153, 255, 0.3);
 } 
