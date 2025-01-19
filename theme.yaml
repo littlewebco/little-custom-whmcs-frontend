@@ -6,6 +6,15 @@ author: "Little Cloud"
 properties:
   serverSidePagination: false # Defines client side will handle pagination
 provides:
-  bootstrap: 4.5.3
-  jquery: 1.12.4
-  fontawesome: 5.10.1
+  bootstrap: 5.3.2
+  jquery: 3.7.1
+  fontawesome: 6.5.1
+  
+# Theme settings
+settings:
+  primary-color: "#5599FF"
+  secondary-color: "#8B5CF6"
+  success-color: "#22c55e"
+  info-color: "#4c82f7"
+  warning-color: "#ffba08"
+  danger-color: "#ef4444"
