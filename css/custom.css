@@ -2,76 +2,164 @@
 @import url('../css/dev/css/theme.css');
 @import url('../css/dev/css/custom.css');
 
-/* Override specific WHMCS styles to ensure proper integration */
+/* Override WHMCS variables with Little.cloud theme variables */
 :root {
-    /* Ensure WHMCS elements use Little.cloud colors */
-    --primary-bg-color: var(--bs-primary);
-    --primary-color: var(--bs-primary);
-    --secondary-bg-color: var(--bs-secondary);
-    --secondary-color: var(--bs-secondary);
+    /* Map WHMCS variables to Little.cloud variables */
+    --primary-bg-color: var(--si-primary);
+    --primary-color: var(--si-primary);
+    --secondary-bg-color: var(--si-secondary);
+    --secondary-color: var(--si-secondary);
+    --body-bg: var(--si-body-bg);
+    --text-color: var(--si-body-color);
 }
 
-/* Ensure buttons match Little.cloud styling */
+/* Typography */
+body {
+    font-family: "Manrope", sans-serif;
+    color: var(--si-body-color);
+    background-color: var(--si-body-bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    color: var(--si-black);
+}
+
+/* Buttons */
+.btn {
+    font-weight: 600;
+    font-family: "Manrope", sans-serif;
+}
+
 .btn-primary {
-    background-color: var(--bs-primary);
-    border-color: var(--bs-primary);
+    background-color: var(--si-primary);
+    border-color: var(--si-primary);
+    color: #fff;
 }
 
 .btn-primary:hover {
-    background-color: var(--bs-primary-dark);
-    border-color: var(--bs-primary-dark);
+    background-color: var(--si-primary);
+    filter: brightness(90%);
 }
 
-/* Match form elements */
+.btn-secondary {
+    background-color: var(--si-secondary);
+    border-color: var(--si-secondary);
+    color: var(--si-gray-900);
+}
+
+/* Forms */
+.form-control {
+    border-color: var(--si-gray-300);
+}
+
 .form-control:focus {
-    border-color: var(--bs-primary);
-    box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+    border-color: var(--si-primary);
+    box-shadow: 0 0 0 0.2rem rgba(var(--si-primary-rgb), 0.25);
 }
 
-/* Navigation styling */
+/* Navigation */
 .navbar {
-    background: var(--bs-dark);
+    background-color: var(--si-dark);
+    backdrop-filter: blur(10px);
 }
 
-/* Alert and notification styling */
-.alert-success {
-    background-color: var(--bs-success);
-    border-color: var(--bs-success);
-    color: var(--bs-white);
+.navbar-nav .nav-link {
+    font-weight: var(--si-nav-link-font-weight);
+    color: var(--si-nav-link-color);
 }
 
-.alert-danger {
-    background-color: var(--bs-danger);
-    border-color: var(--bs-danger);
-    color: var(--bs-white);
+.navbar-nav .nav-link:hover {
+    color: var(--si-nav-link-hover-color);
 }
 
-/* Card styling */
+/* Cards */
 .card {
-    border-radius: var(--bs-border-radius);
-    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-color: var(--si-gray-200);
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
 
 .card-header {
-    background-color: var(--bs-light);
-    border-bottom: var(--bs-border-width) solid var(--bs-border-color);
+    background-color: var(--si-gray-100);
+    border-bottom-color: var(--si-gray-200);
 }
 
-/* Table styling */
-.table thead th {
-    background-color: var(--bs-light);
-    border-bottom: 2px solid var(--bs-border-color);
+/* Tables */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--si-gray-200);
 }
 
-/* Typography adjustments */
-body {
-    font-family: var(--bs-body-font-family);
-    color: var(--bs-body-color);
+.table > thead {
+    background-color: var(--si-gray-100);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--bs-heading-color);
-    font-family: var(--bs-heading-font-family);
+/* Alerts */
+.alert {
+    border: 0;
+}
+
+.alert-success {
+    background-color: var(--si-success);
+    color: #fff;
+}
+
+.alert-danger {
+    background-color: var(--si-danger);
+    color: #fff;
+}
+
+.alert-warning {
+    background-color: var(--si-warning);
+    color: var(--si-gray-900);
+}
+
+.alert-info {
+    background-color: var(--si-info);
+    color: #fff;
+}
+
+/* Dark mode support */
+.dark-mode {
+    color-scheme: dark;
+}
+
+.dark-mode body {
+    color: var(--si-gray-300);
+    background-color: var(--si-dark);
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, 
+.dark-mode h4, .dark-mode h5, .dark-mode h6,
+.dark-mode .h1, .dark-mode .h2, .dark-mode .h3,
+.dark-mode .h4, .dark-mode .h5, .dark-mode .h6 {
+    color: #fff;
+}
+
+.dark-mode .card {
+    background-color: var(--si-gray-800);
+    border-color: var(--si-gray-700);
+}
+
+.dark-mode .table {
+    --bs-table-color: var(--si-gray-300);
+    --bs-table-border-color: var(--si-gray-700);
+}
+
+.dark-mode .form-control {
+    background-color: var(--si-gray-800);
+    border-color: var(--si-gray-700);
+    color: var(--si-gray-300);
+}
+
+/* Custom gradients and effects */
+.text-gradient-primary {
+    background: linear-gradient(to right, var(--si-primary), var(--si-purple), var(--si-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Links */
