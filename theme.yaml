@@ -1,8 +1,8 @@
 # WHMCS Twenty-One Theme Configuration File
 
-name: "Twenty-One"
-description: "The Default Theme for WHMCS 2021"
-author: "WHMCS Limited"
+name: "Little-Portal"
+description: "The Default Theme for Little Portal"
+author: "Little Cloud"
 properties:
   serverSidePagination: false # Defines client side will handle pagination
 provides:

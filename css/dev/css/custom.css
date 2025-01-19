@@ -1,0 +1,127 @@
+/* Custom Styles */
+
+/* Hero Section Custom Styles */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: (var(--si-body-bg));
+    color: #000;
+}
+.dark-mode .hero-section {
+    background-color: #000;
+    color: #fff;
+}
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F3F6FF;
+}
+.dark-mode .hero-section .overlay {
+    background: rgba(255, 255, 255, 0.1);
+}
+.hero-section .content {
+    position: relative;
+    color: inherit;
+}
+.hero-section .form-label {
+    color: inherit;
+}
+
+
+.inline-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.domain-table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.domain-table th, .domain-table td {
+    padding: 0.75rem 1.5rem;
+    text-align: left;
+}
+.domain-table th {
+    background-color: #dadada;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+}
+.domain-table td {
+    font-size: 0.875rem;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+}
+.domain-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 998;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 0.5rem;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar-nav {
+    --si-nav-link-padding-x: 0;
+    --si-nav-link-padding-y: 0.535rem;
+    --si-nav-link-font-weight: 600;
+    --si-nav-link-color: #888888;
+    --si-nav-link-hover-color: var(--si-navbar-hover-color);
+    --si-nav-link-disabled-color: #5599ff;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+body {
+    padding-top: 76px; /* Adjust this value based on your navbar height */
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust the color and opacity as needed */
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 1); /* Fully opaque when scrolled */
+}

@@ -1,0 +1,84 @@
+/* Import Little.cloud styles */
+@import url('../css/dev/css/theme.css');
+@import url('../css/dev/css/custom.css');
+
+/* Override specific WHMCS styles to ensure proper integration */
+:root {
+    /* Ensure WHMCS elements use Little.cloud colors */
+    --primary-bg-color: var(--bs-primary);
+    --primary-color: var(--bs-primary);
+    --secondary-bg-color: var(--bs-secondary);
+    --secondary-color: var(--bs-secondary);
+}
+
+/* Ensure buttons match Little.cloud styling */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--bs-primary-dark);
+    border-color: var(--bs-primary-dark);
+}
+
+/* Match form elements */
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* Navigation styling */
+.navbar {
+    background: var(--bs-dark);
+}
+
+/* Alert and notification styling */
+.alert-success {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+    color: var(--bs-white);
+}
+
+.alert-danger {
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+    color: var(--bs-white);
+}
+
+/* Card styling */
+.card {
+    border-radius: var(--bs-border-radius);
+    border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+.card-header {
+    background-color: var(--bs-light);
+    border-bottom: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+/* Table styling */
+.table thead th {
+    background-color: var(--bs-light);
+    border-bottom: 2px solid var(--bs-border-color);
+}
+
+/* Typography adjustments */
+body {
+    font-family: var(--bs-body-font-family);
+    color: var(--bs-body-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--bs-heading-color);
+    font-family: var(--bs-heading-font-family);
+}
+
+/* Links */
+a {
+    color: var(--bs-primary);
+}
+
+a:hover {
+    color: var(--bs-primary-dark);
+} 
