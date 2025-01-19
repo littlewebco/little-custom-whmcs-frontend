@@ -6,13 +6,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-12 text-center">
                     <div class="content">
-                        <h1 class="mb-4">Secure your <span class="text-primary">domain name</span></h1>
+                        <h1 class="mb-4">Secure your domain name</h1>
                         <div class="domain-search">
-                            <form class="inline-form">
+                            <form method="post" action="cart.php?a=add&domain=register" id="domain-search">
                                 <div class="input-group">
                                     <input type="text" class="form-control form-control-lg" placeholder="eg. example.com" name="domain" autocomplete="off">
                                     <button type="submit" class="btn btn-primary btn-lg">Search</button>
-                                    <button type="button" class="btn btn-success btn-lg">Transfer</button>
+                                    <button type="button" class="btn btn-success btn-lg" onclick="window.location='cart.php?a=add&domain=transfer'">Transfer</button>
                                 </div>
                             </form>
                             <div class="domain-prices mt-4">
@@ -26,7 +26,7 @@
                                         <span class="price">$15.99</span>
                                     </div>
                                     <div class="text-end">
-                                        <a href="#" class="text-primary">View all pricing</a>
+                                        <a href="{$WEB_ROOT}/domain-pricing" class="text-white">View all pricing <i class="fas fa-arrow-right ms-2"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -44,6 +44,9 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
                     <div class="product-card h-100">
+                        <div class="icon">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
                         <h3>WordPress</h3>
                         <p>Optimized WordPress hosting with automatic updates and backups</p>
                         <a href="{$WEB_ROOT}/store/wordpress-hosting" class="btn btn-outline-primary">Browse Products</a>
@@ -51,6 +54,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="product-card h-100">
+                        <div class="icon">
+                            <i class="fas fa-server"></i>
+                        </div>
                         <h3>Shared Web Hosting</h3>
                         <p>Choose your plan today</p>
                         <a href="{$WEB_ROOT}/store/shared-hosting" class="btn btn-outline-primary">Browse Products</a>
@@ -58,6 +64,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="product-card h-100">
+                        <div class="icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
                         <h3>Cpanel Hosting</h3>
                         <p>Full featured web hosting with Cpanel control panel</p>
                         <a href="{$WEB_ROOT}/store/cpanel-hosting" class="btn btn-outline-primary">Browse Products</a>
@@ -65,6 +74,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="product-card h-100">
+                        <div class="icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
                         <h3>Support Services</h3>
                         <p>Website, Email, Hardware, Administration & Support all in one place.</p>
                         <a href="{$WEB_ROOT}/store/support-services" class="btn btn-outline-primary">Browse Products</a>
@@ -72,6 +84,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="product-card h-100">
+                        <div class="icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
                         <h3>Website Builder</h3>
                         <p>Build your website with a simple drag and drop interface and plenty of templates to choose from</p>
                         <a href="{$WEB_ROOT}/store/website-builder" class="btn btn-outline-primary">Browse Products</a>
@@ -79,6 +94,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="product-card h-100">
+                        <div class="icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
                         <h3>CodeGuard</h3>
                         <p>Get peace-of-mind that your website is backed up</p>
                         <a href="{$WEB_ROOT}/store/codeguard" class="btn btn-outline-primary">Browse Products</a>
@@ -86,6 +104,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="product-card h-100">
+                        <div class="icon">
+                            <i class="fas fa-envelope-open"></i>
+                        </div>
                         <h3>Email Spam Filtering</h3>
                         <p>Take back control of your inbox</p>
                         <a href="{$WEB_ROOT}/store/email-spam-filtering" class="btn btn-outline-primary">Browse Products</a>
@@ -94,6 +115,9 @@
                 {if $registerdomainenabled}
                     <div class="col-md-6 col-lg-4">
                         <div class="product-card h-100">
+                            <div class="icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
                             <h3>Register a New Domain</h3>
                             <p>Secure your domain name by registering it today</p>
                             <a href="{$WEB_ROOT}/cart.php?a=add&domain=register" class="btn btn-outline-primary">Domain Search</a>
@@ -103,6 +127,9 @@
                 {if $transferdomainenabled}
                     <div class="col-md-6 col-lg-4">
                         <div class="product-card h-100">
+                            <div class="icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
                             <h3>Transfer Your Domain</h3>
                             <p>Transfer now to extend your domain by 1 year</p>
                             <a href="{$WEB_ROOT}/cart.php?a=add&domain=transfer" class="btn btn-outline-primary">Transfer Your Domain</a>
@@ -122,7 +149,7 @@
             <div class="col">
                 <a href="{routePath('announcement-index')}" class="help-card">
                     <div class="icon">
-                        <i class="fal fa-bullhorn"></i>
+                        <i class="fas fa-bullhorn"></i>
                     </div>
                     <h3>Announcements</h3>
                 </a>
@@ -130,7 +157,7 @@
             <div class="col">
                 <a href="serverstatus.php" class="help-card">
                     <div class="icon">
-                        <i class="fal fa-server"></i>
+                        <i class="fas fa-server"></i>
                     </div>
                     <h3>Network Status</h3>
                 </a>
@@ -138,7 +165,7 @@
             <div class="col">
                 <a href="{routePath('knowledgebase-index')}" class="help-card">
                     <div class="icon">
-                        <i class="fal fa-book"></i>
+                        <i class="fas fa-book"></i>
                     </div>
                     <h3>Knowledge Base</h3>
                 </a>
@@ -146,7 +173,7 @@
             <div class="col">
                 <a href="{routePath('download-index')}" class="help-card">
                     <div class="icon">
-                        <i class="fal fa-download"></i>
+                        <i class="fas fa-download"></i>
                     </div>
                     <h3>Downloads</h3>
                 </a>
@@ -154,7 +181,7 @@
             <div class="col">
                 <a href="submitticket.php" class="help-card">
                     <div class="icon">
-                        <i class="fal fa-life-ring"></i>
+                        <i class="fas fa-life-ring"></i>
                     </div>
                     <h3>Submit a Ticket</h3>
                 </a>
@@ -171,7 +198,7 @@
             <div class="col">
                 <a href="clientarea.php" class="help-card">
                     <div class="icon">
-                        <i class="fal fa-home"></i>
+                        <i class="fas fa-home"></i>
                     </div>
                     <h3>Your Account</h3>
                 </a>
@@ -179,7 +206,7 @@
             <div class="col">
                 <a href="clientarea.php?action=services" class="help-card">
                     <div class="icon">
-                        <i class="far fa-cubes"></i>
+                        <i class="fas fa-cubes"></i>
                     </div>
                     <h3>Manage Services</h3>
                 </a>
@@ -188,7 +215,7 @@
                 <div class="col">
                     <a href="clientarea.php?action=domains" class="help-card">
                         <div class="icon">
-                            <i class="fal fa-globe"></i>
+                            <i class="fas fa-globe"></i>
                         </div>
                         <h3>Manage Domains</h3>
                     </a>
@@ -197,7 +224,7 @@
             <div class="col">
                 <a href="supporttickets.php" class="help-card">
                     <div class="icon">
-                        <i class="fal fa-comments"></i>
+                        <i class="fas fa-comments"></i>
                     </div>
                     <h3>Support Requests</h3>
                 </a>
@@ -205,7 +232,7 @@
             <div class="col">
                 <a href="clientarea.php?action=masspay&all=true" class="help-card">
                     <div class="icon">
-                        <i class="fal fa-credit-card"></i>
+                        <i class="fas fa-credit-card"></i>
                     </div>
                     <h3>Make a Payment</h3>
                 </a>

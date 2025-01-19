@@ -1,7 +1,7 @@
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-secondary) 100%);
-    padding: 100px 0;
+    background: linear-gradient(135deg, #5599FF 0%, #8B5CF6 100%);
+    padding: 120px 0 100px;
     position: relative;
     overflow: hidden;
 }
@@ -23,9 +23,10 @@
 
 .hero-section h1 {
     color: #fff;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .domain-search {
@@ -36,15 +37,18 @@
 .domain-search .input-group {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 8px;
+    border-radius: 16px;
+    padding: 10px;
+    gap: 8px;
 }
 
 .domain-search input {
     border: none;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
     color: #fff;
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 12px;
 }
 
 .domain-search input::placeholder {
@@ -52,20 +56,38 @@
 }
 
 .domain-search .btn {
-    padding: 1rem 2rem;
+    padding: 1.25rem 2rem;
     font-weight: 600;
-    border-radius: 8px;
-    margin: 0 4px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.domain-search .btn-primary {
+    background: #5599FF;
+    border-color: #5599FF;
+}
+
+.domain-search .btn-success {
+    background: #22c55e;
+    border-color: #22c55e;
+}
+
+.domain-search .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .domain-prices {
     color: #fff;
+    margin-top: 2rem;
 }
 
 .domain-price {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    font-size: 1.1rem;
 }
 
 .domain-price .tld {
@@ -73,19 +95,37 @@
 }
 
 .domain-price .price {
-    opacity: 0.8;
+    opacity: 0.9;
+}
+
+.domain-prices a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.domain-prices a:hover {
+    opacity: 0.9;
 }
 
 /* Products Section */
 .products-section {
-    padding: 80px 0;
+    padding: 100px 0;
     background: var(--bs-body-bg);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--bs-heading-color);
 }
 
 .product-card {
     background: var(--bs-body-bg);
     border: 1px solid var(--bs-border-color);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 2rem;
     transition: all 0.3s ease;
     height: 100%;
@@ -95,33 +135,58 @@
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #5599FF;
 }
 
 .product-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--bs-heading-color);
+    font-weight: 600;
 }
 
 .product-card p {
     color: var(--bs-secondary-color);
     margin-bottom: 1.5rem;
     flex-grow: 1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.product-card .btn {
+    padding: 0.875rem 1.5rem;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.product-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Help Section & Account Section */
 .help-section,
 .account-section {
-    padding: 60px 0;
+    padding: 80px 0;
     background: var(--bs-tertiary-bg);
+}
+
+.help-section + .account-section {
+    padding-top: 40px;
 }
 
 .help-card {
     background: var(--bs-body-bg);
     border: 1px solid var(--bs-border-color);
-    border-radius: 12px;
-    padding: 1.5rem;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
     text-align: center;
     text-decoration: none;
     color: var(--bs-body-color);
@@ -135,14 +200,19 @@
 
 .help-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    color: var(--bs-primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    color: #5599FF;
 }
 
 .help-card .icon {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--bs-primary);
+    color: #5599FF;
+    transition: all 0.3s ease;
+}
+
+.help-card:hover .icon {
+    transform: scale(1.1);
 }
 
 .help-card h3 {
@@ -160,17 +230,40 @@
 
 [data-bs-theme="dark"] .product-card:hover,
 [data-bs-theme="dark"] .help-card:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .help-section,
+[data-bs-theme="dark"] .account-section {
+    background: rgba(255, 255, 255, 0.02);
 }
 
 /* Responsive adjustments */
+@media (max-width: 991px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .hero-section {
+        padding: 100px 0 80px;
+    }
+
     .hero-section h1 {
         font-size: 2.5rem;
     }
 
     .domain-search .input-group {
         flex-direction: column;
+    }
+
+    .domain-search input {
+        width: 100%;
     }
 
     .domain-search .btn {
@@ -182,5 +275,20 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .product-card,
+    .help-card {
+        padding: 1.5rem;
     }
 } 
