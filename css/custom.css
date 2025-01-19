@@ -20,7 +20,7 @@
     --card-hover-blur: 20px;
 }
 
-/* Layout */
+/* Base Layout */
 body {
     font-family: "Manrope", sans-serif;
     color: var(--si-body-color);
@@ -252,104 +252,274 @@ a:hover {
     padding: 2rem 0;
 }
 
-/* Product Groups Cards */
-.card-columns.home {
-    column-count: 3;
+/* Domain Search Section */
+.domain-search-section {
+    padding: 4rem 0;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(85,153,255,0.05) 100%);
+}
+
+.domain-search-section h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.domain-search-section h1 .highlight {
+    color: var(--si-primary);
+}
+
+.domain-search-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.domain-search-form input {
+    flex: 1;
+    height: 56px;
+    border-radius: 0.75rem;
+    border: 1px solid var(--si-gray-200);
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.domain-search-form .btn {
+    height: 56px;
+    padding: 0 2rem;
+    font-weight: 600;
+}
+
+.domain-prices {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.9375rem;
+}
+
+.domain-price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.domain-price .tld {
+    font-weight: 600;
+    color: var(--si-primary);
+}
+
+/* Products Grid */
+.products-section {
+    padding: 4rem 0;
+}
+
+.products-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
 }
 
 @media (max-width: 992px) {
-    .card-columns.home {
-        column-count: 2;
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 576px) {
-    .card-columns.home {
-        column-count: 1;
+    .products-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-.home .card {
+.product-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
     backdrop-filter: blur(var(--card-hover-blur));
     -webkit-backdrop-filter: blur(var(--card-hover-blur));
-    margin-bottom: 1.5rem;
 }
 
-.home .card:hover {
+.product-card:hover {
     transform: translateY(var(--card-hover-y));
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     border-color: rgba(85, 153, 255, 0.1);
 }
 
-.home .card-body {
-    padding: 2.5rem;
-}
-
-.home .card-title {
+.product-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(to right, var(--si-primary), var(--si-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--si-black);
 }
 
-.home .card p {
+.product-card p {
     color: var(--si-gray-600);
     margin-bottom: 1.5rem;
     font-size: 0.9375rem;
+    line-height: 1.6;
 }
 
-/* Action Icons Section */
-.action-icon-btns {
-    gap: 1.5rem;
-}
-
-.action-icon-btns > div {
-    margin-bottom: 1.5rem;
-}
-
-.action-icon-btns a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: var(--si-gray-600);
-}
-
-.action-icon-btns a:hover {
-    transform: translateY(var(--card-hover-y));
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    border-color: rgba(85, 153, 255, 0.1);
+.product-card .btn {
+    width: 100%;
+    background: transparent;
+    border: 2px solid var(--si-primary);
     color: var(--si-primary);
 }
 
-.action-icon-btns .ico-container {
-    width: 64px;
-    height: 64px;
+.product-card .btn:hover {
+    background: var(--si-primary);
+    color: white;
+}
+
+/* Help Section */
+.help-section {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, rgba(85,153,255,0.05) 0%, rgba(0,0,0,0) 100%);
+}
+
+.help-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+@media (max-width: 992px) {
+    .help-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .help-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.help-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.help-card:hover {
+    transform: translateY(var(--card-hover-y));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.help-card .icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    border-radius: 1rem;
-    background: rgba(85, 153, 255, 0.1);
-    color: var(--si-primary);
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
+    color: var(--si-gray-600);
 }
 
-.action-icon-btns a:hover .ico-container {
-    transform: scale(1.1);
-    background: var(--si-primary);
+.help-card .icon i {
+    font-size: 1.5rem;
+}
+
+.help-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--si-gray-900);
+    margin: 0;
+}
+
+/* Dark Mode Overrides */
+.dark-mode .product-card,
+.dark-mode .help-card {
+    background: rgba(34, 36, 51, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .product-card h3,
+.dark-mode .help-card h3 {
     color: white;
+}
+
+.dark-mode .domain-search-form input {
+    background: rgba(34, 36, 51, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.dark-mode .help-card {
+    background: rgba(34, 36, 51, 0.7);
+}
+
+.dark-mode .help-card .icon {
+    color: var(--si-gray-400);
+}
+
+/* Remove old card-columns styles */
+.card-columns.home {
+    display: none;
+}
+
+/* Update action-icon-btns to match help-grid */
+.action-icon-btns {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+@media (max-width: 992px) {
+    .action-icon-btns {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .action-icon-btns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.action-icon-btns a {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.dark-mode .action-icon-btns a {
+    background: rgba(34, 36, 51, 0.7);
 }
 
 /* Section Headings */
