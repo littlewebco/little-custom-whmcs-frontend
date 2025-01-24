@@ -27,6 +27,27 @@ body {
     background-color: var(--si-body-bg);
     -webkit-font-smoothing: antialiased;
     padding-top: var(--navbar-height);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-body {
+    flex: 1 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.footer {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.homepage-container {
+    min-height: calc(100vh - var(--navbar-height));
+    display: flex;
+    flex-direction: column;
 }
 
 /* Typography */
@@ -254,16 +275,12 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
+    flex: 1;
     background: url('https://picsum.photos/1920/1080') center/cover fixed no-repeat;
-    min-height: calc(100vh - var(--navbar-height));
-    width: 100%;
     position: relative;
     overflow: hidden;
     margin: 0;
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hero-section .overlay {
