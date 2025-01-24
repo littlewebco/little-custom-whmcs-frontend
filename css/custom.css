@@ -21,22 +21,101 @@
     --main-content-min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
 }
 
-/* WHMCS Core Structure - Override all previous styles */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
+/* WHMCS Core Structure */
 body {
     font-family: "Manrope", sans-serif;
     color: var(--si-body-color);
     background-color: var(--si-body-bg);
     -webkit-font-smoothing: antialiased;
     padding-top: var(--navbar-height);
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
+}
+
+/* Main Body Container */
+#main-body {
+    min-height: calc(100vh - var(--navbar-height));
+    padding-bottom: 0;
+    margin-bottom: 0;
+    position: relative;
+    background: var(--si-body-bg);
+}
+
+/* Primary Content Area */
+.primary-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* WHMCS Footer */
+.footer {
+    background: var(--si-dark);
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Container Overrides */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    z-index: 1;
+    margin: -2rem -15px 2rem;
+    padding: 60px 15px;
+}
+
+.search-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1920/1080') center/cover no-repeat;
+    z-index: -1;
+}
+
+/* Footer Links */
+.footer h5 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.footer ul.list-unstyled li {
+    margin-bottom: 0.5rem;
+}
+
+.footer ul.list-unstyled li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer ul.list-unstyled li a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer .copyright {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer .social-links a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s ease;
+}
+
+.footer .social-links a:hover {
+    color: #fff;
 }
 
 /* WHMCS Main Container */
