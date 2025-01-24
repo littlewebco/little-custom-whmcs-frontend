@@ -1,8 +1,11 @@
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #5599FF 0%, #8B5CF6 100%);
-    padding: 120px 0 100px;
+    background: url('https://picsum.photos/1920/1080') center/cover no-repeat;
+    min-height: 100vh;
+    padding: 200px 0;
     position: relative;
+    display: flex;
+    align-items: center;
     overflow: hidden;
 }
 
@@ -12,8 +15,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
 }
 
 .hero-section .content {
@@ -23,10 +26,10 @@
 
 .hero-section h1 {
     color: #fff;
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 800;
     margin-bottom: 2.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .domain-search {
@@ -44,7 +47,7 @@
 
 .domain-search input {
     border: none;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     color: #fff;
     padding: 1.25rem 1.5rem;
     font-size: 1.1rem;
@@ -241,7 +244,7 @@
 /* Responsive adjustments */
 @media (max-width: 991px) {
     .hero-section h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
     
     .section-title {
@@ -251,11 +254,11 @@
 
 @media (max-width: 768px) {
     .hero-section {
-        padding: 100px 0 80px;
+        padding: 150px 0;
     }
 
     .hero-section h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .domain-search .input-group {
@@ -284,7 +287,7 @@
 
 @media (max-width: 576px) {
     .hero-section h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .product-card,
