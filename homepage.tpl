@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <!-- Products Section -->
+    <!-- Products Section 
     <section class="products-section">
         <div class="container">
             <h2 class="section-title text-center mb-5">Browse our Products/Services</h2>
@@ -136,8 +136,9 @@
         </div>
     </section>
 {/if}
+-->
 
-<!-- Quick Links -->
+<!-- Quick Links 
 <section class="quick-links">
     <div class="container">
         <div class="row g-4">
@@ -165,8 +166,8 @@
         </div>
     </div>
 </section>
-
-<!-- Help Section -->
+-->
+<!-- Help Section 
 <section class="help-section">
     <div class="container">
         <h2 class="section-title text-center">How can we help today</h2>
@@ -204,8 +205,8 @@
         </div>
     </div>
 </section>
-
-<!-- Account Section -->
+-->
+<!-- Account Section 
 <section class="account-section">
     <div class="container">
         <h2 class="section-title text-center">Your Account</h2>
@@ -243,3 +244,4 @@
         </div>
     </div>
 </section>
+-->
