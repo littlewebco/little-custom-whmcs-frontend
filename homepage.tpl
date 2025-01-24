@@ -137,49 +137,68 @@
     </section>
 {/if}
 
+<!-- Quick Links -->
+<section class="quick-links">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <a href="{$WEB_ROOT}/store/email-spam-filtering" class="quick-link-card">
+                    <i class="fas fa-envelope-open"></i>
+                    <h3>Email Spam Filtering</h3>
+                    <p>Take back control of your inbox</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="{$WEB_ROOT}/cart.php?a=add&domain=register" class="quick-link-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Register a New Domain</h3>
+                    <p>Secure your domain name by registering it today</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="{$WEB_ROOT}/cart.php?a=add&domain=transfer" class="quick-link-card">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Transfer Your Domain</h3>
+                    <p>Transfer now to extend your domain by 1 year</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Help Section -->
 <section class="help-section">
     <div class="container">
-        <h2 class="section-title text-center mb-5">How can we help today</h2>
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
-            <div class="col">
-                <a href="{routePath('announcement-index')}" class="help-card">
-                    <div class="icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Announcements</h3>
+        <h2 class="section-title text-center">How can we help today</h2>
+        <div class="row g-4">
+            <div class="col-6 col-md">
+                <a href="{routePath('announcement-index')}" class="help-link">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Announcements</span>
                 </a>
             </div>
-            <div class="col">
-                <a href="serverstatus.php" class="help-card">
-                    <div class="icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>Network Status</h3>
+            <div class="col-6 col-md">
+                <a href="serverstatus.php" class="help-link">
+                    <i class="fas fa-server"></i>
+                    <span>Network Status</span>
                 </a>
             </div>
-            <div class="col">
-                <a href="{routePath('knowledgebase-index')}" class="help-card">
-                    <div class="icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Knowledge Base</h3>
+            <div class="col-6 col-md">
+                <a href="{routePath('knowledgebase-index')}" class="help-link">
+                    <i class="fas fa-book"></i>
+                    <span>Knowledge Base</span>
                 </a>
             </div>
-            <div class="col">
-                <a href="{routePath('download-index')}" class="help-card">
-                    <div class="icon">
-                        <i class="fas fa-download"></i>
-                    </div>
-                    <h3>Downloads</h3>
+            <div class="col-6 col-md">
+                <a href="{routePath('download-index')}" class="help-link">
+                    <i class="fas fa-download"></i>
+                    <span>Downloads</span>
                 </a>
             </div>
-            <div class="col">
-                <a href="submitticket.php" class="help-card">
-                    <div class="icon">
-                        <i class="fas fa-life-ring"></i>
-                    </div>
-                    <h3>Submit a Ticket</h3>
+            <div class="col-6 col-md">
+                <a href="submitticket.php" class="help-link">
+                    <i class="fas fa-life-ring"></i>
+                    <span>Submit a Ticket</span>
                 </a>
             </div>
         </div>
@@ -189,48 +208,36 @@
 <!-- Account Section -->
 <section class="account-section">
     <div class="container">
-        <h2 class="section-title text-center mb-5">Your Account</h2>
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
-            <div class="col">
-                <a href="clientarea.php" class="help-card">
-                    <div class="icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Your Account</h3>
+        <h2 class="section-title text-center">Your Account</h2>
+        <div class="row g-4">
+            <div class="col-6 col-md">
+                <a href="clientarea.php" class="help-link">
+                    <i class="fas fa-home"></i>
+                    <span>Your Account</span>
                 </a>
             </div>
-            <div class="col">
-                <a href="clientarea.php?action=services" class="help-card">
-                    <div class="icon">
-                        <i class="fas fa-cubes"></i>
-                    </div>
-                    <h3>Manage Services</h3>
+            <div class="col-6 col-md">
+                <a href="clientarea.php?action=services" class="help-link">
+                    <i class="fas fa-cubes"></i>
+                    <span>Manage Services</span>
                 </a>
             </div>
-            {if $registerdomainenabled || $transferdomainenabled || $numberOfDomains}
-                <div class="col">
-                    <a href="clientarea.php?action=domains" class="help-card">
-                        <div class="icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3>Manage Domains</h3>
-                    </a>
-                </div>
-            {/if}
-            <div class="col">
-                <a href="supporttickets.php" class="help-card">
-                    <div class="icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Support Requests</h3>
+            <div class="col-6 col-md">
+                <a href="clientarea.php?action=domains" class="help-link">
+                    <i class="fas fa-globe"></i>
+                    <span>Manage Domains</span>
                 </a>
             </div>
-            <div class="col">
-                <a href="clientarea.php?action=masspay&all=true" class="help-card">
-                    <div class="icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3>Make a Payment</h3>
+            <div class="col-6 col-md">
+                <a href="supporttickets.php" class="help-link">
+                    <i class="fas fa-comments"></i>
+                    <span>Support Requests</span>
+                </a>
+            </div>
+            <div class="col-6 col-md">
+                <a href="clientarea.php?action=masspay&all=true" class="help-link">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Make a Payment</span>
                 </a>
             </div>
         </div>
