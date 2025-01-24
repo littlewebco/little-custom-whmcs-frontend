@@ -104,19 +104,39 @@
 
     {include file="$template/includes/verifyemail.tpl"}
 
+    {if $templatefile != 'login' && $templatefile != 'password-reset-container' && $templatefile != 'password-reset-confirm' && $templatefile != 'logout'}
+        <nav class="master-breadcrumb" aria-label="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb">
+                    {foreach $breadcrumb as $item}
+                        <li class="breadcrumb-item{if $item@last} active{/if}">
+                            {if !$item@last}<a href="{$item.link}">{/if}
+                            {$item.label}
+                            {if !$item@last}</a>{/if}
+                        </li>
+                    {/foreach}
+                </ol>
+            </div>
+        </nav>
+    {/if}
+
+    {include file="$template/includes/validateuser.tpl"}
+    {include file="$template/includes/network-issues-notifications.tpl"}
+
     <section id="main-body">
         <div class="{if !$skipMainBodyContainer}container{/if}">
             <div class="row">
-                {if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}
-                    <div class="col-lg-4 col-xl-3">
-                        <div class="sidebar">
-                            {include file="$template/includes/sidebar.tpl" sidebar=$primarySidebar}
-                        </div>
-                        {if !$inShoppingCart && $secondarySidebar->hasChildren()}
-                            <div class="d-none d-lg-block sidebar">
-                                {include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
-                            </div>
-                        {/if}
+
+            {if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}
+                <div class="col-lg-4 col-xl-3">
+                    <div class="sidebar">
+                        {include file="$template/includes/sidebar.tpl" sidebar=$primarySidebar}
                     </div>
-                {/if}
-                <div class="{if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}col-lg-8 col-xl-9{else}col-12{/if} primary-content">
+                    {if !$inShoppingCart && $secondarySidebar->hasChildren()}
+                        <div class="d-none d-lg-block sidebar">
+                            {include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
+                        </div>
+                    {/if}
+                </div>
+            {/if}
+            <div class="{if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}col-lg-8 col-xl-9{else}col-12{/if} primary-content">
