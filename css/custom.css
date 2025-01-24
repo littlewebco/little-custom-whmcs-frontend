@@ -1,6 +1,6 @@
 /* Import Little.cloud styles */
 @import url('../css/dev/css/theme.css');
-@import url('../css/dev/css/custom.css');
+
 
 /* Override WHMCS variables with Little.cloud theme variables */
 :root {
