@@ -129,19 +129,17 @@ h1, h2, h3, h4, h5, h6,
 .card {
     border-radius: 1rem;
     border: 1px solid var(--si-gray-200);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: var(--si-white);
+    transition: all 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(var(--card-hover-y));
+    box-shadow: 0 8px var(--card-hover-blur) rgba(0, 0, 0, 0.1);
 }
 
-.card-header {
-    background-color: transparent;
-    border-bottom: 1px solid var(--si-gray-200);
-    padding: 1.25rem;
+.card-body {
+    padding: 2rem;
 }
 
 /* Tables */
@@ -189,9 +187,8 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .dark-mode .card {
-    background-color: rgba(34, 36, 51, 0.7);
-    border-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(var(--header-blur));
+    background: rgba(34, 36, 51, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
 }
 
 .dark-mode .table {
@@ -709,4 +706,126 @@ a:hover {
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(85, 153, 255, 0.3);
+}
+
+/* Search Box */
+.search-box {
+    background: url('https://picsum.photos/1920/1080') center/cover no-repeat;
+    position: relative;
+    padding: 60px 0;
+    margin-bottom: 40px;
+}
+
+.search-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+.search-box .container {
+    position: relative;
+    z-index: 2;
+}
+
+.search-box h1 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-box .input-group {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box .form-control {
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    height: auto;
+}
+
+.search-box .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box .btn {
+    padding: 1.25rem 2rem;
+    font-weight: 600;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    margin-left: 8px;
+}
+
+.domain-pricing {
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.tld-pricing {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 15px;
+}
+
+.domain-pricing a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.domain-pricing a:hover {
+    text-decoration: underline;
+}
+
+/* Action Icons */
+.action-icon-btns {
+    margin: 40px -15px;
+}
+
+.action-icon-btns a {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: var(--si-body-color);
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.action-icon-btns a:hover {
+    transform: translateY(var(--card-hover-y));
+    color: var(--si-primary);
+}
+
+.ico-container {
+    margin-bottom: 15px;
+}
+
+.ico-container i {
+    font-size: 2rem;
+    color: var(--si-primary);
+}
+
+/* Dark Mode */
+.dark-mode .search-box::before {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .action-icon-btns a {
+    color: var(--si-gray-300);
 } 
