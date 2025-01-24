@@ -103,16 +103,26 @@ h1, h2, h3, h4, h5, h6,
 /* Navigation */
 .navbar {
     height: var(--navbar-height);
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(var(--header-blur));
-    -webkit-backdrop-filter: blur(var(--header-blur));
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #0B0F19;
     padding: 0 var(--navbar-padding);
     transition: background-color 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    font-weight: 800;
+    padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand img {
     height: 32px;
+    width: auto;
+    content: url('https://little.cloud/assets/img/logo.svg');
 }
 
 .navbar-nav .nav-link {
@@ -224,7 +234,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .dark-mode .navbar {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #0B0F19;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
