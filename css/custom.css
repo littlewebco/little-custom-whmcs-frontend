@@ -30,24 +30,34 @@ body {
     -webkit-font-smoothing: antialiased;
     padding-top: var(--navbar-height);
     min-height: 100vh;
-    position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 #main-body {
-    min-height: var(--main-content-min-height);
+    flex: 1 0 auto;
+    width: 100%;
     position: relative;
     z-index: 1;
     padding-bottom: 40px;
 }
 
 .footer {
-    position: relative;
-    bottom: 0;
+    flex-shrink: 0;
     width: 100%;
     background: var(--si-dark);
-    z-index: 2;
     padding: 40px 0 20px;
+    margin-top: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.footer.footer {
+    margin: 0;
+    padding: 50px 0 80px;
+    background-color: #404040;
+    color: #eee;
+    font-size: .9rem;
 }
 
 .homepage-container {
