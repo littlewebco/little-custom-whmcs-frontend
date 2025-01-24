@@ -18,6 +18,8 @@
     --header-blur: 10px;
     --card-hover-y: -4px;
     --card-hover-blur: 20px;
+    --footer-height: auto;
+    --main-content-min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
 }
 
 /* Base Layout */
@@ -28,20 +30,24 @@ body {
     -webkit-font-smoothing: antialiased;
     padding-top: var(--navbar-height);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    display: block;
 }
 
 #main-body {
-    flex: 1 0 auto;
+    min-height: var(--main-content-min-height);
     position: relative;
     z-index: 1;
+    padding-bottom: 40px;
 }
 
 .footer {
-    flex-shrink: 0;
     position: relative;
-    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    background: var(--si-dark);
+    z-index: 2;
+    padding: 40px 0 20px;
 }
 
 .homepage-container {
@@ -623,38 +629,46 @@ a:hover {
 
 /* Remove old card-columns styles */
 .card-columns.home {
-    display: none;
+    column-count: 3;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+    margin: 2rem 0;
+}
+
+@media (max-width: 991px) {
+    .card-columns.home {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 575px) {
+    .card-columns.home {
+        column-count: 1;
+    }
 }
 
 /* Update action-icon-btns to match help-grid */
 .action-icon-btns {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 1rem;
-}
-
-@media (max-width: 992px) {
-    .action-icon-btns {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .action-icon-btns {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    margin: 2rem 0;
+    padding: 0 15px;
 }
 
 .action-icon-btns a {
-    background: white;
+    background: var(--si-white);
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
     transition: all 0.3s ease;
-    border: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .dark-mode .action-icon-btns a {
@@ -710,8 +724,9 @@ a:hover {
 
 /* Search Box */
 .search-box {
-    background: url('https://picsum.photos/1920/1080') center/cover no-repeat;
     position: relative;
+    z-index: 1;
+    background: transparent;
     padding: 60px 0;
     margin-bottom: 40px;
 }
@@ -723,8 +738,8 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(2px);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1920/1080') center/cover no-repeat;
+    z-index: -1;
 }
 
 .search-box .container {
