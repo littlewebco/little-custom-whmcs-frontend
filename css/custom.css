@@ -109,6 +109,19 @@ h1, h2, h3, h4, h5, h6,
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Override header link colors with more specific selectors */
+header.header .navbar a,
+.navbar a,
+.header .navbar-nav .nav-link {
+    color: var(--si-nav-link-color) !important;
+}
+
+header.header .navbar a:hover,
+.navbar a:hover,
+.header .navbar-nav .nav-link:hover {
+    color: var(--si-nav-link-hover-color) !important;
+}
+
 .navbar-brand {
     font-size: 1.25rem;
     line-height: inherit;
@@ -128,13 +141,8 @@ h1, h2, h3, h4, h5, h6,
 .navbar-nav .nav-link {
     font-weight: 600;
     font-size: 0.9375rem;
-    color: var(--si-nav-link-color);
     padding: 0.535rem 1rem;
     transition: color 0.2s ease;
-}
-
-.navbar-nav .nav-link:hover {
-    color: var(--si-nav-link-hover-color);
 }
 
 /* Buttons */
