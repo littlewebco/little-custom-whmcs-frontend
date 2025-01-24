@@ -22,7 +22,7 @@
     --main-content-min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
 }
 
-/* Base Layout */
+/* WHMCS Core Structure */
 body {
     font-family: "Manrope", sans-serif;
     color: var(--si-body-color);
@@ -30,40 +30,65 @@ body {
     -webkit-font-smoothing: antialiased;
     padding-top: var(--navbar-height);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-#main-body {
-    flex: 1 0 auto;
-    width: 100%;
     position: relative;
-    z-index: 1;
-    padding-bottom: 40px;
 }
 
+/* WHMCS Main Container */
+#main-body {
+    min-height: calc(100vh - var(--navbar-height));
+    padding-bottom: 300px; /* Height of footer */
+    position: relative;
+    background: var(--si-body-bg);
+}
+
+/* Primary Content Area */
+.primary-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* WHMCS Footer */
 .footer {
-    flex-shrink: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     background: var(--si-dark);
-    padding: 40px 0 20px;
-    margin-top: auto;
-    position: relative;
+    padding: 50px 0;
     z-index: 1;
 }
 
-.footer.footer {
-    margin: 0;
-    padding: 50px 0 80px;
-    background-color: #404040;
-    color: #eee;
-    font-size: .9rem;
+/* Container Overrides */
+.container {
+    position: relative;
+    z-index: 2;
 }
 
-.homepage-container {
-    min-height: calc(100vh - var(--navbar-height));
-    display: flex;
-    flex-direction: column;
+/* Search Box Adjustments */
+.search-box {
+    position: relative;
+    z-index: 1;
+    margin: -2rem -15px 2rem;
+    padding: 60px 15px;
+}
+
+.search-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1920/1080') center/cover no-repeat;
+    z-index: -1;
+}
+
+/* Responsive Footer Adjustments */
+@media (max-width: 768px) {
+    #main-body {
+        padding-bottom: 400px; /* Increased footer space for mobile */
+    }
 }
 
 /* Typography */
