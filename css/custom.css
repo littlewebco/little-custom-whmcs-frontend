@@ -255,12 +255,15 @@ a:hover {
 /* Hero Section */
 .hero-section {
     background: url('https://picsum.photos/1920/1080') center/cover fixed no-repeat;
-    height: 100vh;
+    min-height: calc(100vh - var(--navbar-height));
     width: 100%;
     position: relative;
     overflow: hidden;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-section .overlay {
@@ -278,7 +281,7 @@ a:hover {
     z-index: 1;
     max-width: 800px;
     width: 100%;
-    padding: 0 1rem;
+    padding: 2rem 1rem;
 }
 
 .hero-section h1 {
