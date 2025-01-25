@@ -41,11 +41,10 @@
         <div class="container">
             <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                 {if $assetLogoPath}
-                    <img src="{$assetLogoPath}" alt="" class="logo-img">
+                    <img src="{$assetLogoPath}" alt="{$companyname}" class="logo-img">
                 {else}
-                    <img src="{$systemurl}/templates/{$template}/assets/img/logo.svg" alt="" class="logo-img">
+                    {$companyname}
                 {/if}
-                <span class="brand-text">{$companyname}</span>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbar" aria-controls="primaryNavbar" aria-expanded="false" aria-label="Toggle navigation">
