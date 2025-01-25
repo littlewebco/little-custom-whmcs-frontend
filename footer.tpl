@@ -18,13 +18,13 @@
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
                     <nav class="footer-nav">
-                        <a href="{$WEB_ROOT}/about">About Us</a>
-                        <a href="{$WEB_ROOT}/services">Services</a>
-                        <a href="{$WEB_ROOT}/ai-protection">AI Protection</a>
-                        <a href="{$WEB_ROOT}/managed-services">Managed Services</a>
-                        <a href="{$WEB_ROOT}/cyber-security">Cyber Security</a>
-                        <a href="{$WEB_ROOT}/whois">WHOIS</a>
-                        <a href="{$WEB_ROOT}/domain-tracker">Domain Tracker</a>
+                        <a href="{$WEB_ROOT}/cart.php?a=add&domain=register">Register Domain</a>
+                        <a href="{$WEB_ROOT}/cart.php?a=add&domain=transfer">Transfer Domain</a>
+                        <a href="{$WEB_ROOT}/domain-pricing">Domain Pricing</a>
+                        <a href="{$WEB_ROOT}/whois">WHOIS Lookup</a>
+                        <a href="{$WEB_ROOT}/clientarea.php?action=domains">Domain Management</a>
+                        <a href="{$WEB_ROOT}/ssl-certificates">SSL Certificates</a>
+                        <a href="{$WEB_ROOT}/contact.php">Contact Us</a>
                     </nav>
                 </div>
                 <div class="col-md-4">
