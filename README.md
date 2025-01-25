@@ -1,63 +1,112 @@
-# WHMCS Twenty-One Client Area Template Theme
+# Little-Portal WHMCS Theme
 
-Welcome to the WHMCS “Twenty-One” template repository!  This repository is dedicated to providing version-by-version changes of the “Twenty-One” template as published in [WHMCS](https://downloads.whmcs.com/).  Sharing these changes through GitHub as a read-only repository enables you to quick inspect and import these changes for your custom theme.
+A modern, customized WHMCS client area theme based on the official WHMCS Twenty-One template. This theme provides an enhanced user experience while maintaining full compatibility with WHMCS core functionality.
 
-## Compatibility
+## Overview
 
-This theme is compatible with WHMCS 6.0 and later.
+Little-Portal is a fork of the [WHMCS Twenty-One theme](https://github.com/WHMCS/templates-twenty-one) with additional customizations and modern improvements. Our goal is to provide a beautiful, responsive, and user-friendly interface while maintaining strict adherence to WHMCS development standards.
 
-## Usage
+## Features
 
-You can utilise this repository to see the individual changes to this theme as distributed in WHMCS.
+- Modern tech stack:
+  - Bootstrap 5.3.2
+  - jQuery 3.7.1
+  - Font Awesome 6.5.1
+- Enhanced UI/UX with custom color scheme
+- Client-side pagination for improved performance
+- Responsive design optimized for all devices
+- Full compatibility with WHMCS core features
+- Google Tag Manager integration
+- Modern authentication flows
 
-You can also use it to build your template in a way that can be controlled using Version Control, with the ability to pull in and auto-merge future changes.
+## Requirements
 
-You may fork this repository as described in the
-[GitHub Guide: Forking Projects](https://guides.github.com/activities/forking/) or
-[GitHub Bootcamp: Forking a Repo](https://help.github.com/articles/fork-a-repo/) articles.
+- WHMCS 6.0 or later
+- PHP 7.4 or later (recommended)
+- Modern web browser with JavaScript enabled
 
-### Command Line Usage
+## Installation
 
-The below is an example of how you might check this repository out locally into a custom folder and create a branch for building and tracking the changes for your custom theme:
-
-```sh
-# Navigate to your WHMCS templates directory
+1. Navigate to your WHMCS templates directory:
+```bash
 cd ~/whmcs/templates/
-
-# Clone the Twenty-One template theme repo into your new template directory
-git clone git@github.com:WHMCS/templates-twenty-one.git my-template-name
-
-# Change directory to the template directory
-cd my-template-name
-
-# Create a custom branch to make and commit your customisations into
-git checkout -b my-template-name
 ```
 
-When an update of WHMCS is published, the template changes will be propagated to this repository.  You can then pull those changes into your custom template branch as follows:
-
-```sh
-# Navigate to the template directory
-cd ~/whmcs/templates/my-template-name
-
-# Fetch the latest updates from the Twenty-One template theme repo
-git fetch origin
-
-# Ensure your custom template branch is checked out
-git checkout my-template-name
-
-# Merge changes from origin/master into your custom branch
-git merge origin/master
+2. Clone this repository:
+```bash
+git clone https://github.com/your-username/little-custom-whmcs-frontend.git little-portal
 ```
 
-## Viewing the Template Changes
+3. Switch to the template directory:
+```bash
+cd little-portal
+```
 
-A distinct tag is created for each published version of WHMCS.  You can easily view
-any span of changes you like using the [Github Comparison View](https://github.com/WHMCS/templates-twenty-one/compare).
-Simply, select a pair of version tags in that interface!
+4. Activate the theme in your WHMCS admin panel:
+   - Navigate to Setup > General Settings > Templates
+   - Select "Little-Portal" from the available templates
+   - Save changes
 
-## Useful Links
+## Updating
 
-* [Documentation](https://developers.whmcs.com/themes/)
-* [Technical Support](https://www.whmcs.com/support)
-* [WHMCS Website](https://www.whmcs.com/)
+To update the theme while maintaining your customizations:
+
+1. Add the original Twenty-One repository as a remote:
+```bash
+git remote add upstream https://github.com/WHMCS/templates-twenty-one.git
+```
+
+2. Fetch updates:
+```bash
+git fetch upstream
+```
+
+3. Merge changes (resolve conflicts if necessary):
+```bash
+git merge upstream/master
+```
+
+## Customization
+
+The theme can be customized through:
+
+- `theme.yaml` - Core theme settings and color scheme
+- `css/custom.css` - Custom CSS styles
+- `js/scripts.js` - Custom JavaScript functionality
+
+### Color Scheme
+
+Default color palette (customizable in theme.yaml):
+```yaml
+primary-color: "#5599FF"
+secondary-color: "#8B5CF6"
+success-color: "#22c55e"
+info-color: "#4c82f7"
+warning-color: "#ffba08"
+danger-color: "#ef4444"
+```
+
+## Development Guidelines
+
+When contributing to this theme:
+
+1. Follow [WHMCS Theme Development Standards](https://developers.whmcs.com/themes/)
+2. Maintain backwards compatibility
+3. Test thoroughly before deploying changes
+4. Document any customizations
+5. Follow security best practices
+
+## Credits
+
+This theme is based on the [WHMCS Twenty-One theme](https://github.com/WHMCS/templates-twenty-one) and is maintained in accordance with WHMCS development guidelines.
+
+## Support
+
+For support related to:
+- Theme customizations: Open an issue in this repository
+- Core WHMCS functionality: Contact [WHMCS Support](https://www.whmcs.com/support)
+- Documentation: Visit [WHMCS Developers](https://developers.whmcs.com/themes/)
+
+## License
+
+This theme is distributed under the same license as the original WHMCS Twenty-One theme. All customizations are provided as-is under this license.
