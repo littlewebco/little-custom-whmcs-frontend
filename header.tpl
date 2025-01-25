@@ -40,7 +40,11 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
-                Little Cloud
+                {if $assetLogoPath}
+                    <img src="{$assetLogoPath}" alt="{$companyname}" class="logo-img">
+                {else}
+                    {$companyname}
+                {/if}
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbar" aria-controls="primaryNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,30 +53,7 @@
 
             <div class="collapse navbar-collapse" id="primaryNavbar">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a href="{$WEB_ROOT}/index.php" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Store</a>
-                        <div class="dropdown-menu">
-                            {include file="$template/includes/navbar.tpl" navbar=$primaryNavbar}
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{$WEB_ROOT}/announcements.php" class="nav-link">Announcements</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{$WEB_ROOT}/knowledgebase.php" class="nav-link">Knowledgebase</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{$WEB_ROOT}/serverstatus.php" class="nav-link">Network Status</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{$WEB_ROOT}/affiliates.php" class="nav-link">Affiliates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{$WEB_ROOT}/contact.php" class="nav-link">Contact Us</a>
-                    </li>
+                    {include file="$template/includes/navbar.tpl" navbar=$primaryNavbar}
                 </ul>
 
                 <div class="navbar-nav ms-auto">
