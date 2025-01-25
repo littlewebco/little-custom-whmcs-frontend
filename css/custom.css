@@ -1304,8 +1304,8 @@ body.home {
 .home .card-columns {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 1.5rem !important;
-    padding: 4rem 2rem !important;
+    gap: 2rem !important;
+    padding: 4rem !important;
     margin: 0 auto !important;
     max-width: 1400px !important;
     width: 100% !important;
@@ -1378,12 +1378,14 @@ body.home {
 @media (max-width: 1200px) {
     .home .card-columns {
         grid-template-columns: repeat(2, 1fr) !important;
+        padding: 3rem 2rem !important;
     }
 }
 
 @media (max-width: 768px) {
     .home .card-columns {
         grid-template-columns: 1fr !important;
+        padding: 2rem 1.5rem !important;
     }
     
     .home .card {
