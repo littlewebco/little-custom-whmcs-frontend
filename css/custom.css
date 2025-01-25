@@ -1817,10 +1817,10 @@ body {
 /* Order Cart Styles */
 .order-standard_cart {
     padding: 40px !important;
-    max-width: 100% !important;
+    max-width: 90% !important;
     box-sizing: border-box !important;
     margin: 0 auto !important;
-    width: 100% !important;
+    width: 90% !important;
 }
 
 @media (max-width: 768px) {
