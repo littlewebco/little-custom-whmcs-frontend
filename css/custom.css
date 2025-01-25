@@ -563,6 +563,9 @@ h1, h2, h3, h4, h5, h6,
     margin-right: 3rem !important;
     text-decoration: none !important;
     white-space: nowrap !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    color: white !important;
 }
 
 .navbar-brand img {
@@ -1700,6 +1703,9 @@ header.header .navbar-brand {
     margin-right: 3rem !important;
     text-decoration: none !important;
     white-space: nowrap !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    color: white !important;
 }
 
 header.header .navbar-brand:hover {
