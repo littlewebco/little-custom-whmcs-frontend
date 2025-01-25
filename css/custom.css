@@ -566,11 +566,18 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 800 !important;
     font-size: 1.35rem !important;
     color: white !important;
+    gap: 1rem !important;
 }
 
 .navbar-brand img {
     height: 32px !important;
     width: auto !important;
+}
+
+.navbar-brand .brand-text {
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    color: white !important;
 }
 
 .navbar-nav {
@@ -620,6 +627,10 @@ h1, h2, h3, h4, h5, h6,
     
     .navbar-brand {
         margin-right: 0 !important;
+    }
+    
+    .navbar-brand .brand-text {
+        font-size: 1.15rem !important;
     }
 }
 
@@ -1706,6 +1717,7 @@ header.header .navbar-brand {
     font-weight: 800 !important;
     font-size: 1.35rem !important;
     color: white !important;
+    gap: 1rem !important;
 }
 
 header.header .navbar-brand:hover {
@@ -1715,6 +1727,12 @@ header.header .navbar-brand:hover {
 header.header .navbar-brand img {
     height: 32px !important;
     width: auto !important;
+}
+
+header.header .navbar-brand .brand-text {
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    color: white !important;
 }
 
 /* Navigation items */

@@ -74,6 +74,21 @@ The theme can be customized through:
 - `css/custom.css` - Custom CSS styles
 - `js/scripts.js` - Custom JavaScript functionality
 
+### Navbar Brand Configuration
+
+The navbar brand can be configured to show:
+- Both logo and brand name (default)
+- Logo only
+- Brand name only
+
+To show only the logo:
+1. Open `header.tpl`
+2. Remove or comment out the `<span class="brand-text">` line
+3. Or in `css/custom.css`, uncomment `display: none` in the `.navbar-brand .brand-text` class
+
+To show only brand name:
+1. Remove or comment out the `<img>` element in `header.tpl`
+
 ### Color Scheme
 
 Default color palette (customizable in theme.yaml):
