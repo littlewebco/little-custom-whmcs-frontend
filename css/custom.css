@@ -1470,9 +1470,4 @@ body.home {
     .global-footer .action-icon-btns {
         grid-template-columns: 1fr !important;
     }
-}
-
-/* Hide the footer content on the homepage since it's already in the main content */
-.home .global-footer {
-    display: none !important;
 } 
