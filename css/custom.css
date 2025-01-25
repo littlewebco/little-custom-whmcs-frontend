@@ -1715,6 +1715,9 @@ header.header .navbar-brand {
     text-decoration: none !important;
     white-space: nowrap !important;
     gap: 1rem !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    color: white !important;
 }
 
 header.header .navbar-brand:hover {
