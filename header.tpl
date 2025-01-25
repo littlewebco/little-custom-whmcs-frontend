@@ -14,7 +14,11 @@
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
-                    <img src="{$WEB_ROOT}/assets/img/logo.png" alt="{$companyname}">
+                    {if $assetLogoPath}
+                        <img src="{$assetLogoPath}" alt="{$companyname}" width="47" height="47">
+                    {else}
+                        <img src="{$WEB_ROOT}/assets/img/logo.svg" alt="{$companyname}" width="47" height="47">
+                    {/if}
                     <span>{$companyname}</span>
                 </a>
 
@@ -24,7 +28,7 @@
 
                 <div class="collapse navbar-collapse" id="primaryNavbar">
                     <ul class="navbar-nav me-auto">
-                        {include file="$template/includes/navbar.tpl" navbar=$navbar}
+                        {include file="$template/includes/navbar.tpl" navbar=$primaryNavbar}
                     </ul>
 
                     <div class="navbar-nav ms-auto">
