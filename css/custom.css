@@ -194,8 +194,11 @@ body {
     box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3) !important;
 }
 
+.search-box-text-primary {
+	color: #5599FF !important;
+}
 .search-box h1 {
-    font-size: 4.5rem !important;
+    font-size: 3.5rem !important;
     font-weight: 800 !important;
     color: var(--si-white) !important;
     margin-bottom: 2rem !important;
@@ -334,7 +337,7 @@ header.header .navbar a:hover,
 }
 
 .navbar-brand {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     line-height: inherit;
     white-space: nowrap;
     font-weight: 800;
