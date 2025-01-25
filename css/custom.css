@@ -574,14 +574,9 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .navbar-brand img {
-    height: auto !important;
-    width: 47px !important;
+    height: 47px !important;
+    width: auto !important;
     margin-right: 1rem !important;
-}
-
-.navbar-brand span {
-    color: #fff !important;
-    font-weight: var(--si-navbar-brand-font-weight) !important;
 }
 
 .navbar-collapse {
@@ -1731,11 +1726,6 @@ header.header .navbar-brand img {
     height: 47px !important;
     width: auto !important;
     margin-right: 1rem !important;
-}
-
-header.header .navbar-brand span {
-    color: #fff !important;
-    font-weight: var(--si-navbar-brand-font-weight) !important;
 }
 
 /* Navigation items */
