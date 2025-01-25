@@ -60,6 +60,8 @@
         {include file="$template/includes/network-issues-notifications.tpl"}
     {/if}
 
-    <div class="main-content">
+    <main class="main-content">
+        {$template_content}
+    </main>
 </body>
 </html>
