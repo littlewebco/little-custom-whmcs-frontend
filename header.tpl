@@ -15,11 +15,11 @@
             <div class="container">
                 <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                     {if $assetLogoPath}
-                        <img src="{$assetLogoPath}" alt="{$companyname}" width="47" height="47">
+                        <img src="{$assetLogoPath}" alt="{$companyname}" class="logo">
                     {else}
-                        <img src="{$WEB_ROOT}/assets/img/logo.svg" alt="{$companyname}" width="47" height="47">
+                        <img src="{$WEB_ROOT}/assets/img/logo.svg" alt="{$companyname}" class="logo">
                     {/if}
-                    <span>{$companyname}</span>
+                    Little Cloud
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbar" aria-controls="primaryNavbar" aria-expanded="false" aria-label="Toggle navigation">
