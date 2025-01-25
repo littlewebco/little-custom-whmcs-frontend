@@ -1410,13 +1410,32 @@ body.home {
     color: #a1a1aa !important;
 }
 
-/* Global Footer */
+/* Global Footer - ensure it appears on all pages */
 .global-footer {
     padding: 4rem 0 2rem !important;
     background: linear-gradient(180deg, rgba(85,153,255,0.05) 0%, rgba(0,0,0,0) 100%) !important;
     margin-top: 4rem !important;
+    display: block !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
+/* Remove rules that hide content */
+.home #main-body > .container > *:not(.home-domain-search):not(.card-columns):not(.global-footer) {
+    display: none !important;
+}
+
+/* Ensure footer is visible in all contexts */
+.home .global-footer,
+.announcements .global-footer,
+.clientarea .global-footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Footer content styling */
 .global-footer h2 {
     font-size: 2rem !important;
     font-weight: 800 !important;
@@ -1765,4 +1784,19 @@ header.header .navbar-nav > li > a > span.badge,
     overflow: hidden !important;
     position: absolute !important;
     z-index: -1 !important;
+}
+
+/* Ensure proper spacing after main content */
+#main-body {
+    min-height: calc(100vh - var(--navbar-height)) !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#main-body > .container {
+    flex: 1 0 auto !important;
+}
+
+.global-footer {
+    flex-shrink: 0 !important;
 } 
