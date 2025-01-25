@@ -70,17 +70,19 @@ body {
     padding: 0 !important;
     margin: 0 !important;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
 }
 
 /* Main Body Container */
 #main-body {
-    min-height: 100vh;
+    flex: 1 0 auto;
     position: relative;
     background: var(--si-body-bg);
     margin: 0 !important;
     padding: 0 !important;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
 }
 
@@ -1412,126 +1414,166 @@ body.home {
 
 /* Footer Styles */
 .global-footer {
-    padding: 4rem 0 !important;
-    background: var(--si-body-bg) !important;
-    border-top: 1px solid rgba(85, 153, 255, 0.1) !important;
-    margin-top: 4rem !important;
+    flex-shrink: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--si-gray-50), var(--si-white));
+    padding: 4rem 0;
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.global-footer .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .footer-grid {
-    display: grid !important;
-    grid-template-columns: 2fr 3fr 1fr !important;
-    gap: 4rem !important;
-    max-width: 1400px !important;
-    margin: 0 auto !important;
-    padding: 0 2rem !important;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    gap: 4rem;
+    align-items: start;
 }
 
-/* Brand Section */
 .footer-brand {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1.5rem !important;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .footer-brand a {
-    display: flex !important;
-    align-items: center !important;
-    gap: 1rem !important;
-    text-decoration: none !important;
-}
-
-.footer-brand img {
-    width: 47px !important;
-    height: 47px !important;
-}
-
-.footer-brand span {
-    font-size: 1.375rem !important;
-    font-weight: 800 !important;
-    color: var(--si-gray-900) !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--si-gray-900);
+    font-weight: 700;
+    font-size: 1.25rem;
 }
 
 .footer-brand p {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-    color: var(--si-gray-600) !important;
-    margin: 0 !important;
+    color: var(--si-gray-600);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
-/* Navigation */
 .footer-nav {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
 
 .nav-column {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1rem !important;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .nav-column a {
-    color: var(--si-gray-600) !important;
-    text-decoration: none !important;
-    font-size: 1rem !important;
-    transition: color 0.2s ease !important;
+    color: var(--si-gray-700);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
 }
 
 .nav-column a:hover {
-    color: var(--si-primary) !important;
+    color: var(--si-primary);
 }
 
-/* Contact Section */
 .footer-contact {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1rem !important;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .footer-contact h3 {
-    font-size: 1.25rem !important;
-    font-weight: 700 !important;
-    color: var(--si-gray-900) !important;
-    margin: 0 !important;
+    color: var(--si-gray-900);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0;
 }
 
 .contact-email {
-    color: var(--si-primary) !important;
-    text-decoration: none !important;
-    font-size: 1rem !important;
-    transition: opacity 0.2s ease !important;
+    color: var(--si-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
 }
 
 .contact-email:hover {
-    opacity: 0.8 !important;
+    opacity: 0.8;
 }
 
 /* Dark Mode */
-.dark-mode .footer-brand span,
-.dark-mode .footer-contact h3 {
-    color: var(--si-white) !important;
-}
-
-.dark-mode .footer-brand p,
-.dark-mode .nav-column a {
-    color: var(--si-gray-400) !important;
-}
-
 .dark-mode .global-footer {
-    border-top-color: rgba(255, 255, 255, 0.1) !important;
+    background: linear-gradient(to bottom, var(--si-dark), var(--si-dark-gray));
 }
 
-/* Responsive */
-@media (max-width: 991px) {
+.dark-mode .footer-brand a {
+    color: var(--si-white);
+}
+
+.dark-mode .footer-brand p {
+    color: var(--si-gray-400);
+}
+
+.dark-mode .nav-column a {
+    color: var(--si-gray-400);
+}
+
+.dark-mode .nav-column a:hover {
+    color: var(--si-primary);
+}
+
+.dark-mode .footer-contact h3 {
+    color: var(--si-white);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
     .footer-grid {
-        grid-template-columns: 1fr !important;
-        gap: 3rem !important;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
     .footer-nav {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .global-footer {
+        padding: 3rem 0;
+    }
+
+    .footer-nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .global-footer {
+        padding: 2rem 0;
+    }
+
+    .footer-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        gap: 2rem;
     }
 }
 
@@ -1794,4 +1836,18 @@ header.header .navbar-nav > li > a > span.badge,
 
 .global-footer {
     flex-shrink: 0 !important;
+}
+
+/* Show footer on all pages */
+.home .global-footer,
+.announcements .global-footer,
+.clientarea .global-footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Only hide non-essential content on homepage */
+.home #main-body > .container > *:not(.home-domain-search):not(.card-columns):not(.global-footer) {
+    display: none !important;
 } 
