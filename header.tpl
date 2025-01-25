@@ -16,7 +16,7 @@
                 <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                     <img src="{$WEB_ROOT}/assets/img/logo.png" alt="{$companyname}">
                 </a>
-                <div class="site-title">
+                <div class="navbar-brand">
                     {$companyname}
                 </div>
 
