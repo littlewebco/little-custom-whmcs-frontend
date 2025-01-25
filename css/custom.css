@@ -1815,7 +1815,7 @@ body {
 }
 
 /* Order Cart Styles */
-#order-standard_cart {
+.order-standard_cart {
     padding: 40px !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -1824,7 +1824,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    #order-standard_cart {
+    .order-standard_cart {
         padding: 20px !important;
     }
 }
