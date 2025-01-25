@@ -1734,9 +1734,24 @@ header.header .navbar-nav .badge {
     }
 }
 
-/* Hide all badges in navbar */
+/* Hide all badges in navbar - more specific selectors */
 header.header .navbar .badge,
 header.header .navbar-nav .badge,
-header.header .dropdown-menu .badge {
+header.header .dropdown-menu .badge,
+header.header .navbar-nav > li > a .badge,
+header.header .navbar-nav > li > a > .badge,
+header.header .navbar-nav > li > a > span.badge,
+.navbar .badge[class*="badge-"],
+.navbar-nav .badge[class*="badge-"],
+.dropdown-menu .badge[class*="badge-"] {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: -1 !important;
 } 
