@@ -2137,56 +2137,27 @@ body.page-type-full {
 }
 
 /* Single Card Display */
-.page-type-full .card:only-child {
+.page-type-full .card:only-child,
+.announcements .card,
+.contact .card {
+    width: 90vw !important;
+    align-self: center !important;
     max-width: 800px !important;
-    width: 100% !important;
     margin: 2rem auto !important;
     box-sizing: border-box !important;
     flex-shrink: 0 !important;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .page-type-full #main-body {
-        padding: 1.5rem !important;
-    }
-    
-    .page-type-full #main-body > .container {
-        padding: 1.5rem !important;
-    }
-    
-    .page-type-full .card:only-child {
-        margin: 1.5rem auto !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .page-type-full #main-body {
-        padding: 1rem !important;
-    }
-    
-    .page-type-full #main-body > .container {
-        padding: 1rem !important;
-    }
-    
-    .page-type-full .card:only-child {
-        margin: 1rem auto !important;
-    }
-}
-
 /* Preserve Homepage Card Grid */
-.home .card-columns {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 2rem !important;
-    padding: 4rem !important;
-    margin: 0 auto !important;
-    max-width: 1400px !important;
+.home .card-columns .card {
     width: 100% !important;
+    align-self: stretch !important;
 }
 
 /* Preserve Store Cards */
 .store-page-container .card {
+    width: 100% !important;
+    align-self: stretch !important;
     margin-bottom: 1.5rem !important;
 }
 
