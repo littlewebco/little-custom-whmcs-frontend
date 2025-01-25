@@ -1410,134 +1410,128 @@ body.home {
     color: #a1a1aa !important;
 }
 
-/* Global Footer - ensure it appears on all pages */
+/* Footer Styles */
 .global-footer {
-    padding: 4rem 0 2rem !important;
-    background: linear-gradient(180deg, rgba(85,153,255,0.05) 0%, rgba(0,0,0,0) 100%) !important;
+    padding: 4rem 0 !important;
+    background: var(--si-body-bg) !important;
+    border-top: 1px solid rgba(85, 153, 255, 0.1) !important;
     margin-top: 4rem !important;
-    display: block !important;
-    width: 100% !important;
-    position: relative !important;
-    z-index: 10 !important;
 }
 
-/* Remove rules that hide content */
-.home #main-body > .container > *:not(.home-domain-search):not(.card-columns):not(.global-footer) {
-    display: none !important;
-}
-
-/* Ensure footer is visible in all contexts */
-body .global-footer,
-.home .global-footer,
-.announcements .global-footer,
-.clientarea .global-footer {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-/* Footer content styling */
-.global-footer h2 {
-    font-size: 2rem !important;
-    font-weight: 800 !important;
-    margin-bottom: 2.5rem !important;
-    text-align: center !important;
-    background: linear-gradient(to right, var(--si-primary), #6c8eef) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-.global-footer .action-icon-btns {
+.footer-grid {
     display: grid !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 1.5rem !important;
-    margin: 0 auto 3rem !important;
-    padding: 0 2rem !important;
+    grid-template-columns: 2fr 3fr 1fr !important;
+    gap: 4rem !important;
     max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
 }
 
-.global-footer .action-icon-btns a {
-    background: var(--si-white) !important;
-    border: var(--si-card-border-width) solid var(--si-card-border-color) !important;
-    border-radius: var(--si-card-border-radius) !important;
-    padding: 1.5rem !important;
-    text-align: center !important;
-    transition: all 0.2s ease-in-out !important;
-    height: 100% !important;
+/* Brand Section */
+.footer-brand {
     display: flex !important;
     flex-direction: column !important;
+    gap: 1.5rem !important;
+}
+
+.footer-brand a {
+    display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    gap: 1rem !important;
     text-decoration: none !important;
+}
+
+.footer-brand img {
+    width: 47px !important;
+    height: 47px !important;
+}
+
+.footer-brand span {
+    font-size: 1.375rem !important;
+    font-weight: 800 !important;
     color: var(--si-gray-900) !important;
 }
 
-.global-footer .action-icon-btns a:hover {
-    transform: translateY(-4px) !important;
-    border-color: var(--si-primary) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+.footer-brand p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    color: var(--si-gray-600) !important;
+    margin: 0 !important;
 }
 
-.global-footer .ico-container {
-    width: 48px !important;
-    height: 48px !important;
-    background: rgba(75, 139, 244, 0.1) !important;
-    border-radius: calc(var(--si-card-border-radius) * 1.5) !important;
+/* Navigation */
+.footer-nav {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+}
+
+.nav-column {
     display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-bottom: 1rem !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
 }
 
-.global-footer .ico-container i {
-    font-size: 1.25rem !important;
+.nav-column a {
+    color: var(--si-gray-600) !important;
+    text-decoration: none !important;
+    font-size: 1rem !important;
+    transition: color 0.2s ease !important;
+}
+
+.nav-column a:hover {
     color: var(--si-primary) !important;
 }
 
-/* Dark mode styles */
-.dark-mode .global-footer {
-    background: linear-gradient(180deg, rgba(85,153,255,0.025) 0%, rgba(0,0,0,0) 100%) !important;
+/* Contact Section */
+.footer-contact {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
 }
 
-.dark-mode .global-footer .action-icon-btns a {
-    background: rgba(34, 36, 51, 0.7) !important;
-    border-color: rgba(255, 255, 255, 0.05) !important;
+.footer-contact h3 {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    color: var(--si-gray-900) !important;
+    margin: 0 !important;
+}
+
+.contact-email {
+    color: var(--si-primary) !important;
+    text-decoration: none !important;
+    font-size: 1rem !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.contact-email:hover {
+    opacity: 0.8 !important;
+}
+
+/* Dark Mode */
+.dark-mode .footer-brand span,
+.dark-mode .footer-contact h3 {
     color: var(--si-white) !important;
 }
 
-.dark-mode .global-footer .action-icon-btns a:hover {
-    background: rgba(34, 36, 51, 0.9) !important;
-    border-color: var(--si-primary) !important;
+.dark-mode .footer-brand p,
+.dark-mode .nav-column a {
+    color: var(--si-gray-400) !important;
 }
 
-/* Responsive styles */
-@media (max-width: 1200px) {
-    .global-footer .action-icon-btns {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
+.dark-mode .global-footer {
+    border-top-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-@media (max-width: 768px) {
-    .global-footer {
-        padding: 3rem 0 1.5rem !important;
-        margin-top: 3rem !important;
-    }
-
-    .global-footer .action-icon-btns {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1rem !important;
-        padding: 0 1rem !important;
-    }
-
-    .global-footer h2 {
-        font-size: 1.75rem !important;
-        margin-bottom: 2rem !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .global-footer .action-icon-btns {
+/* Responsive */
+@media (max-width: 991px) {
+    .footer-grid {
         grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+    }
+
+    .footer-nav {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
     }
 }
 
