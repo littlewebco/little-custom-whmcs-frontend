@@ -282,6 +282,9 @@ body {
     padding: 80px 0 40px !important;
     position: relative !important;
     z-index: 10 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .footer .container {
@@ -408,6 +411,10 @@ body {
     text-align: center !important;
     color: var(--si-gray-500) !important;
     font-size: 0.875rem !important;
+}
+
+.footer .company-info p {
+    margin-bottom: 0.5rem !important;
 }
 
 /* Responsive Adjustments */
@@ -1726,92 +1733,171 @@ body.home {
 
 /* Footer Styles */
 .footer {
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    background-color: #0B0F19 !important;
+    color: var(--si-gray-300) !important;
+    padding: 80px 0 40px !important;
+    position: relative !important;
+    z-index: 10 !important;
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    position: relative !important;
-    z-index: 10 !important;
-    margin: 0 !important;
-    padding: 50px 0 80px !important;
-    background-color: #404040 !important;
-    color: #eee !important;
-    font-size: 0.9rem !important;
 }
 
-.footer a {
-    color: #eee;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.footer .container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
 }
 
-.footer a:hover {
-    color: #fff;
-    text-decoration: none;
+.footer .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin: 0 -1rem !important;
 }
 
-.footer h5 {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+.footer .col {
+    flex: 1 !important;
+    padding: 0 1rem !important;
+    min-width: 250px !important;
 }
 
+/* Footer Logo and Info */
 .footer-logo {
-    max-height: 47px;
-    width: auto;
-    margin-bottom: 1.5rem;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    margin-bottom: 1.5rem !important;
 }
 
-.footer-desc {
-    color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+.footer-logo img {
+    height: 32px !important;
+    width: auto !important;
 }
 
-.footer-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+.footer-logo span {
+    color: white !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
 }
 
-.footer-nav a {
-    color: #ccc;
+.footer p {
+    color: var(--si-gray-400) !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 2rem !important;
 }
 
-.footer-nav a:hover {
-    color: #fff;
+/* Footer Navigation */
+.footer h4 {
+    color: white !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.5rem !important;
 }
 
-.footer-copyright {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    color: #ccc;
-    font-size: 0.85rem;
+.footer ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-.footer-copyright p {
-    margin: 0;
+.footer ul li {
+    margin-bottom: 0.75rem !important;
 }
 
-/* Dark Mode Footer */
-.dark-mode .footer {
-    background-color: #1a1a1a;
+.footer ul li a {
+    color: var(--si-gray-400) !important;
+    text-decoration: none !important;
+    font-size: 0.9375rem !important;
+    transition: color 0.2s ease !important;
 }
 
-/* Responsive Footer */
-@media (max-width: 768px) {
+.footer ul li a:hover {
+    color: white !important;
+}
+
+/* Newsletter Form */
+.footer .newsletter-form {
+    margin-bottom: 2rem !important;
+}
+
+.footer .newsletter-form h4 {
+    color: white !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+}
+
+.footer .newsletter-form .input-group {
+    display: flex !important;
+    gap: 0.5rem !important;
+}
+
+.footer .newsletter-form input {
+    flex: 1 !important;
+    padding: 0.75rem 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0.5rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: white !important;
+    font-size: 0.9375rem !important;
+}
+
+.footer .newsletter-form button {
+    padding: 0.75rem 1.5rem !important;
+    background: var(--si-primary) !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 0.9375rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.footer .newsletter-form button:hover {
+    background: #3b7de3 !important;
+}
+
+/* Company Info */
+.footer .company-info {
+    margin-top: 2rem !important;
+    padding-top: 2rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    text-align: center !important;
+    color: var(--si-gray-500) !important;
+    font-size: 0.875rem !important;
+}
+
+.footer .company-info p {
+    margin-bottom: 0.5rem !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
     .footer {
-        padding: 40px 0 60px;
+        padding: 60px 0 30px !important;
     }
-    
-    .footer [class^="col-"] {
-        margin-bottom: 2rem;
+
+    .footer .row {
+        flex-direction: column !important;
+        gap: 2rem !important;
     }
-    
-    .footer [class^="col-"]:last-child {
-        margin-bottom: 0;
+
+    .footer .col {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 40px 0 20px !important;
+    }
+
+    .footer .container {
+        padding: 0 1rem !important;
     }
 }
 
