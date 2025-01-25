@@ -557,8 +557,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Brand styling */
-.navbar-brand,
-header.header .navbar-brand {
+.navbar-brand {
     display: flex !important;
     align-items: center !important;
     padding: 0 !important;
@@ -568,14 +567,12 @@ header.header .navbar-brand {
     gap: 1rem !important;
 }
 
-.navbar-brand img,
-header.header .navbar-brand img {
+.navbar-brand img {
     height: 32px !important;
     width: auto !important;
 }
 
-.navbar-brand .brand-text,
-header.header .navbar-brand .brand-text {
+.navbar-brand .brand-text {
     font-weight: 800 !important;
     font-size: 1.35rem !important;
     color: white !important;
@@ -628,13 +625,11 @@ header.header .navbar-brand .brand-text {
         padding: 0 1rem !important;
     }
     
-    .navbar-brand,
-    header.header .navbar-brand {
+    .navbar-brand {
         margin-right: 0 !important;
     }
     
-    .navbar-brand .brand-text,
-    header.header .navbar-brand .brand-text {
+    .navbar-brand .brand-text {
         font-size: 1.15rem !important;
     }
 }
