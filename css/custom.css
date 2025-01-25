@@ -109,6 +109,32 @@ h1, h2, h3, h4, h5, h6,
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.navbar > .container,
+.navbar > .container-fluid {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.navbar-collapse {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
 /* Override header link colors with more specific selectors */
 header.header .navbar a,
 .navbar a,
