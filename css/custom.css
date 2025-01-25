@@ -556,28 +556,31 @@ h1, h2, h3, h4, h5, h6,
     height: 100% !important;
 }
 
-.navbar-brand {
+/* Brand styling */
+.navbar-brand,
+header.header .navbar-brand {
     display: flex !important;
     align-items: center !important;
     padding: 0 !important;
     margin-right: 3rem !important;
     text-decoration: none !important;
     white-space: nowrap !important;
-    font-weight: 800 !important;
-    font-size: 1.35rem !important;
-    color: white !important;
     gap: 1rem !important;
 }
 
-.navbar-brand img {
+.navbar-brand img,
+header.header .navbar-brand img {
     height: 32px !important;
     width: auto !important;
 }
 
-.navbar-brand .brand-text {
+.navbar-brand .brand-text,
+header.header .navbar-brand .brand-text {
     font-weight: 800 !important;
     font-size: 1.35rem !important;
     color: white !important;
+    /* To hide brand text, uncomment the line below */
+    /* display: none !important; */
 }
 
 .navbar-nav {
@@ -625,11 +628,13 @@ h1, h2, h3, h4, h5, h6,
         padding: 0 1rem !important;
     }
     
-    .navbar-brand {
+    .navbar-brand,
+    header.header .navbar-brand {
         margin-right: 0 !important;
     }
     
-    .navbar-brand .brand-text {
+    .navbar-brand .brand-text,
+    header.header .navbar-brand .brand-text {
         font-size: 1.15rem !important;
     }
 }
@@ -1714,9 +1719,6 @@ header.header .navbar-brand {
     margin-right: 3rem !important;
     text-decoration: none !important;
     white-space: nowrap !important;
-    font-weight: 800 !important;
-    font-size: 1.35rem !important;
-    color: white !important;
     gap: 1rem !important;
 }
 
