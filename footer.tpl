@@ -8,9 +8,9 @@
                 <div class="col-md-4">
                     <a href="{$WEB_ROOT}">
                         {if $assetLogoPath}
-                            <img src="{$assetLogoPath}" alt="{$companyname}" class="footer-logo" />
+                            <img src="https://little.cloud/assets/img/logo.svg" alt="{$companyname}" class="footer-logo" />
                         {else}
-                            <img src="{$WEB_ROOT}/assets/img/logo.svg" alt="{$companyname}" class="footer-logo" />
+                            <img src="https://little.cloud/assets/img/logo.svg" alt="{$companyname}" class="footer-logo" />
                         {/if}
                     </a>
                     <p class="footer-desc">Our mission is to make life easier for our customers. We do it by offering easy to use, fast and reliable technology and support services.</p>
