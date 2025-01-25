@@ -10,6 +10,12 @@
             
             {include file="$template/includes/flashmessage.tpl"}
 
+            {include file="$template/includes/linkedaccounts.tpl" linkContext="login" customFeedback=true}
+
+            <div class="divider my-4">
+                <span class="divider-text text-muted">or continue with email</span>
+            </div>
+
             <div class="form-group">
                 <label for="inputEmail" class="form-control-label">{lang key='clientareaemail'}</label>
                 <div class="input-group">
@@ -66,5 +72,3 @@
         </div>
     </div>
 </form>
-
-{include file="$template/includes/linkedaccounts.tpl" linkContext="login" customFeedback=true}

@@ -2243,4 +2243,38 @@ body.page-type-full {
 
 .login-form .form-check-input {
     margin-right: 0.5rem;
+}
+
+/* Divider Styling */
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #d4d7e5;
+}
+
+.divider-text {
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+    background: #fff;
+    font-size: 0.875rem;
+}
+
+/* Dark mode support */
+.dark-mode .divider::before {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .divider-text {
+    background: var(--si-dark);
 } 
