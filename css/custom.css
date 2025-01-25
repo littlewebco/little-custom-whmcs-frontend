@@ -325,8 +325,7 @@ body {
 .home .default-content,
 .home #main-body > .container > p,
 .home #main-body > br,
-.home #main-body > .container > br,
-.home #main-body > .container > *:not(.search-box) {
+.home #main-body > .container > br {
     display: none !important;
 }
 
