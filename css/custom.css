@@ -96,7 +96,6 @@ header.header {
     position: relative !important;
     display: flex !important;
     flex-direction: column !important;
-    min-height: calc(100vh - var(--navbar-height)) !important;
 }
 
 #main-body > .container {
@@ -105,7 +104,6 @@ header.header {
     margin: 0 auto !important;
     padding: 40px !important;
     box-sizing: border-box !important;
-    flex: 1 0 auto !important;
 }
 
 /* Landing Pages */
@@ -115,6 +113,7 @@ header.header {
     flex: 1 0 auto !important;
     width: 100% !important;
     margin: 0 !important;
+    min-height: calc(100vh - var(--navbar-height)) !important;
 }
 
 .landing-page.bg-white {
@@ -128,6 +127,41 @@ header.header {
     margin: 0 auto !important;
     padding: 40px !important;
     box-sizing: border-box !important;
+}
+
+/* CodeGuard Specific Styles */
+.landing-page.codeguard {
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%) !important;
+}
+
+/* Hide CodeGuard's navbar since we have our own */
+.landing-page.codeguard nav.navbar.navbar-light.bg-light.navbar-expand-md.p-0,
+.landing-page.codeguard .navbar:not(header.header .navbar) {
+    display: none !important;
+}
+
+/* Adjust content to account for removed navbar */
+.landing-page.codeguard .hero {
+    padding: 60px 0 !important;
+    text-align: center !important;
+    margin-top: 0 !important;
+}
+
+.landing-page.codeguard .content-block {
+    margin-bottom: 40px !important;
+}
+
+.landing-page.codeguard .content-block.image-standout {
+    margin: 40px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 40px !important;
+}
+
+.landing-page.codeguard .content-block img {
+    max-width: 100% !important;
+    height: auto !important;
 }
 
 /* Footer */
@@ -146,6 +180,15 @@ header.header {
     #main-body > .container,
     .landing-page .main-content {
         padding: 20px !important;
+    }
+    
+    .landing-page.codeguard .hero {
+        padding: 40px 0 !important;
+    }
+    
+    .landing-page.codeguard .content-block.image-standout {
+        flex-direction: column !important;
+        gap: 20px !important;
     }
 }
 
