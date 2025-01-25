@@ -2064,4 +2064,53 @@ body {
     .landing-page .main-content {
         padding: 20px !important;
     }
+}
+
+/* WHMCS Product Landing Pages */
+.landing-page.codeguard,
+.landing-page.mail-services,
+.landing-page[class*="bg-white"] {
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%) !important;
+}
+
+/* Hide all product landing page navbars since we have our own */
+.landing-page nav.navbar.navbar-light,
+.landing-page nav.navbar.navbar-expand-md,
+.landing-page .navbar:not(header.header .navbar) {
+    display: none !important;
+}
+
+/* Adjust content for all product landing pages */
+.landing-page .hero {
+    padding: 60px 0 !important;
+    text-align: center !important;
+    margin-top: 0 !important;
+}
+
+.landing-page .content-block {
+    margin-bottom: 40px !important;
+}
+
+.landing-page .content-block.image-standout {
+    margin: 40px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 40px !important;
+}
+
+.landing-page .content-block img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+@media (max-width: 768px) {
+    .landing-page .hero {
+        padding: 40px 0 !important;
+    }
+    
+    .landing-page .content-block.image-standout {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
 } 
