@@ -63,7 +63,7 @@
 
 /* Core Layout Structure */
 html, body {
-    min-height: 100vh !important;
+    height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
 }
@@ -94,7 +94,8 @@ header.header {
     flex: 1 0 auto !important;
     width: 100% !important;
     position: relative !important;
-    background: var(--si-body-bg) !important;
+    display: flex !important;
+    flex-direction: column !important;
     min-height: calc(100vh - var(--navbar-height)) !important;
 }
 
@@ -104,14 +105,16 @@ header.header {
     margin: 0 auto !important;
     padding: 40px !important;
     box-sizing: border-box !important;
+    flex: 1 0 auto !important;
 }
 
 /* Landing Pages */
 .landing-page {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 0 auto !important;
     width: 100% !important;
-    max-width: none !important;
     margin: 0 !important;
-    min-height: calc(100vh - var(--navbar-height) - 200px) !important; /* Account for footer */
 }
 
 .landing-page.bg-white {
@@ -119,7 +122,12 @@ header.header {
 }
 
 .landing-page .main-content {
+    flex: 1 0 auto !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
     padding: 40px !important;
+    box-sizing: border-box !important;
 }
 
 /* Footer */
@@ -129,7 +137,6 @@ header.header {
     background-color: #404040 !important;
     color: #eee !important;
     padding: 50px 0 !important;
-    margin-top: auto !important;
     position: relative !important;
     z-index: 10 !important;
 }
