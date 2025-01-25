@@ -1418,7 +1418,7 @@ body.home {
     display: block !important;
     width: 100% !important;
     position: relative !important;
-    z-index: 1 !important;
+    z-index: 10 !important;
 }
 
 /* Remove rules that hide content */
@@ -1427,6 +1427,7 @@ body.home {
 }
 
 /* Ensure footer is visible in all contexts */
+body .global-footer,
 .home .global-footer,
 .announcements .global-footer,
 .clientarea .global-footer {
