@@ -7,7 +7,7 @@
     {include file="$template/includes/head.tpl"}
     {$headoutput}
 </head>
-<body class="primary-bg-color" data-phone-cc-input="{$phoneNumberInputStyle}">
+<body class="{if $templatefile == 'homepage'}home{/if} {$language} {$templatefile}" data-phone-cc-input="{$phoneNumberInputStyle}">
     {$headeroutput}
 
     <header id="header" class="header">
@@ -15,7 +15,9 @@
             <div class="container">
                 <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                     {if $assetLogoPath}
-                        <img src="https://little.cloud/assets/img/logo.svg" alt="{$companyname}" width="47" height="47">
+                        <img src="{$assetLogoPath}" alt="{$companyname}" width="47" height="47">
+                    {else}
+                        <img src="{$WEB_ROOT}/assets/img/logo.svg" alt="{$companyname}" width="47" height="47">
                     {/if}
                     <span>{$companyname}</span>
                 </a>
@@ -84,17 +86,25 @@
     <section id="main-body">
         <div class="{if !$skipMainBodyContainer}container{/if}">
             <div class="row">
-
-            {if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}
-                <div class="col-lg-4 col-xl-3">
-                    <div class="sidebar">
-                        {include file="$template/includes/sidebar.tpl" sidebar=$primarySidebar}
-                    </div>
-                    {if !$inShoppingCart && $secondarySidebar->hasChildren()}
-                        <div class="d-none d-lg-block sidebar">
-                            {include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
+                {if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="sidebar">
+                            {include file="$template/includes/sidebar.tpl" sidebar=$primarySidebar}
                         </div>
-                    {/if}
+                        {if !$inShoppingCart && $secondarySidebar->hasChildren()}
+                            <div class="d-none d-lg-block sidebar">
+                                {include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
+                            </div>
+                        {/if}
+                    </div>
+                {/if}
+                <div class="{if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}col-lg-8 col-xl-9{else}col-12{/if} primary-content">
+                    {$template_content}
                 </div>
-            {/if}
-            <div class="{if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}col-lg-8 col-xl-9{else}col-12{/if} primary-content">
+            </div>
+        </div>
+    </section>
+
+    {include file="$template/footer.tpl"}
+</body>
+</html>

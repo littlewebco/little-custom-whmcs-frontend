@@ -10,12 +10,6 @@
     </div>
 {/if}
 
-<!-- Footer Debug Start -->
-<div style="display: block !important; visibility: visible !important; background: red; color: white; padding: 20px; text-align: center; position: relative; z-index: 9999;">
-    Footer Debug: If you can see this, the footer template is being loaded
-</div>
-<!-- Footer Debug End -->
-
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -52,4 +46,7 @@
             <p>Copyright &copy; {$date_year} {$companyname}. All Rights Reserved.</p>
         </div>
     </div>
-</footer> 
+</footer>
+
+</body>
+</html> 

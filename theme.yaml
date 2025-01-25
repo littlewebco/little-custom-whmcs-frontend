@@ -3,7 +3,6 @@
 name: "Little-Portal"
 description: "The Default Theme for Little Portal"
 author: "Little Cloud"
-layout: "layout"
 properties:
   serverSidePagination: false # Defines client side will handle pagination
 provides:
