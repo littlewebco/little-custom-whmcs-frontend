@@ -198,15 +198,59 @@ body {
 	color: #5599FF !important;
 }
 .search-box h1 {
-    font-size: 3.5rem !important;
+    font-size: 4.5rem !important;
     font-weight: 800 !important;
     color: var(--si-white) !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 1.5rem !important;
     line-height: 1.1 !important;
     text-align: left !important;
     max-width: 800px !important;
     margin-left: 0 !important;
     margin-right: auto !important;
+}
+
+/* Search description text */
+.search-box p {
+    font-size: 1.125rem !important;
+    color: var(--si-white) !important;
+    margin-bottom: 2rem !important;
+    opacity: 0.9 !important;
+    text-align: left !important;
+    max-width: 600px !important;
+}
+
+/* Domain pricing alignment */
+.domain-pricing {
+    margin-top: 1.5rem !important;
+    color: var(--si-white) !important;
+    font-size: 0.9375rem !important;
+    text-align: left !important;
+    opacity: 0.9 !important;
+    max-width: 600px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    align-items: center !important;
+}
+
+.tld-pricing {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    font-weight: 500 !important;
+}
+
+.domain-pricing a {
+    color: var(--si-white) !important;
+    text-decoration: none !important;
+    opacity: 0.9 !important;
+    transition: opacity 0.2s ease !important;
+    font-weight: 500 !important;
+    margin-left: auto !important;
+}
+
+.domain-pricing a:hover {
+    opacity: 1 !important;
 }
 
 /* Container adjustments */
@@ -228,32 +272,32 @@ body {
         padding: 0 1.5rem !important;
     }
     
-    .search-box .input-group {
-        flex-direction: column !important;
-        gap: 0.5rem !important;
-        padding: 0.5rem !important;
-        width: 100% !important;
-    }
-    
-    .search-box .input-group-btn {
-        flex-direction: row !important;
-        width: 100% !important;
-        gap: 0.5rem !important;
-    }
-    
-    .search-box .form-control,
-    .search-box .btn {
-        width: 100% !important;
+    .search-box p {
+        font-size: 1rem !important;
+        padding: 0 !important;
     }
     
     .domain-pricing {
-        text-align: left !important;
+        flex-direction: row !important;
+        gap: 0.75rem !important;
+        padding: 0 !important;
+        justify-content: flex-start !important;
     }
 }
 
 @media (max-width: 576px) {
     .search-box h1 {
         font-size: 2.5rem !important;
+    }
+    
+    .domain-pricing {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .domain-pricing a {
+        margin-left: 0 !important;
+        margin-top: 0.5rem !important;
     }
 }
 
