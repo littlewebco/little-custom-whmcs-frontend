@@ -1414,11 +1414,16 @@ body.home {
 
 /* Footer Styles */
 .footer {
-    margin: 0;
-    padding: 50px 0 80px;
-    background-color: #404040;
-    color: #eee;
-    font-size: 0.9rem;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
+    margin: 0 !important;
+    padding: 50px 0 80px !important;
+    background-color: #404040 !important;
+    color: #eee !important;
+    font-size: 0.9rem !important;
 }
 
 .footer a {
@@ -1771,4 +1776,36 @@ header.header .navbar-nav > li > a > span.badge,
 /* Only hide non-essential content on homepage */
 .home #main-body > .container > *:not(.home-domain-search):not(.card-columns):not(.global-footer) {
     display: none !important;
+}
+
+/* Footer Visibility Fix */
+.footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
+    margin: 0 !important;
+    padding: 50px 0 80px !important;
+    background-color: #404040 !important;
+    color: #eee !important;
+    font-size: 0.9rem !important;
+}
+
+/* Ensure proper page structure */
+html, body {
+    min-height: 100vh !important;
+}
+
+body {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#main-body {
+    flex: 1 0 auto !important;
+}
+
+.footer {
+    flex-shrink: 0 !important;
 } 
