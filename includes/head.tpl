@@ -10,6 +10,10 @@
 <link href="{$__assetPath__}" rel="stylesheet">
 {/assetExists}
 
+<!-- JavaScript Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
 <script>
     var csrfToken = '{$token}',
         markdownGuide = '{lang|addslashes key="markdown.title"}',
@@ -21,6 +25,7 @@
         recaptchaSiteKey = "{if $captcha}{$captcha->recaptcha->getSiteKey()}{/if}";
 </script>
 <script src="{assetPath file='scripts.min.js'}?v={$versionHash}"></script>
+<script src="{$WEB_ROOT}/js/bootstrap-init.js?v={$versionHash}"></script>
 
 {if $templatefile == "viewticket" && !$loggedin}
   <meta name="robots" content="noindex" />

@@ -1,6 +1,6 @@
 {foreach $navbar as $item}
     <li menuItemName="{$item->getName()}" class="nav-item d-block{if $item@first} no-collapse{/if}{if $item->hasChildren()} dropdown no-collapse{/if}{if $item->getClass()} {$item->getClass()}{/if}" id="{$item->getId()}">
-        <a class="nav-link {if !isset($rightDrop) || !$rightDrop}pr-4{/if}{if $item->hasChildren()} dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false" href="#"{else}" href="{$item->getUri()}"{/if}{if $item->getAttribute('target')} target="{$item->getAttribute('target')}"{/if}>
+        <a class="nav-link {if !isset($rightDrop) || !$rightDrop}pe-4{/if}{if $item->hasChildren()} dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false" href="#"{else}" href="{$item->getUri()}"{/if}{if $item->getAttribute('target')} target="{$item->getAttribute('target')}"{/if}>
             {if $item->hasIcon()}<i class="{$item->getIcon()}"></i>&nbsp;{/if}
             {$item->getLabel()}
             {if $item->hasBadge()}&nbsp;<span class="badge">{$item->getBadge()}</span>{/if}
