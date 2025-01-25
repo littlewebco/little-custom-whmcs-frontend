@@ -277,8 +277,8 @@ body {
 .footer {
     flex-shrink: 0 !important;
     width: 100% !important;
-    background-color: #404040 !important;
-    color: #eee !important;
+    background-color: #1B1E28 !important;
+    color: #fff !important;
     padding: 50px 0 !important;
     position: relative !important;
     z-index: 10 !important;
@@ -1600,13 +1600,13 @@ body.home {
     z-index: 10 !important;
     margin: 0 !important;
     padding: 50px 0 80px !important;
-    background-color: #404040 !important;
-    color: #eee !important;
+    background-color: #1B1E28 !important;
+    color: #fff !important;
     font-size: 0.9rem !important;
 }
 
 .footer a {
-    color: #eee;
+    color: #fff;
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -1630,7 +1630,7 @@ body.home {
 }
 
 .footer-desc {
-    color: #ccc;
+    color: #fff;
     line-height: 1.6;
     margin-bottom: 2rem;
 }
@@ -1642,7 +1642,7 @@ body.home {
 }
 
 .footer-nav a {
-    color: #ccc;
+    color: #fff;
 }
 
 .footer-nav a:hover {
@@ -1654,7 +1654,7 @@ body.home {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
-    color: #ccc;
+    color: #fff;
     font-size: 0.85rem;
 }
 
@@ -1664,7 +1664,7 @@ body.home {
 
 /* Dark Mode Footer */
 .dark-mode .footer {
-    background-color: #1a1a1a;
+    background-color: #1B1E28;
 }
 
 /* Responsive Footer */
@@ -1966,8 +1966,8 @@ header.header .navbar-nav > li > a > span.badge,
     z-index: 10 !important;
     margin: 0 !important;
     padding: 50px 0 80px !important;
-    background-color: #404040 !important;
-    color: #eee !important;
+    background-color: #1B1E28 !important;
+    color: #fff !important;
     font-size: 0.9rem !important;
 }
 
