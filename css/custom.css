@@ -1253,4 +1253,169 @@ a:hover {
 .master-breadcrumb,
 header.header .breadcrumb {
     display: none !important;
+}
+
+/* Homepage overrides */
+body.home {
+    padding: 0 !important;
+    background-color: var(--si-body-bg) !important;
+}
+
+.home #main-body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Domain Search Hero Section */
+.home .home-domain-search {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 !important;
+    margin: -76px 0 0 0 !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://picsum.photos/1920/1080') center/cover no-repeat !important;
+    color: var(--si-white);
+    z-index: 1;
+}
+
+.home .home-domain-search .container {
+    max-width: 800px;
+    padding: 0 2rem;
+    margin: 76px auto 0 auto;
+}
+
+.home .home-domain-search h1 {
+    font-size: 4rem !important;
+    font-weight: 800 !important;
+    color: var(--si-white) !important;
+    margin-bottom: 2rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+}
+
+.home .home-domain-search .input-group {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px !important;
+    padding: 0.5rem !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+}
+
+.home .home-domain-search .form-control {
+    height: 60px !important;
+    font-size: 1.25rem !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: none !important;
+    color: var(--si-white) !important;
+    padding: 0 1.5rem !important;
+    border-radius: 8px !important;
+    width: auto !important;
+    flex: 1 !important;
+}
+
+.home .home-domain-search .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.home .home-domain-search .btn {
+    padding: 0 2rem !important;
+    height: 60px !important;
+    font-size: 1.25rem !important;
+    margin: 0 0.25rem !important;
+    min-width: 120px !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.home .home-domain-search .btn-primary {
+    background-color: var(--si-primary) !important;
+    border-color: var(--si-primary) !important;
+    color: var(--si-white) !important;
+}
+
+.home .home-domain-search .btn-success {
+    background-color: #2ecc71 !important;
+    border-color: #2ecc71 !important;
+    color: var(--si-white) !important;
+}
+
+.home .domain-pricing {
+    margin-top: 2rem !important;
+    color: var(--si-white) !important;
+    font-size: 1.125rem !important;
+    text-align: center !important;
+}
+
+.home .domain-pricing a {
+    color: var(--si-white) !important;
+    text-decoration: none !important;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.home .domain-pricing a:hover {
+    opacity: 1;
+    color: var(--si-white) !important;
+}
+
+.home .tld-pricing {
+    display: inline-block !important;
+    margin: 0 1rem !important;
+}
+
+/* Remove any margin/padding from containers */
+.home .container {
+    width: 100% !important;
+    max-width: 1400px !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+.home .home-domain-search + .container {
+    padding-top: 4rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home .home-domain-search h1 {
+        font-size: 2.5rem !important;
+        padding: 0 1rem !important;
+    }
+    
+    .home .home-domain-search .input-group {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        padding: 1rem !important;
+    }
+    
+    .home .home-domain-search .form-control,
+    .home .home-domain-search .btn {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    .home .domain-pricing {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 0 1rem !important;
+    }
+    
+    .home .tld-pricing {
+        margin: 0.5rem 0 !important;
+        display: block !important;
+    }
+}
+
+/* Hide unnecessary elements on homepage */
+.home .announcement-single,
+.home .default-content {
+    display: none !important;
 } 
