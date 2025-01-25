@@ -139,8 +139,8 @@ body {
 }
 
 .navbar-brand img {
-    height: 32px !important;
-    width: auto !important;
+    height: auto !important;
+    width: 47px !important;
 }
 
 /* Navigation items */

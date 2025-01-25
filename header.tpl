@@ -40,11 +40,9 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
-                {if $assetLogoPath}
-                    <img src="{$assetLogoPath}" alt="" class="logo-img">
-                {else}
-                    <img src='https://little.cloud/assets/img/logo.svg' alt="" class="logo-img">
-                {/if}
+               
+                <img src='https://little.cloud/assets/img/logo.svg' alt="" class="logo-img">
+               
                 <span class="brand-text">{$companyname}</span>
             </a>
 
