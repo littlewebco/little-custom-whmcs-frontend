@@ -2112,9 +2112,26 @@ body {
 
 /* Single Card Display */
 .card:only-child {
-    max-width: 800px !important;
+    max-width: 600px !important;
     margin: 2rem auto !important;
     width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Container adjustments for single card pages */
+.container:has(.card:only-child) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 0 1rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card:only-child {
+        max-width: 100% !important;
+        margin: 1rem !important;
+    }
 }
 
 /* Card Styles (Both Homepage and Single) */
@@ -2123,7 +2140,7 @@ body {
     display: flex !important;
     flex-direction: column !important;
     min-width: 0 !important;
-    height: 100% !important;
+    height: auto !important;
     word-wrap: break-word !important;
     background-color: #fff !important;
     border: 1px solid #e2e5f1 !important;
