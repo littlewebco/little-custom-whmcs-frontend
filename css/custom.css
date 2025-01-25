@@ -51,6 +51,7 @@ body {
     padding: 0 !important;
     margin: 0 !important;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Main Body Container */
@@ -60,6 +61,8 @@ body {
     background: var(--si-body-bg);
     margin: 0 !important;
     padding: 0 !important;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 /* Primary Content Area */
@@ -88,21 +91,37 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://picsum.photos/1920/1080') center/cover no-repeat !important;
     color: var(--si-white);
     z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .search-box .container {
     max-width: 800px;
     padding: 0 2rem;
     margin: 0 auto !important;
+    width: 100%;
 }
 
 .search-box .row {
     width: 100%;
+    margin: 0 !important;
+}
+
+.search-box .col-md-8,
+.search-box .col-md-offset-2,
+.search-box .col-sm-10,
+.search-box .col-sm-offset-1 {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
 }
 
 .search-box .input-group {
     width: 100% !important;
     max-width: none !important;
+    margin: 0 auto !important;
 }
 
 .search-box h1 {
@@ -232,12 +251,13 @@ body {
     }
 }
 
-/* Hide unnecessary elements */
+/* Hide all unnecessary elements that might cause spacing */
 .home .announcement-single,
 .home .default-content,
 .home #main-body > .container > p,
 .home #main-body > br,
-.home #main-body > .container > br {
+.home #main-body > .container > br,
+.home #main-body > .container > *:not(.search-box) {
     display: none !important;
 }
 
@@ -261,6 +281,9 @@ h1, h2, h3, h4, h5, h6,
 
 /* Navigation */
 .navbar {
+    position: absolute !important;
+    width: 100%;
+    z-index: 1000;
     height: var(--navbar-height);
     background-color: #0B0F19;
     padding: 0 var(--navbar-padding);
