@@ -1857,4 +1857,31 @@ body {
         padding-right: 0 !important;
         margin-bottom: 20px !important;
     }
+}
+
+/* WHMCS Landing Pages */
+.landing-page {
+    padding-top: 76px !important; /* Match navbar height */
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.landing-page.bg-white {
+    background: #fff !important;
+}
+
+.landing-page .main-content {
+    flex: 1 !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+    .landing-page .main-content {
+        padding: 20px !important;
+    }
 } 
