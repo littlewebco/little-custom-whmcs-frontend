@@ -73,6 +73,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    padding-top: 76px !important; /* Add padding for fixed navbar */
 }
 
 /* Main Body Container */
@@ -90,6 +91,7 @@ body {
 .primary-content {
     position: relative;
     z-index: 1;
+    padding-top: 2rem !important; /* Add padding to content area */
 }
 
 /* Container Overrides */
@@ -351,10 +353,12 @@ h1, h2, h3, h4, h5, h6,
 
 /* Navigation */
 .navbar {
-    position: absolute !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    height: var(--navbar-height);
+    height: 76px; /* Fixed navbar height */
     background-color: #0B0F19;
     padding: 0 var(--navbar-padding);
     transition: background-color 0.3s ease;
