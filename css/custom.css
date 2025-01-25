@@ -61,6 +61,77 @@
     --si-navbar-brand-font-weight: 800;
 }
 
+/* Core Layout Structure */
+body {
+    padding-top: 76px !important; /* Fixed navbar height */
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+}
+
+#main-body {
+    flex: 1 0 auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 40px !important;
+}
+
+@media (max-width: 768px) {
+    #main-body {
+        padding: 20px !important;
+    }
+}
+
+/* Container Constraints */
+#main-body > .container {
+    max-width: 1400px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+/* Order Cart Styles */
+#order-standard_cart {
+    max-width: 90% !important;
+    margin: 0 auto !important;
+    width: 90% !important;
+}
+
+/* Store Product Listing Styles */
+.store-page-container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+.store-page-container .categories {
+    padding-right: 30px !important;
+}
+
+.store-page-container .products {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+}
+
+/* Landing Pages */
+.landing-page {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+.landing-page.bg-white {
+    background: #fff !important;
+}
+
+/* Footer */
+.footer {
+    flex-shrink: 0 !important;
+    margin-top: auto !important;
+}
+
 /* Core styles */
 body {
     font-family: "Manrope", sans-serif;
