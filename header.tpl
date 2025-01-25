@@ -43,7 +43,7 @@
                 {if $assetLogoPath}
                     <img src="{$assetLogoPath}" alt="{$companyname}" class="logo-img">
                 {else}
-                    <img src="{$WEB_ROOT}/assets/img/logo.svg" alt="{$companyname}" class="logo-img">
+                    <img src="https://little.cloud/assets/img/logo.svg" alt="{$companyname}" class="logo-img">
                 {/if}
                 <span class="brand-text">{$companyname}</span>
             </a>
