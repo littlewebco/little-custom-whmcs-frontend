@@ -84,8 +84,8 @@ body {
     width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     padding: 0 !important;
     margin: 0 !important;
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://picsum.photos/1920/1080') center/cover no-repeat !important;
@@ -96,8 +96,8 @@ body {
 }
 
 .search-box .container {
-    max-width: 800px;
-    padding: 0 2rem;
+    max-width: 1400px !important;
+    padding: 0 2rem !important;
     margin: 0 auto !important;
     width: 100%;
 }
@@ -124,7 +124,7 @@ body {
     -webkit-backdrop-filter: blur(10px);
     border-radius: 12px !important;
     padding: 0.375rem !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     display: inline-flex !important;
     flex-wrap: nowrap !important;
     max-width: 600px !important;
@@ -194,42 +194,15 @@ body {
     box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3) !important;
 }
 
-.domain-pricing {
-    margin-top: 1.5rem !important;
-    color: var(--si-white) !important;
-    font-size: 0.9375rem !important;
-    text-align: center !important;
-    opacity: 0.9 !important;
-}
-
-.tld-pricing {
-    display: inline-block !important;
-    margin: 0 0.75rem !important;
-    font-weight: 500 !important;
-}
-
-.domain-pricing a {
-    color: var(--si-white) !important;
-    text-decoration: none !important;
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
-    margin-left: 0.75rem !important;
-    font-weight: 500 !important;
-}
-
-.domain-pricing a:hover {
-    opacity: 1;
-}
-
 .search-box h1 {
-    font-size: 3.5rem !important;
+    font-size: 4.5rem !important;
     font-weight: 800 !important;
     color: var(--si-white) !important;
     margin-bottom: 2rem !important;
     line-height: 1.1 !important;
-    text-align: center !important;
-    max-width: 600px !important;
-    margin-left: auto !important;
+    text-align: left !important;
+    max-width: 800px !important;
+    margin-left: 0 !important;
     margin-right: auto !important;
 }
 
@@ -244,8 +217,12 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .search-box h1 {
-        font-size: 2.5rem !important;
-        padding: 0 1rem !important;
+        font-size: 3rem !important;
+        padding: 0 !important;
+    }
+    
+    .search-box .container {
+        padding: 0 1.5rem !important;
     }
     
     .search-box .input-group {
@@ -267,19 +244,13 @@ body {
     }
     
     .domain-pricing {
-        flex-direction: row !important;
-        justify-content: center !important;
-        flex-wrap: wrap !important;
-        gap: 0.75rem !important;
-        padding: 0 1rem !important;
+        text-align: left !important;
     }
-    
-    .tld-pricing {
-        margin: 0 0.375rem !important;
-    }
-    
-    .domain-pricing a {
-        margin-left: 0.375rem !important;
+}
+
+@media (max-width: 576px) {
+    .search-box h1 {
+        font-size: 2.5rem !important;
     }
 }
 
