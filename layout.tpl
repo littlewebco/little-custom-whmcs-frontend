@@ -12,35 +12,37 @@
     
     {include file="$template/header.tpl"}
     
-    <div id="main-body">
-        {if $templatefile == 'homepage'}
+    <main class="main-content">
+        <div id="main-body">
+            {if $templatefile == 'homepage'}
+                {include file="$template/includes/network-issues-notifications.tpl"}
+            {/if}
+
+            {include file="$template/includes/verifyemail.tpl"}
+            {include file="$template/includes/validateuser.tpl"}
             {include file="$template/includes/network-issues-notifications.tpl"}
-        {/if}
 
-        {include file="$template/includes/verifyemail.tpl"}
-        {include file="$template/includes/validateuser.tpl"}
-        {include file="$template/includes/network-issues-notifications.tpl"}
-
-        <div class="{if !$skipMainBodyContainer}container{/if}">
-            <div class="row">
-                {if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}
-                    <div class="col-lg-4 col-xl-3">
-                        <div class="sidebar">
-                            {include file="$template/includes/sidebar.tpl" sidebar=$primarySidebar}
-                        </div>
-                        {if !$inShoppingCart && $secondarySidebar->hasChildren()}
-                            <div class="d-none d-lg-block sidebar">
-                                {include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
+            <div class="{if !$skipMainBodyContainer}container{/if}">
+                <div class="row">
+                    {if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}
+                        <div class="col-lg-4 col-xl-3">
+                            <div class="sidebar">
+                                {include file="$template/includes/sidebar.tpl" sidebar=$primarySidebar}
                             </div>
-                        {/if}
+                            {if !$inShoppingCart && $secondarySidebar->hasChildren()}
+                                <div class="d-none d-lg-block sidebar">
+                                    {include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
+                                </div>
+                            {/if}
+                        </div>
+                    {/if}
+                    <div class="{if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}col-lg-8 col-xl-9{else}col-12{/if} primary-content">
+                        {$template_content}
                     </div>
-                {/if}
-                <div class="{if !$inShoppingCart && ($primarySidebar->hasChildren() || $secondarySidebar->hasChildren())}col-lg-8 col-xl-9{else}col-12{/if} primary-content">
-                    {$template_content}
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     {include file="$template/includes/footer.tpl"}
 
