@@ -2209,4 +2209,141 @@ body.page-type-full {
 .dark-mode.page-type-full .card:only-child {
     background-color: rgba(34, 36, 51, 0.7) !important;
     border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Announcements and Contact Pages */
+.announcements #main-body,
+.contact #main-body {
+    padding-top: calc(var(--navbar-height) + 2rem) !important;
+    min-height: calc(100vh - var(--navbar-height)) !important;
+    background: linear-gradient(180deg, var(--si-gray-50) 0%, var(--si-white) 100%) !important;
+}
+
+.announcements #main-body > .container,
+.contact #main-body > .container {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Card styles for announcements and contact */
+.announcements .card,
+.contact .card {
+    background: var(--si-white) !important;
+    border: 1px solid var(--si-card-border-color) !important;
+    border-radius: var(--si-card-border-radius) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02) !important;
+    margin-bottom: 2rem !important;
+    overflow: hidden !important;
+}
+
+/* Announcement specific styles */
+.announcement-single {
+    padding: 2rem !important;
+}
+
+.announcement-single h2 {
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+    color: var(--si-gray-900) !important;
+    margin-bottom: 1rem !important;
+}
+
+.announcement-single .date {
+    font-size: 0.875rem !important;
+    color: var(--si-gray-600) !important;
+    margin-bottom: 1.5rem !important;
+    display: block !important;
+}
+
+.announcement-single .article {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    color: var(--si-gray-700) !important;
+}
+
+/* Contact page specific styles */
+.contact .card {
+    padding: 2rem !important;
+}
+
+.contact h2 {
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+    color: var(--si-gray-900) !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.contact .form-group {
+    margin-bottom: 1.5rem !important;
+}
+
+.contact label {
+    font-weight: 600 !important;
+    color: var(--si-gray-700) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.contact .form-control {
+    border: 1px solid var(--si-gray-200) !important;
+    border-radius: 0.5rem !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.contact .form-control:focus {
+    border-color: var(--si-primary) !important;
+    box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1) !important;
+}
+
+/* Dark mode adjustments */
+.dark-mode .announcements #main-body,
+.dark-mode .contact #main-body {
+    background: linear-gradient(180deg, rgba(34, 36, 51, 0.5) 0%, var(--si-dark) 100%) !important;
+}
+
+.dark-mode .announcements .card,
+.dark-mode .contact .card {
+    background: rgba(34, 36, 51, 0.7) !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark-mode .announcement-single h2,
+.dark-mode .contact h2 {
+    color: var(--si-white) !important;
+}
+
+.dark-mode .announcement-single .article {
+    color: var(--si-gray-300) !important;
+}
+
+.dark-mode .contact label {
+    color: var(--si-gray-300) !important;
+}
+
+.dark-mode .contact .form-control {
+    background: rgba(34, 36, 51, 0.7) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--si-gray-300) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .announcements #main-body > .container,
+    .contact #main-body > .container {
+        padding: 1rem !important;
+    }
+    
+    .announcement-single,
+    .contact .card {
+        padding: 1.5rem !important;
+    }
+    
+    .announcement-single h2,
+    .contact h2 {
+        font-size: 1.5rem !important;
+    }
 } 
