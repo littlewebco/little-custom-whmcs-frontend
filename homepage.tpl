@@ -20,6 +20,7 @@
                 <div class="d-flex justify-content-center gap-4">
                     <span class="tld-pricing">.com $14.50</span>
                     <span class="tld-pricing">.net $15.99</span>
+                    <br>
                     <a href="{$WEB_ROOT}/domain-pricing">View all pricing</a>
                 </div>
             </div>
@@ -42,33 +43,6 @@
                 </div>
             </div>
         {/foreach}
-
-        {if $registerdomainenabled}
-            <div class="card mb-3">
-                <div class="card-body p-lg-4 p-xl-5 text-center">
-                    <h3 class="card-title pricing-card-title">
-                        {lang key='orderregisterdomain'}
-                    </h3>
-                    <p>{lang key='secureYourDomain'}</p>
-                    <a href="{$WEB_ROOT}/cart.php?a=add&domain=register" class="btn btn-block btn-outline-primary">
-                        {lang key='navdomainsearch'}
-                    </a>
-                </div>
-            </div>
-        {/if}
-        {if $transferdomainenabled}
-            <div class="card mb-3">
-                <div class="card-body p-lg-4 p-xl-5 text-center">
-                    <h3 class="card-title pricing-card-title">
-                        {lang key='transferYourDomain'}
-                    </h3>
-                    <p>{lang key='transferExtend'}</p>
-                    <a href="{$WEB_ROOT}/cart.php?a=add&domain=transfer" class="btn btn-block btn-outline-primary">
-                        {lang key='transferYourDomain'}
-                    </a>
-                </div>
-            </div>
-        {/if}
     </div>
 {/if}
 
