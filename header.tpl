@@ -16,6 +16,9 @@
                 <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                     <img src="{$WEB_ROOT}/assets/img/logo.png" alt="{$companyname}">
                 </a>
+                <div class="site-title">
+                    {$companyname}
+                </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbar" aria-controls="primaryNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

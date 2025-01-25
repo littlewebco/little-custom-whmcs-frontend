@@ -159,8 +159,8 @@ header.header .navbar a:hover,
 }
 
 .navbar-brand img {
-    height: 32px;
-    width: auto;
+    height: auto;
+    width: 47px;
     content: url('https://little.cloud/assets/img/logo.svg');
 }
 
