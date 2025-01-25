@@ -48,15 +48,18 @@ body {
     color: var(--si-body-color);
     background-color: var(--si-body-bg);
     -webkit-font-smoothing: antialiased;
-    padding-top: var(--navbar-height);
+    padding: 0 !important;
+    margin: 0 !important;
     min-height: 100vh;
 }
 
 /* Main Body Container */
 #main-body {
-    min-height: calc(100vh - var(--navbar-height));
+    min-height: 100vh;
     position: relative;
     background: var(--si-body-bg);
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* Primary Content Area */
@@ -75,12 +78,13 @@ body {
 .search-box {
     position: relative;
     min-height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 !important;
-    margin: -76px 0 0 0 !important;
+    margin: 0 !important;
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://picsum.photos/1920/1080') center/cover no-repeat !important;
     color: var(--si-white);
     z-index: 1;
@@ -89,7 +93,16 @@ body {
 .search-box .container {
     max-width: 800px;
     padding: 0 2rem;
-    margin: 76px auto 0 auto;
+    margin: 0 auto !important;
+}
+
+.search-box .row {
+    width: 100%;
+}
+
+.search-box .input-group {
+    width: 100% !important;
+    max-width: none !important;
 }
 
 .search-box h1 {
@@ -132,6 +145,7 @@ body {
     display: flex !important;
     gap: 0.5rem !important;
     padding: 0 0.25rem !important;
+    margin: 0 !important;
 }
 
 .search-box .btn {
@@ -220,8 +234,19 @@ body {
 
 /* Hide unnecessary elements */
 .home .announcement-single,
-.home .default-content {
+.home .default-content,
+.home #main-body > .container > p,
+.home #main-body > br,
+.home #main-body > .container > br {
     display: none !important;
+}
+
+/* Remove any additional spacing */
+.home #main-body > .container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
 }
 
 /* Typography */
