@@ -1,13 +1,5 @@
 {if !$inShoppingCart}
-    <div class="content-container-full clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    {$footeroutput}
-                </div>
-            </div>
-        </div>
-    </div>
+    {$footeroutput}
 {/if}
 
 <footer class="footer">
@@ -46,7 +38,4 @@
             <p>Copyright &copy; {$date_year} {$companyname}. All Rights Reserved.</p>
         </div>
     </div>
-</footer>
-
-</body>
-</html> 
+</footer> 
