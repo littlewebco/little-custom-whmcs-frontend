@@ -1308,6 +1308,7 @@ body.home {
     padding: calc(var(--si-card-spacer-y) * 2) 0 !important;
     margin: 0 auto !important;
     max-width: 1400px !important;
+    width: 100% !important;
 }
 
 .home .card {
@@ -1315,7 +1316,7 @@ body.home {
     display: flex !important;
     flex-direction: column !important;
     min-width: 0 !important;
-    height: var(--si-card-height) !important;
+    height: 100% !important;
     word-wrap: break-word !important;
     background-color: var(--si-card-bg) !important;
     background-clip: border-box !important;
@@ -1324,6 +1325,7 @@ body.home {
     box-shadow: var(--si-card-box-shadow) !important;
     padding: var(--si-card-spacer-y) var(--si-card-spacer-x) !important;
     transition: all 0.2s ease-in-out !important;
+    margin: 0 !important;
 }
 
 .home .card:hover {
@@ -1359,6 +1361,7 @@ body.home {
     color: var(--si-gray-600) !important;
     margin-bottom: 0 !important;
     line-height: 1.5 !important;
+    flex: 1 1 auto !important;
 }
 
 /* Icon overrides for specific cards */
@@ -1371,13 +1374,14 @@ body.home {
 @media (max-width: 1200px) {
     .home .card-columns {
         grid-template-columns: repeat(2, 1fr) !important;
+        padding: var(--si-card-spacer-y) 2rem !important;
     }
 }
 
 @media (max-width: 768px) {
     .home .card-columns {
         grid-template-columns: 1fr !important;
-        padding: var(--si-card-spacer-y) 0 !important;
+        padding: var(--si-card-spacer-y) 1rem !important;
     }
 }
 
