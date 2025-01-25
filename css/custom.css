@@ -1827,4 +1827,34 @@ body {
     #order-standard_cart {
         padding: 20px !important;
     }
+}
+
+/* Store Product Listing Styles */
+.store-page-container {
+    padding: 40px !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.store-page-container .categories {
+    padding-right: 30px !important;
+}
+
+.store-page-container .products {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+}
+
+@media (max-width: 768px) {
+    .store-page-container {
+        padding: 20px !important;
+    }
+    
+    .store-page-container .categories {
+        padding-right: 0 !important;
+        margin-bottom: 20px !important;
+    }
 } 
