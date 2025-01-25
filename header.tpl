@@ -14,9 +14,9 @@
         <div class="container">
             <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                 {if $assetLogoPath}
-                    <img src="{$assetLogoPath}" alt="{$companyname}" class="logo">
+                    <img src="{$assetLogoPath}" alt="{$companyname}" class="logo-img">
                 {else}
-                    <img src="{$WEB_ROOT}/assets/img/logo.svg" alt="{$companyname}" class="logo">
+                    <img src="{$WEB_ROOT}/assets/img/logo.svg" alt="{$companyname}" class="logo-img">
                 {/if}
             </a>
 
