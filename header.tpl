@@ -26,48 +26,7 @@
 
                 <div class="collapse navbar-collapse" id="primaryNavbar">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                Hosting
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{$WEB_ROOT}/store/shared-hosting">Shared Hosting</a>
-                                <a class="dropdown-item" href="{$WEB_ROOT}/store/wordpress-hosting">WordPress Hosting</a>
-                                <a class="dropdown-item" href="{$WEB_ROOT}/store/cpanel-hosting">cPanel Hosting</a>
-                                <a class="dropdown-item" href="{$WEB_ROOT}/store/website-builder">Website Builder</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                Domains
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{$WEB_ROOT}/cart.php?a=add&domain=register">Register</a>
-                                <a class="dropdown-item" href="{$WEB_ROOT}/cart.php?a=add&domain=transfer">Transfer</a>
-                                <a class="dropdown-item" href="{$WEB_ROOT}/domain-pricing">Pricing</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                Security
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{$WEB_ROOT}/store/ssl-certificates">SSL Certificates</a>
-                                <a class="dropdown-item" href="{$WEB_ROOT}/store/codeguard">Website Backup</a>
-                                <a class="dropdown-item" href="{$WEB_ROOT}/store/email-spam-filtering">Email Protection</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                Support
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{routePath('knowledgebase-index')}">Knowledge Base</a>
-                                <a class="dropdown-item" href="serverstatus.php">Network Status</a>
-                                <a class="dropdown-item" href="{routePath('announcement-index')}">Announcements</a>
-                                <a class="dropdown-item" href="submitticket.php">Contact Support</a>
-                            </div>
-                        </li>
+                        {include file="$template/includes/navbar.tpl"}
                     </ul>
 
                     <div class="navbar-nav ms-auto">

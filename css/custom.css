@@ -1470,4 +1470,109 @@ body.home {
     .global-footer .action-icon-btns {
         grid-template-columns: 1fr !important;
     }
+}
+
+/* WHMCS Navigation Styles */
+.navbar-nav > li {
+    position: relative !important;
+    margin: 0 0.25rem !important;
+}
+
+.navbar-nav > li > a {
+    color: var(--si-nav-link-color) !important;
+    font-weight: 600 !important;
+    font-size: 0.9375rem !important;
+    padding: 0.535rem 1rem !important;
+    transition: color 0.2s ease !important;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+    color: var(--si-nav-link-hover-color) !important;
+}
+
+.navbar-nav > li.dropdown > a {
+    padding-right: 1.5rem !important;
+}
+
+.navbar-nav > li.dropdown > a:after {
+    content: '\f107' !important;
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900 !important;
+    position: absolute !important;
+    right: 0.5rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    transition: transform 0.2s ease !important;
+}
+
+.navbar-nav > li.dropdown.show > a:after {
+    transform: translateY(-50%) rotate(180deg) !important;
+}
+
+.navbar-nav .dropdown-menu {
+    background: rgba(34, 36, 51, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0.75rem !important;
+    margin-top: 0.5rem !important;
+    padding: 0.5rem !important;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+    color: var(--si-nav-link-color) !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.5rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar-nav .dropdown-menu .dropdown-item:focus {
+    color: var(--si-nav-link-hover-color) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-nav .dropdown-menu .dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    margin: 0.5rem 0 !important;
+}
+
+/* Dark mode adjustments */
+.dark-mode .navbar-nav .dropdown-menu {
+    background: rgba(34, 36, 51, 0.95) !important;
+}
+
+.dark-mode .navbar-nav .dropdown-menu .dropdown-item:hover,
+.dark-mode .navbar-nav .dropdown-menu .dropdown-item:focus {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .navbar-nav {
+        padding: 1rem 0 !important;
+    }
+
+    .navbar-nav > li {
+        margin: 0 !important;
+    }
+
+    .navbar-nav .dropdown-menu {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 0 0 1rem !important;
+        margin: 0 !important;
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-item {
+        padding: 0.5rem 1rem !important;
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-item:hover,
+    .navbar-nav .dropdown-menu .dropdown-item:focus {
+        background: transparent !important;
+    }
 } 
