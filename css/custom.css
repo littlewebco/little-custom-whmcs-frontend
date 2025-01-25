@@ -40,6 +40,21 @@
     --header-blur: 10px;
     --card-hover-y: -4px;
     --card-hover-blur: 20px;
+    --si-card-spacer-y: 1.5rem;
+    --si-card-spacer-x: 1.5rem;
+    --si-card-title-spacer-y: 0.75rem;
+    --si-card-border-width: 1px;
+    --si-card-border-color: #e2e5f1;
+    --si-card-border-radius: 0.5rem;
+    --si-card-box-shadow: none;
+    --si-card-inner-border-radius: calc(0.5rem - 1px);
+    --si-card-cap-padding-y: 1.125rem;
+    --si-card-cap-padding-x: 1.5rem;
+    --si-card-cap-bg: transparent;
+    --si-card-height: auto;
+    --si-card-bg: #fff;
+    --si-card-img-overlay-padding: 1.5rem;
+    --si-card-group-margin: 0.75rem;
 }
 
 /* Core styles */
@@ -493,6 +508,8 @@ header.header .navbar a:hover,
 /* Dark mode */
 .dark-mode {
     color-scheme: dark;
+    --si-card-border-color: rgba(255, 255, 255, 0.1);
+    --si-card-bg: rgba(34, 36, 51, 0.7);
 }
 
 .dark-mode body {
@@ -1253,60 +1270,61 @@ body.home {
 .home .card-columns {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 1.5rem !important;
-    padding: 4rem 0 !important;
+    gap: var(--si-card-group-margin) !important;
+    padding: calc(var(--si-card-spacer-y) * 2) 0 !important;
     margin: 0 auto !important;
     max-width: 1400px !important;
 }
 
 .home .card {
-    break-inside: avoid !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 1rem !important;
-    background: rgba(255, 255, 255, 0.03) !important;
-    padding: 2rem !important;
-    text-align: center !important;
-    transition: all 0.3s ease !important;
-    height: 100% !important;
+    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
+    min-width: 0 !important;
+    height: var(--si-card-height) !important;
+    word-wrap: break-word !important;
+    background-color: var(--si-card-bg) !important;
+    background-clip: border-box !important;
+    border: var(--si-card-border-width) solid var(--si-card-border-color) !important;
+    border-radius: var(--si-card-border-radius) !important;
+    box-shadow: var(--si-card-box-shadow) !important;
+    padding: var(--si-card-spacer-y) var(--si-card-spacer-x) !important;
+    transition: all 0.2s ease-in-out !important;
 }
 
 .home .card:hover {
     transform: translateY(-4px) !important;
-    border-color: rgba(75, 139, 244, 0.2) !important;
+    border-color: var(--si-primary) !important;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
 }
 
 .home .card .fa,
 .home .card .fas,
 .home .card .far {
-    font-size: 2rem !important;
-    color: #4B8BF4 !important;
+    font-size: 1.5rem !important;
+    color: var(--si-primary) !important;
     background: rgba(75, 139, 244, 0.1) !important;
-    width: 64px !important;
-    height: 64px !important;
+    width: 48px !important;
+    height: 48px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    border-radius: 16px !important;
-    margin-bottom: 1.5rem !important;
+    border-radius: calc(var(--si-card-border-radius) * 1.5) !important;
+    margin-bottom: var(--si-card-title-spacer-y) !important;
 }
 
 .home .card h3 {
-    font-size: 1.25rem !important;
-    font-weight: 700 !important;
-    color: var(--si-white) !important;
-    margin-bottom: 1rem !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    margin-bottom: var(--si-card-title-spacer-y) !important;
 }
 
 .home .card p {
-    font-size: 0.9375rem !important;
-    color: var(--si-gray-400) !important;
+    font-size: 0.875rem !important;
+    color: var(--si-gray-600) !important;
     margin-bottom: 0 !important;
-    line-height: 1.6 !important;
+    line-height: 1.5 !important;
 }
 
 /* Icon overrides for specific cards */
@@ -1325,27 +1343,18 @@ body.home {
 @media (max-width: 768px) {
     .home .card-columns {
         grid-template-columns: 1fr !important;
-        padding: 2rem 0 !important;
-    }
-    
-    .home .card {
-        padding: 1.5rem !important;
+        padding: var(--si-card-spacer-y) 0 !important;
     }
 }
 
 /* Dark mode specific styles */
 .dark-mode .home .card {
-    background: rgba(34, 36, 51, 0.7) !important;
-    border-color: rgba(255, 255, 255, 0.05) !important;
+    background-color: var(--si-card-bg) !important;
+    border-color: var(--si-card-border-color) !important;
 }
 
 .dark-mode .home .card:hover {
-    background: rgba(34, 36, 51, 0.9) !important;
-    border-color: rgba(75, 139, 244, 0.2) !important;
-}
-
-.dark-mode .home .card h3 {
-    color: var(--si-white) !important;
+    border-color: var(--si-primary) !important;
 }
 
 .dark-mode .home .card p {
