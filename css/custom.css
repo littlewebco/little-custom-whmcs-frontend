@@ -75,8 +75,10 @@ body {
     -webkit-font-smoothing: antialiased !important;
     display: flex !important;
     flex-direction: column !important;
+    padding-top: var(--navbar-height) !important;
 }
 
+/* Header */
 header.header {
     position: fixed !important;
     top: 0 !important;
@@ -87,21 +89,57 @@ header.header {
     height: var(--navbar-height) !important;
 }
 
+/* Main Content Area */
 #main-body {
     flex: 1 0 auto !important;
     width: 100% !important;
-    margin-top: var(--navbar-height) !important;
+    position: relative !important;
+    background: var(--si-body-bg) !important;
+    min-height: calc(100vh - var(--navbar-height)) !important;
+}
+
+#main-body > .container {
+    max-width: 1400px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
     padding: 40px !important;
     box-sizing: border-box !important;
 }
 
+/* Landing Pages */
+.landing-page {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    min-height: calc(100vh - var(--navbar-height) - 200px) !important; /* Account for footer */
+}
+
+.landing-page.bg-white {
+    background: #fff !important;
+}
+
+.landing-page .main-content {
+    padding: 40px !important;
+}
+
+/* Footer */
 .footer {
     flex-shrink: 0 !important;
-    position: relative !important;
     width: 100% !important;
-    background: #404040 !important;
+    background-color: #404040 !important;
+    color: #eee !important;
     padding: 50px 0 !important;
     margin-top: auto !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #main-body > .container,
+    .landing-page .main-content {
+        padding: 20px !important;
+    }
 }
 
 /* Container Constraints */
