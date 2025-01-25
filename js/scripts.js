@@ -1,4 +1,3 @@
-function removeWHMCSBranding(){document.querySelectorAll('*').forEach(e=>{e.childNodes.length===1&&3===e.firstChild.nodeType&&e.textContent.includes('Powered by WHMCompleteSolution')&&(e.style.display='none')});['powered-by','whmcs'].forEach(e=>{document.querySelectorAll('[class*="'+e+'"],[id*="'+e+'"]').forEach(e=>{e.style.display='none'})});}document.addEventListener('DOMContentLoaded',removeWHMCSBranding);setInterval(removeWHMCSBranding,1000);
 
 
 /*!
@@ -45511,3 +45510,6 @@ else {
 }
 
 })(Math);
+
+function removeWHMCSBranding(){document.querySelectorAll('*').forEach(e=>{e.childNodes.length===1&&3===e.firstChild.nodeType&&e.textContent.includes('Powered by WHMCompleteSolution')&&(e.style.display='none')});['powered-by','whmcs'].forEach(e=>{document.querySelectorAll('[class*="'+e+'"],[id*="'+e+'"]').forEach(e=>{e.style.display='none'})});}document.addEventListener('DOMContentLoaded',removeWHMCSBranding);setInterval(removeWHMCSBranding,1000);
+
