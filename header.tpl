@@ -45,6 +45,7 @@
                 {else}
                     <img src="https://little.cloud/assets/img/logo.svg" alt="{$companyname}" class="logo-img">
                 {/if}
+                {* To show only logo, remove or comment out the span below *}
                 <span class="brand-text">{$companyname}</span>
             </a>
 
