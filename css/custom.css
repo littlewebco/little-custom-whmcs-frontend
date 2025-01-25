@@ -1547,8 +1547,8 @@ header.header .navbar-brand:hover {
 }
 
 header.header .navbar-brand img {
-    height: auto !important;
-    width: 47px !important;
+    height: 47px !important;
+    width: auto !important;
     margin-right: 1rem !important;
 }
 
@@ -1609,6 +1609,7 @@ header.header .navbar-nav > li.dropdown.show > a.dropdown-toggle:after {
 
 /* Dropdown menu */
 header.header .dropdown-menu {
+    display: none !important;
     background: rgba(34, 36, 51, 0.95) !important;
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
@@ -1616,6 +1617,10 @@ header.header .dropdown-menu {
     border-radius: 0.75rem !important;
     margin-top: 0.5rem !important;
     padding: 0.5rem !important;
+}
+
+header.header .dropdown.show .dropdown-menu {
+    display: block !important;
 }
 
 header.header .dropdown-menu .dropdown-item {
@@ -1631,11 +1636,6 @@ header.header .dropdown-menu .dropdown-item:hover,
 header.header .dropdown-menu .dropdown-item:focus {
     color: var(--si-nav-link-hover-color) !important;
     background: rgba(255, 255, 255, 0.1) !important;
-}
-
-header.header .dropdown-menu .dropdown-divider {
-    border-color: rgba(255, 255, 255, 0.1) !important;
-    margin: 0.5rem 0 !important;
 }
 
 /* Icons in navigation */

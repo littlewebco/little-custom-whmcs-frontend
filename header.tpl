@@ -16,8 +16,6 @@
                 <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                     {if $assetLogoPath}
                         <img src="{$assetLogoPath}" alt="{$companyname}" width="47" height="47">
-                    {else}
-                        <img src="{$WEB_ROOT}/assets/img/logo.svg" alt="{$companyname}" width="47" height="47">
                     {/if}
                     <span>{$companyname}</span>
                 </a>
@@ -32,29 +30,25 @@
                     </ul>
 
                     <div class="navbar-nav ms-auto">
-                        <div class="theme-toggle me-3">
-                            <span class="theme-toggle-option" data-theme="light">Light</span>
-                            <span class="theme-toggle-option active" data-theme="dark">Dark</span>
-                        </div>
                         {if $loggedin}
                             <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-user me-1"></i>
                                     {$clientsdetails.firstname}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                    <a class="dropdown-item" href="clientarea.php">Dashboard</a>
-                                    <a class="dropdown-item" href="clientarea.php?action=services">My Services</a>
-                                    <a class="dropdown-item" href="clientarea.php?action=domains">My Domains</a>
-                                    <a class="dropdown-item" href="clientarea.php?action=invoices">Billing</a>
-                                    <a class="dropdown-item" href="clientarea.php?action=details">My Details</a>
+                                    <a class="dropdown-item" href="{$WEB_ROOT}/clientarea.php">Dashboard</a>
+                                    <a class="dropdown-item" href="{$WEB_ROOT}/clientarea.php?action=services">My Services</a>
+                                    <a class="dropdown-item" href="{$WEB_ROOT}/clientarea.php?action=domains">My Domains</a>
+                                    <a class="dropdown-item" href="{$WEB_ROOT}/clientarea.php?action=invoices">Billing</a>
+                                    <a class="dropdown-item" href="{$WEB_ROOT}/clientarea.php?action=details">My Details</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="logout.php">Logout</a>
+                                    <a class="dropdown-item" href="{$WEB_ROOT}/logout.php">Logout</a>
                                 </div>
                             </div>
                         {else}
-                            <a href="login.php" class="btn btn-outline-light me-2">Login</a>
-                            <a href="register.php" class="btn btn-primary">Sign Up</a>
+                            <a href="{$WEB_ROOT}/login.php" class="btn btn-outline-light me-2">Login</a>
+                            <a href="{$WEB_ROOT}/register.php" class="btn btn-primary">Sign Up</a>
                         {/if}
                     </div>
                 </div>
