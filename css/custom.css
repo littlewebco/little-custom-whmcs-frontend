@@ -1812,4 +1812,19 @@ body {
 
 .footer {
     flex-shrink: 0 !important;
+}
+
+/* Order Cart Styles */
+#order-standard_cart {
+    padding: 40px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+@media (max-width: 768px) {
+    #order-standard_cart {
+        padding: 20px !important;
+    }
 } 
