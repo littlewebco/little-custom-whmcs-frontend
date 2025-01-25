@@ -41,7 +41,7 @@
 
     {$footeroutput}
 
-    {include file="$template/includes/footer.tpl"}
+    {include file="includes/footer-include.tpl"}
 
 </body>
 </html> 
