@@ -15,10 +15,8 @@
             <div class="container">
                 <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                     <img src="{$WEB_ROOT}/assets/img/logo.png" alt="{$companyname}">
+                    <span>{$companyname}</span>
                 </a>
-                <div class="navbar-brand">
-                    {$companyname}
-                </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbar" aria-controls="primaryNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -26,7 +24,7 @@
 
                 <div class="collapse navbar-collapse" id="primaryNavbar">
                     <ul class="navbar-nav me-auto">
-                        {include file="$template/includes/navbar.tpl"}
+                        {include file="$template/includes/navbar.tpl" navbar=$navbar}
                     </ul>
 
                     <div class="navbar-nav ms-auto">

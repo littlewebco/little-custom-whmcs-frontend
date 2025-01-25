@@ -404,12 +404,24 @@ header.header .navbar a:hover,
     padding: 0;
     display: flex;
     align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
 .navbar-brand img {
     height: auto;
     width: 47px;
     content: url('https://little.cloud/assets/img/logo.svg');
+}
+
+.navbar-brand span {
+    color: #fff;
+    font-weight: 600;
 }
 
 .navbar-nav .nav-link {
