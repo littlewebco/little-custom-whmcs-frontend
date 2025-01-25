@@ -1169,4 +1169,11 @@ a:hover {
         rgba(255, 255, 255, 0.1) 50%,
         rgba(255, 255, 255, 0.05) 100%
     );
+}
+
+/* Hide breadcrumb */
+.breadcrumb,
+.master-breadcrumb,
+header.header .breadcrumb {
+    display: none !important;
 } 
