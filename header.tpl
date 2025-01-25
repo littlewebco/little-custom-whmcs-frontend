@@ -15,7 +15,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                     {if $assetLogoPath}
-                        <img src="{$assetLogoPath}" alt="{$companyname}" width="47" height="47">
+                        <img src="https://little.cloud/assets/img/logo.svg" alt="{$companyname}" width="47" height="47">
                     {/if}
                     <span>{$companyname}</span>
                 </a>
