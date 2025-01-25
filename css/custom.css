@@ -1732,4 +1732,11 @@ header.header .navbar-nav .badge {
     header.header .navbar-nav .dropdown-menu .dropdown-item:focus {
         background: transparent !important;
     }
+}
+
+/* Hide all badges in navbar */
+header.header .navbar .badge,
+header.header .navbar-nav .badge,
+header.header .dropdown-menu .badge {
+    display: none !important;
 } 
