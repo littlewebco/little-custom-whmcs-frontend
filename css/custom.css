@@ -1304,8 +1304,8 @@ body.home {
 .home .card-columns {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: var(--si-card-group-margin) !important;
-    padding: calc(var(--si-card-spacer-y) * 2) 0 !important;
+    gap: 1.5rem !important;
+    padding: 4rem 2rem !important;
     margin: 0 auto !important;
     max-width: 1400px !important;
     width: 100% !important;
@@ -1318,12 +1318,10 @@ body.home {
     min-width: 0 !important;
     height: 100% !important;
     word-wrap: break-word !important;
-    background-color: var(--si-card-bg) !important;
-    background-clip: border-box !important;
-    border: var(--si-card-border-width) solid var(--si-card-border-color) !important;
-    border-radius: var(--si-card-border-radius) !important;
-    box-shadow: var(--si-card-box-shadow) !important;
-    padding: var(--si-card-spacer-y) var(--si-card-spacer-x) !important;
+    background-color: #fff !important;
+    border: 1px solid #e2e5f1 !important;
+    border-radius: 1rem !important;
+    padding: 2rem !important;
     transition: all 0.2s ease-in-out !important;
     margin: 0 !important;
 }
@@ -1334,34 +1332,40 @@ body.home {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
 }
 
-.home .card .fa,
-.home .card .fas,
-.home .card .far {
-    font-size: 1.5rem !important;
-    color: var(--si-primary) !important;
-    background: rgba(75, 139, 244, 0.1) !important;
-    width: 48px !important;
-    height: 48px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-radius: calc(var(--si-card-border-radius) * 1.5) !important;
-    margin-bottom: var(--si-card-title-spacer-y) !important;
-}
-
 .home .card h3 {
-    font-size: 1.125rem !important;
-    font-weight: 600 !important;
-    color: inherit !important;
-    margin-bottom: var(--si-card-title-spacer-y) !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #1e2124 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.2 !important;
 }
 
 .home .card p {
-    font-size: 0.875rem !important;
-    color: var(--si-gray-600) !important;
-    margin-bottom: 0 !important;
-    line-height: 1.5 !important;
+    font-size: 1rem !important;
+    color: #6e7681 !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.6 !important;
     flex: 1 1 auto !important;
+}
+
+.home .card .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #5599FF !important;
+    background: transparent !important;
+    border: 1px solid #5599FF !important;
+    border-radius: 0.75rem !important;
+    transition: all 0.2s ease-in-out !important;
+    text-decoration: none !important;
+}
+
+.home .card .btn:hover {
+    color: #fff !important;
+    background: #5599FF !important;
+    transform: translateY(-2px) !important;
 }
 
 /* Icon overrides for specific cards */
@@ -1374,29 +1378,35 @@ body.home {
 @media (max-width: 1200px) {
     .home .card-columns {
         grid-template-columns: repeat(2, 1fr) !important;
-        padding: var(--si-card-spacer-y) 2rem !important;
     }
 }
 
 @media (max-width: 768px) {
     .home .card-columns {
         grid-template-columns: 1fr !important;
-        padding: var(--si-card-spacer-y) 1rem !important;
+    }
+    
+    .home .card {
+        padding: 1.5rem !important;
+    }
+    
+    .home .card h3 {
+        font-size: 1.25rem !important;
     }
 }
 
-/* Dark mode specific styles */
+/* Dark mode styles */
 .dark-mode .home .card {
-    background-color: var(--si-card-bg) !important;
-    border-color: var(--si-card-border-color) !important;
+    background-color: rgba(34, 36, 51, 0.7) !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
 }
 
-.dark-mode .home .card:hover {
-    border-color: var(--si-primary) !important;
+.dark-mode .home .card h3 {
+    color: #fff !important;
 }
 
 .dark-mode .home .card p {
-    color: var(--si-gray-400) !important;
+    color: #a1a1aa !important;
 }
 
 /* Global Footer */
