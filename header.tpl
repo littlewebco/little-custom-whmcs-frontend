@@ -43,7 +43,7 @@
                 {if $assetLogoPath}
                     <img src="{$assetLogoPath}" alt="{$companyname}" class="logo-img">
                 {else}
-                    {$companyname}
+                    <img src="{$WEB_ROOT}/assets/img/logo.svg" alt="{$companyname}" class="logo-img">
                 {/if}
             </a>
 
@@ -74,8 +74,8 @@
                             </div>
                         </div>
                     {else}
-                        <a href="{$WEB_ROOT}/login.php" class="btn btn-outline-light">Login</a>
-                        <a href="{$WEB_ROOT}/register.php" class="btn btn-primary ms-3">Sign Up</a>
+                        <a href="{$WEB_ROOT}/login.php" class="btn btn-outline-light me-2">Login</a>
+                        <a href="{$WEB_ROOT}/register.php" class="btn btn-primary">Sign Up</a>
                     {/if}
                 </div>
             </div>
