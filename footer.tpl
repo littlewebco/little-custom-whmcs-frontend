@@ -1,3 +1,6 @@
+{$template_content}
+</div><!-- /.main-content -->
+
 {$footeroutput}
 
 <footer class="footer">

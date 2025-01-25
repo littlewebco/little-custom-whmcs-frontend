@@ -61,7 +61,5 @@
     {/if}
 
     <div class="main-content">
-        {$template_content}
-    </div>
 </body>
 </html>
