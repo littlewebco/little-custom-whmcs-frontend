@@ -41,11 +41,10 @@
         <div class="container">
             <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                 {if $assetLogoPath}
-                    <img src="{$assetLogoPath}" alt="{$companyname}" class="logo-img">
+                    <img src="{$assetLogoPath}" alt="" class="logo-img">
                 {else}
-                    <img src="https://little.cloud/assets/img/logo.svg" alt="{$companyname}" class="logo-img">
+                    <img src="https://little.cloud/assets/img/logo.svg" alt="" class="logo-img">
                 {/if}
-                {* To show only logo, remove or comment out the span below *}
                 <span class="brand-text">{$companyname}</span>
             </a>
 
