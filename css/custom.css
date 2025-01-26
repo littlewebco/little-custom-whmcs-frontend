@@ -2844,9 +2844,13 @@ body.page-type-full {
     }
 }
 
-/* Hide Cart Banner */
+/* Hide Cart Banner and Dev Warning */
 #checkout-promotion-banner,
 .promo-banner,
-.header-lined {
+.header-lined,
+.alert.alert-warning.global-warning-banner,
+div[role="alert"],
+.global-warning-banner,
+.alert-warning {
     display: none !important;
 } 
