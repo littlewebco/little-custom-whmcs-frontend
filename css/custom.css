@@ -2546,299 +2546,185 @@ body.page-type-full {
 }
 
 /* Client Area Styles */
-.clientarea-page {
-    padding-top: var(--navbar-height);
-    min-height: calc(100vh - var(--navbar-height));
-    background: #FAFBFF;
+#main-body > .container {
+    padding: 2rem !important;
+    max-width: 1400px !important;
 }
 
-.clientarea-page .container {
-    max-width: 1400px;
-    padding: 2rem;
-    margin: 0 auto;
+.tiles {
+    margin-bottom: 3rem !important;
 }
 
-/* Client Area Header */
-.clientarea-header {
-    margin-bottom: 2rem;
+.tiles .card {
+    background: #fff !important;
+    border: 1px solid var(--si-card-border-color) !important;
+    border-radius: var(--si-card-border-radius) !important;
+    transition: all 0.2s ease-in-out !important;
+    height: 100% !important;
 }
 
-.clientarea-header h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--si-gray-900);
-    margin-bottom: 0.5rem;
+.tiles .card:hover {
+    transform: translateY(var(--card-hover-y)) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
 }
 
-.clientarea-header p {
-    font-size: 1.125rem;
-    color: var(--si-gray-600);
-    max-width: 600px;
+.tiles .card-body {
+    padding: 2rem !important;
 }
 
-/* Client Area Cards */
-.clientarea-card {
-    background: var(--si-white);
-    border: 1px solid var(--si-gray-200);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    transition: all 0.2s ease;
+.tiles .card i {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+    opacity: 0.9 !important;
 }
 
-.clientarea-card:hover {
-    border-color: var(--si-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.tiles .stat {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+    color: var(--si-gray-900) !important;
 }
 
-.clientarea-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--si-gray-900);
-    margin-bottom: 1rem;
+.tiles .title {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: var(--si-gray-600) !important;
 }
 
-/* Client Area Tables */
-.clientarea-table {
-    width: 100%;
-    background: var(--si-white);
-    border: 1px solid var(--si-gray-200);
-    border-radius: 1rem;
-    overflow: hidden;
+/* Recent Support Tickets */
+.recent-tickets {
+    margin-bottom: 3rem !important;
 }
 
-.clientarea-table th {
-    background: var(--si-gray-50);
-    font-weight: 600;
-    color: var(--si-gray-900);
-    padding: 1rem;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+.recent-tickets h2 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.5rem !important;
+    color: var(--si-gray-900) !important;
 }
 
-.clientarea-table td {
-    padding: 1rem;
-    color: var(--si-gray-700);
-    border-top: 1px solid var(--si-gray-200);
+.ticket-item {
+    padding: 1.25rem !important;
+    border: 1px solid var(--si-card-border-color) !important;
+    border-radius: var(--si-card-border-radius) !important;
+    margin-bottom: 1rem !important;
+    background: #fff !important;
+    transition: all 0.2s ease-in-out !important;
 }
 
-.clientarea-table tr:hover td {
-    background: var(--si-gray-50);
+.ticket-item:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Client Area Forms */
-.clientarea-form {
-    max-width: 600px;
-    margin: 0 auto;
+.ticket-item:last-child {
+    margin-bottom: 0 !important;
 }
 
-.clientarea-form .form-group {
-    margin-bottom: 1.5rem;
+.ticket-item .ticket-number {
+    font-weight: 600 !important;
+    color: var(--si-gray-900) !important;
+    margin-bottom: 0.5rem !important;
 }
 
-.clientarea-form label {
-    font-weight: 600;
-    color: var(--si-gray-700);
-    margin-bottom: 0.5rem;
-    display: block;
+.ticket-item .ticket-status {
+    display: inline-block !important;
+    padding: 0.25rem 0.75rem !important;
+    border-radius: 50px !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    margin-left: 0.5rem !important;
 }
 
-.clientarea-form .form-control {
-    border: 1px solid var(--si-gray-300);
-    border-radius: 0.375rem;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    transition: all 0.2s ease;
+.ticket-item .ticket-status.closed {
+    background-color: var(--si-gray-200) !important;
+    color: var(--si-gray-700) !important;
 }
 
-.clientarea-form .form-control:focus {
-    border-color: var(--si-primary);
-    box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1);
+.ticket-item .ticket-date {
+    font-size: 0.875rem !important;
+    color: var(--si-gray-600) !important;
 }
 
-/* Client Area Buttons */
-.clientarea-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    border-radius: 0.375rem;
-    transition: all 0.2s ease;
+/* Overdue Invoices Section */
+.overdue-invoices {
+    background: #fff5f5 !important;
+    border: 1px solid #fee2e2 !important;
+    border-radius: var(--si-card-border-radius) !important;
+    padding: 1.5rem !important;
+    margin-bottom: 2rem !important;
 }
 
-.clientarea-btn-primary {
-    background: var(--si-primary);
-    border: 1px solid var(--si-primary);
-    color: white;
+.overdue-invoices h3 {
+    color: #dc2626 !important;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
 }
 
-.clientarea-btn-primary:hover {
-    background: #3a7de6;
-    border-color: #3a7de6;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(85, 153, 255, 0.25);
+.overdue-invoices p {
+    color: #991b1b !important;
+    margin-bottom: 1rem !important;
 }
 
-.clientarea-btn-secondary {
-    background: transparent;
-    border: 1px solid var(--si-gray-300);
-    color: var(--si-gray-700);
+.overdue-invoices .btn {
+    background-color: #dc2626 !important;
+    border-color: #dc2626 !important;
+    color: #fff !important;
 }
 
-.clientarea-btn-secondary:hover {
-    border-color: var(--si-gray-400);
-    background: var(--si-gray-50);
-    transform: translateY(-1px);
+.overdue-invoices .btn:hover {
+    background-color: #b91c1c !important;
+    border-color: #b91c1c !important;
 }
 
-/* Client Area Status Labels */
-.clientarea-status {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.25rem 0.75rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: 1rem;
+/* Dark Mode Styles */
+.dark-mode .tiles .card {
+    background: var(--si-dark-gray) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-.clientarea-status-active {
-    background: rgba(40, 167, 69, 0.1);
-    color: #28a745;
+.dark-mode .tiles .stat {
+    color: #fff !important;
 }
 
-.clientarea-status-pending {
-    background: rgba(255, 193, 7, 0.1);
-    color: #ffc107;
+.dark-mode .tiles .title {
+    color: var(--si-gray-400) !important;
 }
 
-.clientarea-status-suspended {
-    background: rgba(220, 53, 69, 0.1);
-    color: #dc3545;
+.dark-mode .ticket-item {
+    background: var(--si-dark-gray) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Client Area Navigation */
-.clientarea-nav {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--si-gray-200);
-    padding-bottom: 1rem;
+.dark-mode .ticket-item .ticket-number {
+    color: #fff !important;
 }
 
-.clientarea-nav-item {
-    padding: 0.5rem 1rem;
-    font-weight: 500;
-    color: var(--si-gray-600);
-    border-radius: 0.375rem;
-    transition: all 0.2s ease;
+.dark-mode .overdue-invoices {
+    background: rgba(220, 38, 38, 0.1) !important;
+    border-color: rgba(220, 38, 38, 0.2) !important;
 }
 
-.clientarea-nav-item:hover,
-.clientarea-nav-item.active {
-    color: var(--si-primary);
-    background: rgba(85, 153, 255, 0.1);
-}
-
-/* Dark Mode Support */
-.dark-mode .clientarea-page {
-    background: var(--si-dark);
-}
-
-.dark-mode .clientarea-card {
-    background: rgba(34, 36, 51, 0.7);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .clientarea-card h3 {
-    color: white;
-}
-
-.dark-mode .clientarea-table {
-    background: rgba(34, 36, 51, 0.7);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .clientarea-table th {
-    background: rgba(255, 255, 255, 0.05);
-    color: white;
-}
-
-.dark-mode .clientarea-table td {
-    color: var(--si-gray-300);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .clientarea-form label {
-    color: var(--si-gray-300);
-}
-
-.dark-mode .clientarea-form .form-control {
-    background: rgba(34, 36, 51, 0.7);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-.dark-mode .clientarea-btn-secondary {
-    border-color: rgba(255, 255, 255, 0.2);
-    color: var(--si-gray-300);
-}
-
-.dark-mode .clientarea-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.dark-mode .clientarea-nav {
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .clientarea-nav-item {
-    color: var(--si-gray-400);
-}
-
-.dark-mode .clientarea-nav-item:hover,
-.dark-mode .clientarea-nav-item.active {
-    background: rgba(85, 153, 255, 0.15);
-}
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .clientarea-page .container {
-        padding: 1rem;
+    #main-body > .container {
+        padding: 1rem !important;
     }
-
-    .clientarea-header h1 {
-        font-size: 2rem;
+    
+    .tiles .card-body {
+        padding: 1.5rem !important;
     }
-
-    .clientarea-nav {
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1.5rem;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .clientarea-table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .clientarea-card {
-        padding: 1rem;
+    
+    .tiles .stat {
+        font-size: 2rem !important;
     }
 }
 
 @media (max-width: 576px) {
-    .clientarea-header h1 {
-        font-size: 1.75rem;
-    }
-
-    .clientarea-btn {
+    .overdue-invoices .btn {
         width: 100%;
         justify-content: center;
     }
