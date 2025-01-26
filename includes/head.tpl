@@ -26,6 +26,13 @@
 </script>
 <script src="{assetPath file='scripts.min.js'}?v={$versionHash}"></script>
 <script src="{$WEB_ROOT}/js/bootstrap-init.js?v={$versionHash}"></script>
+<script>$(document).ready(function() {
+
+  $("[href*='whmcs.com']").each(function(){
+    $(this).parent().remove();
+  });
+  
+});</script>
 
 {if $templatefile == "viewticket" && !$loggedin}
   <meta name="robots" content="noindex" />
