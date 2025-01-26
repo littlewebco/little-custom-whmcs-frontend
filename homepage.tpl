@@ -2,7 +2,7 @@
     <div class="search-box">
         <div class="container">
             <form method="post" action="cart.php?a=add&domain=register" id="domain-search">
-                <h1 class="text-center">it all starts with a <span class="search-box-text-primary">little</span> idea</h1>
+                <h1 class="text-center">it all starts<br>with a <span class="search-box-text-primary">little</span> idea</h1>
                 <p class="text-center">Secure your domain name and get started on your journey to success.</p>
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
