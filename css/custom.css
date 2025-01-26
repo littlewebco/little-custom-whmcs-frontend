@@ -450,28 +450,23 @@ body {
 }
 
 .search-box .input-group {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
+    display: flex;
+    align-items: center;
     background: var(--si-dark-gray);
     border-radius: 0.5rem;
-    padding: 0.75rem;
-    gap: 0.75rem;
+    padding: 0.5rem;
 }
 
 .search-box .input-group .form-control {
     border: none;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
     color: white;
     font-size: 1rem;
     padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    width: 100%;
 }
 
-.search-box .input-group-btn {
-    display: flex !important;
-    gap: 0.75rem !important;
+.search-box .input-group .form-control::placeholder {
+    color: var(--si-gray-500);
 }
 
 .search-box .input-group .btn {
@@ -479,8 +474,7 @@ body {
     font-weight: 600;
     font-size: 0.9375rem;
     border-radius: 0.5rem;
-    margin: 0;
-    flex: 1;
+    margin-left: 0.5rem;
     transition: all 0.2s ease;
 }
 
