@@ -57,12 +57,11 @@
                     <button id="login" type="submit" class="btn btn-primary{$captcha->getButtonClass($captchaForm)}">
                         {lang key='loginbutton'}
                     </button>
-                    <div class="w-100 mb-2">
+                    <div class="w-100 mb-2"></div>
                         <label class="mb-0">
                         <input type="checkbox" class="form-check-input" name="rememberme" />
                         {lang key='loginrememberme'}
                         </label>
-                    </div>
                 </div>
             </div>
         </div>
