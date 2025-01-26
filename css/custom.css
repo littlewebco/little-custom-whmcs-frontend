@@ -444,15 +444,15 @@ body {
 .search-box .col-sm-offset-1 {
     padding: 0 !important;
     margin: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
+    width: 80% !important;
+    max-width: 80% !important;
+    flex: 0 0 80% !important;
 }
 
 .search-box .input-group {
     display: flex;
     align-items: center;
-    background: var(--si-dark-gray);
+    background: rgba(255,255,255,.02);
     border-radius: 0.5rem;
     padding: 0.5rem;
     border: 1px solid #d4d7e5;
