@@ -2899,15 +2899,16 @@ div[role="alert"],
 
 /* Success Button */
 .btn-success {
-    background-color: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    color: var(--si-gray-300) !important;
+    background-color: var(--si-success) !important;
+    border-color: var(--si-success) !important;
+    color: white !important;
 }
 
 .btn-success:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: white !important;
+    background-color: #249c3f !important;
+    border-color: #249c3f !important;
     transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.25) !important;
 }
 
 /* Outline Light Button */
