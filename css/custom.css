@@ -2212,20 +2212,44 @@ body.page-type-full {
 .login-form .card {
     max-width: 540px;
     margin: 2rem auto;
+    border-radius: 1.25rem !important;
+    border: none !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05) !important;
 }
 
 .login-form .card-body.extra-padding {
     padding: 2.5rem;
 }
 
+.login-form h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--si-gray-900);
+    margin-bottom: 0.75rem;
+}
+
+.login-form p.text-muted {
+    font-size: 1.125rem;
+    color: var(--si-gray-600) !important;
+    margin-bottom: 2rem;
+}
+
 .login-form .form-group {
     margin-bottom: 1.5rem;
+}
+
+.login-form label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--si-gray-700);
+    margin-bottom: 0.5rem;
 }
 
 .login-form .input-group {
     border: 1px solid #d4d7e5;
     border-radius: 0.75rem;
     transition: all 0.2s ease;
+    background: #fff;
 }
 
 .login-form .input-group:focus-within {
@@ -2246,6 +2270,7 @@ body.page-type-full {
     font-size: 0.9375rem;
     box-shadow: none;
     height: 3.25rem;
+    background: transparent;
 }
 
 .login-form .form-control:focus {
@@ -2263,21 +2288,18 @@ body.page-type-full {
     color: #565973;
 }
 
-.login-form .form-check-input {
-    margin-right: 0.5rem;
-}
-
 /* Login Button Styling */
 .login-form .btn-primary {
     width: 100%;
     padding: 0.875rem;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 600;
-    background: var(--si-primary);
+    background: #5599FF;
     border: none;
     border-radius: 0.75rem;
     height: 3.25rem;
     transition: all 0.2s ease;
+    margin: 1.5rem 0;
 }
 
 .login-form .btn-primary:hover {
@@ -2292,95 +2314,151 @@ body.page-type-full {
 }
 
 /* Remember Me and Forgot Password */
-.login-form .row-login-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1.5rem 0;
-}
-
 .login-form .form-check {
     margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.login-form .form-check-input {
+    margin-right: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #d4d7e5;
+    width: 1.125rem;
+    height: 1.125rem;
 }
 
 .login-form .form-check-label {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     color: var(--si-gray-600);
+    font-weight: 500;
 }
 
-.login-form .small.text-right {
-    font-size: 0.875rem;
+.login-form .forgot-password {
+    text-align: right;
 }
 
-.login-form .small.text-right a {
+.login-form .forgot-password a {
+    font-size: 0.9375rem;
     color: var(--si-gray-600);
     text-decoration: none;
     transition: color 0.2s ease;
+    font-weight: 500;
 }
 
-.login-form .small.text-right a:hover {
+.login-form .forgot-password a:hover {
     color: var(--si-primary);
 }
 
+/* Google Sign In Button */
+.login-form .google-signin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.875rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--si-gray-700);
+    background: #fff;
+    border: 1px solid #d4d7e5;
+    border-radius: 0.75rem;
+    height: 3.25rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    margin-bottom: 2rem;
+}
+
+.login-form .google-signin:hover {
+    background: #f8f9fa;
+    border-color: #c8ccd5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.login-form .google-signin img {
+    margin-right: 0.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Divider */
+.login-form .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--si-gray-500);
+}
+
+.login-form .divider::before,
+.login-form .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e2e5f1;
+}
+
+.login-form .divider span {
+    margin: 0 1rem;
+    font-size: 0.9375rem;
+    color: var(--si-gray-500);
+}
+
 /* Dark mode support */
+.dark-mode .login-form .card {
+    background: rgba(34, 36, 51, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .login-form h1 {
+    color: #fff;
+}
+
+.dark-mode .login-form p.text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.dark-mode .login-form label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
 .dark-mode .login-form .input-group {
     border-color: rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.05);
 }
 
-.dark-mode .login-form .input-group-text,
-.dark-mode .login-form .btn-reveal-pw {
-    color: rgba(255, 255, 255, 0.5);
-}
-
 .dark-mode .login-form .form-control {
     color: white;
-    background: transparent;
 }
 
 .dark-mode .login-form .form-control::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
 
-.dark-mode .login-form .form-check-label,
-.dark-mode .login-form .small.text-right a {
-    color: rgba(255, 255, 255, 0.7);
+.dark-mode .login-form .google-signin {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
 }
 
-.dark-mode .login-form .small.text-right a:hover {
-    color: var(--si-primary);
-}
-
-/* Divider Styling */
-.divider {
-    position: relative;
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.divider::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: #d4d7e5;
-}
-
-.divider-text {
-    position: relative;
-    display: inline-block;
-    padding: 0 1rem;
-    background: #fff;
-    font-size: 0.875rem;
-}
-
-/* Dark mode support */
-.dark-mode .divider::before {
+.dark-mode .login-form .google-signin:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode .divider-text {
-    background: var(--si-dark);
+.dark-mode .login-form .form-check-input {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .login-form .form-check-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .login-form .divider::before,
+.dark-mode .login-form .divider::after {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .login-form .divider span {
+    color: rgba(255, 255, 255, 0.5);
 } 
