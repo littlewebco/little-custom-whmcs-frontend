@@ -2853,4 +2853,164 @@ div[role="alert"],
 .global-warning-banner,
 .alert-warning {
     display: none !important;
+}
+
+/* Base Button Styles */
+.btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9375rem !important;
+    font-weight: 600 !important;
+    border-radius: 0.375rem !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+    border: 1px solid transparent !important;
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: var(--si-primary) !important;
+    border-color: var(--si-primary) !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: #3a7de6 !important;
+    border-color: #3a7de6 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(85, 153, 255, 0.25) !important;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: transparent !important;
+    border: 1px solid var(--si-gray-300) !important;
+    color: var(--si-gray-700) !important;
+}
+
+.btn-secondary:hover {
+    border-color: var(--si-gray-400) !important;
+    background-color: var(--si-gray-50) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Success Button */
+.btn-success {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--si-gray-300) !important;
+}
+
+.btn-success:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Outline Light Button */
+.btn-outline-light {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Outline Primary Button */
+.btn-outline-primary {
+    background-color: transparent !important;
+    border: 1px solid var(--si-primary) !important;
+    color: var(--si-primary) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--si-primary) !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(85, 153, 255, 0.25) !important;
+}
+
+/* Block Button */
+.btn-block {
+    display: flex !important;
+    width: 100% !important;
+}
+
+/* Small Button */
+.btn-sm {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+}
+
+/* Large Button */
+.btn-lg {
+    padding: 1rem 2rem !important;
+    font-size: 1rem !important;
+}
+
+/* Dark Mode Button Styles */
+.dark-mode .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: var(--si-gray-300) !important;
+}
+
+.dark-mode .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.dark-mode .btn-outline-primary {
+    color: var(--si-primary) !important;
+}
+
+.dark-mode .btn-outline-primary:hover {
+    color: white !important;
+}
+
+/* Disabled Button State */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.65 !important;
+    pointer-events: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Button Group */
+.btn-group {
+    display: inline-flex !important;
+    gap: 0.5rem !important;
+}
+
+/* Remove any conflicting button styles */
+.search-box-buttons .btn,
+.clientarea-btn,
+.login-form .btn,
+.error-page .btn,
+.domain-search .btn,
+.home .card .btn {
+    /* Reset to use base styles */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9375rem !important;
+    font-weight: 600 !important;
+    border-radius: 0.375rem !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .btn-block-sm {
+        width: 100% !important;
+    }
 } 
