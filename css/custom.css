@@ -482,7 +482,7 @@ body {
     padding: 0.75rem 1.5rem;
     font-weight: 600;
     font-size: 0.9375rem;
-    border-radius: 0.5rem;
+    border-radius: 0.375rem;
     transition: all 0.2s ease;
 }
 
@@ -649,7 +649,7 @@ h1, h2, h3, h4, h5, h6,
     padding: 0.5rem 1.25rem !important;
     font-weight: 600 !important;
     font-size: 0.9375rem !important;
-    border-radius: 0.5rem !important;
+    border-radius: 0.375rem !important;
 }
 
 .navbar-nav .btn-outline-light {
@@ -883,7 +883,7 @@ a:hover {
 .domain-search .btn {
     padding: 1.25rem 2rem;
     font-weight: 600;
-    border-radius: 12px;
+    border-radius: 0.375rem;
     font-size: 1.1rem;
     transition: all 0.3s ease;
 }
@@ -1539,7 +1539,7 @@ body.home {
     color: #5599FF !important;
     background: transparent !important;
     border: 1px solid #5599FF !important;
-    border-radius: 0.75rem !important;
+    border-radius: 0.375rem !important;
     transition: all 0.2s ease-in-out !important;
     text-decoration: none !important;
 }
@@ -2281,7 +2281,7 @@ body.page-type-full {
     font-weight: 600;
     background: #5599FF;
     border: none;
-    border-radius: 0.75rem;
+    border-radius: 0.375rem;
     height: 3.25rem;
     transition: all 0.2s ease;
     margin: 1.5rem 0;
@@ -2347,7 +2347,7 @@ body.page-type-full {
     color: var(--si-gray-700);
     background: #fff;
     border: 1px solid #d4d7e5;
-    border-radius: 0.75rem;
+    border-radius: 0.375rem;
     height: 3.25rem;
     transition: all 0.2s ease;
     text-decoration: none;
