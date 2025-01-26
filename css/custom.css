@@ -2543,4 +2543,303 @@ body.page-type-full {
         padding: 1rem;
         text-align: center;
     }
+}
+
+/* Client Area Styles */
+.clientarea-page {
+    padding-top: var(--navbar-height);
+    min-height: calc(100vh - var(--navbar-height));
+    background: #FAFBFF;
+}
+
+.clientarea-page .container {
+    max-width: 1400px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+/* Client Area Header */
+.clientarea-header {
+    margin-bottom: 2rem;
+}
+
+.clientarea-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--si-gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.clientarea-header p {
+    font-size: 1.125rem;
+    color: var(--si-gray-600);
+    max-width: 600px;
+}
+
+/* Client Area Cards */
+.clientarea-card {
+    background: var(--si-white);
+    border: 1px solid var(--si-gray-200);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.clientarea-card:hover {
+    border-color: var(--si-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.clientarea-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--si-gray-900);
+    margin-bottom: 1rem;
+}
+
+/* Client Area Tables */
+.clientarea-table {
+    width: 100%;
+    background: var(--si-white);
+    border: 1px solid var(--si-gray-200);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.clientarea-table th {
+    background: var(--si-gray-50);
+    font-weight: 600;
+    color: var(--si-gray-900);
+    padding: 1rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.clientarea-table td {
+    padding: 1rem;
+    color: var(--si-gray-700);
+    border-top: 1px solid var(--si-gray-200);
+}
+
+.clientarea-table tr:hover td {
+    background: var(--si-gray-50);
+}
+
+/* Client Area Forms */
+.clientarea-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.clientarea-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.clientarea-form label {
+    font-weight: 600;
+    color: var(--si-gray-700);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.clientarea-form .form-control {
+    border: 1px solid var(--si-gray-300);
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.clientarea-form .form-control:focus {
+    border-color: var(--si-primary);
+    box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1);
+}
+
+/* Client Area Buttons */
+.clientarea-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.clientarea-btn-primary {
+    background: var(--si-primary);
+    border: 1px solid var(--si-primary);
+    color: white;
+}
+
+.clientarea-btn-primary:hover {
+    background: #3a7de6;
+    border-color: #3a7de6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(85, 153, 255, 0.25);
+}
+
+.clientarea-btn-secondary {
+    background: transparent;
+    border: 1px solid var(--si-gray-300);
+    color: var(--si-gray-700);
+}
+
+.clientarea-btn-secondary:hover {
+    border-color: var(--si-gray-400);
+    background: var(--si-gray-50);
+    transform: translateY(-1px);
+}
+
+/* Client Area Status Labels */
+.clientarea-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 1rem;
+}
+
+.clientarea-status-active {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.clientarea-status-pending {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+.clientarea-status-suspended {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+/* Client Area Navigation */
+.clientarea-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--si-gray-200);
+    padding-bottom: 1rem;
+}
+
+.clientarea-nav-item {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    color: var(--si-gray-600);
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.clientarea-nav-item:hover,
+.clientarea-nav-item.active {
+    color: var(--si-primary);
+    background: rgba(85, 153, 255, 0.1);
+}
+
+/* Dark Mode Support */
+.dark-mode .clientarea-page {
+    background: var(--si-dark);
+}
+
+.dark-mode .clientarea-card {
+    background: rgba(34, 36, 51, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .clientarea-card h3 {
+    color: white;
+}
+
+.dark-mode .clientarea-table {
+    background: rgba(34, 36, 51, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .clientarea-table th {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.dark-mode .clientarea-table td {
+    color: var(--si-gray-300);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .clientarea-form label {
+    color: var(--si-gray-300);
+}
+
+.dark-mode .clientarea-form .form-control {
+    background: rgba(34, 36, 51, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.dark-mode .clientarea-btn-secondary {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--si-gray-300);
+}
+
+.dark-mode .clientarea-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .clientarea-nav {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .clientarea-nav-item {
+    color: var(--si-gray-400);
+}
+
+.dark-mode .clientarea-nav-item:hover,
+.dark-mode .clientarea-nav-item.active {
+    background: rgba(85, 153, 255, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .clientarea-page .container {
+        padding: 1rem;
+    }
+
+    .clientarea-header h1 {
+        font-size: 2rem;
+    }
+
+    .clientarea-nav {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .clientarea-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .clientarea-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .clientarea-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .clientarea-btn {
+        width: 100%;
+        justify-content: center;
+    }
 } 
