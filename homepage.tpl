@@ -8,10 +8,10 @@
                     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                         <div class="input-group input-group-lg">
                             <input type="text" class="form-control" name="domain" placeholder="eg. example.com" autocomplete="off" />
-                            <span class="input-group-btn">
-                                <button type="submit" class="btn btn-primary">Search</button>
-                                <button type="button" class="btn btn-success" onclick="window.location='cart.php?a=add&domain=transfer'">Transfer</button>
-                            </span>
+                        </div>
+                        <div class="search-box-buttons">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="button" class="btn btn-success" onclick="window.location='cart.php?a=add&domain=transfer'">Transfer</button>
                         </div>
                     </div>
                 </div>

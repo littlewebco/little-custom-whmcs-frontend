@@ -455,6 +455,7 @@ body {
     background: var(--si-dark-gray);
     border-radius: 0.5rem;
     padding: 0.5rem;
+    border: 1px solid #d4d7e5;
 }
 
 .search-box .input-group .form-control {
@@ -463,40 +464,47 @@ body {
     color: white;
     font-size: 1rem;
     padding: 0.75rem 1rem;
+    width: 100%;
 }
 
 .search-box .input-group .form-control::placeholder {
     color: var(--si-gray-500);
 }
 
-.search-box .input-group .btn {
+.search-box-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    justify-content: flex-start;
+}
+
+.search-box-buttons .btn {
     padding: 0.75rem 1.5rem;
     font-weight: 600;
     font-size: 0.9375rem;
     border-radius: 0.5rem;
-    margin-left: 0.5rem;
     transition: all 0.2s ease;
 }
 
-.search-box .input-group .btn-primary {
+.search-box-buttons .btn-primary {
     background-color: var(--si-primary);
     border-color: var(--si-primary);
     color: white;
 }
 
-.search-box .input-group .btn-primary:hover {
+.search-box-buttons .btn-primary:hover {
     background-color: #3a7de6;
     border-color: #3a7de6;
     transform: translateY(-1px);
 }
 
-.search-box .input-group .btn-success {
+.search-box-buttons .btn-success {
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--si-gray-300);
 }
 
-.search-box .input-group .btn-success:hover {
+.search-box-buttons .btn-success:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
     transform: translateY(-1px);
