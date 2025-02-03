@@ -3280,4 +3280,99 @@ div[role="alert"],
     .tiles .stat {
         font-size: 1.5rem !important;
     }
+}
+
+/* Store Order Container */
+.store-order-container {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto 2rem auto !important;
+    padding: 0 1rem !important;
+}
+
+.store-order-container h2 {
+    font-size: 1.75rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.store-order-container .payment-term {
+    background: #f8f9fa !important;
+    padding: 1.5rem !important;
+    border-radius: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.store-order-container .payment-term h4 {
+    font-size: 1.125rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Domain Tabs Styling */
+.store-domain-tabs {
+    border: none !important;
+    margin-bottom: 0 !important;
+    gap: 0.5rem !important;
+}
+
+.store-domain-tabs .nav-link {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-bottom: none !important;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+    background: #f8f9fa !important;
+    color: #666 !important;
+    transition: all 0.2s ease !important;
+}
+
+.store-domain-tabs .nav-link.active {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.store-domain-tab-content {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0 0.5rem 0.5rem 0.5rem !important;
+    padding: 2rem !important;
+}
+
+/* Domain Validation */
+.domain-validation {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem 0 !important;
+    font-size: 0.875rem !important;
+}
+
+.domain-validation.ok {
+    color: #10B981 !important;
+}
+
+/* Form Controls */
+.store-order-container .form-control {
+    padding: 0.75rem 1rem !important;
+    border-radius: 0.375rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Action Buttons */
+.store-order-container .btn {
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 500 !important;
+    border-radius: 0.375rem !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .store-order-container {
+        padding: 0 0.75rem !important;
+    }
+    
+    .store-domain-tab-content {
+        padding: 1.5rem !important;
+    }
+    
+    .store-order-container .payment-term {
+        padding: 1rem !important;
+    }
 } 
