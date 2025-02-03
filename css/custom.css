@@ -3375,4 +3375,115 @@ div[role="alert"],
     .store-order-container .payment-term {
         padding: 1rem !important;
     }
+}
+
+/* Knowledge Base Styles */
+.kb-search {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto 2rem auto !important;
+}
+
+.kb-search .form-control {
+    height: auto !important;
+    padding: 1rem 1.5rem !important;
+    font-size: 1rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-right: none !important;
+    border-radius: 0.5rem 0 0 0.5rem !important;
+}
+
+.kb-search .btn {
+    padding: 1rem 2rem !important;
+    border-radius: 0 0.5rem 0.5rem 0 !important;
+}
+
+/* Category Cards */
+.kb-category {
+    height: 100% !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.5rem !important;
+}
+
+.kb-category:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    text-decoration: none !important;
+}
+
+.kb-category .card-body {
+    padding: 1.5rem !important;
+}
+
+.kb-category .badge {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+}
+
+/* Article Listings */
+.kb-article-item {
+    padding: 1.25rem 1.5rem !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.kb-article-item:last-child {
+    border-bottom: none !important;
+}
+
+.kb-article-item i {
+    margin-right: 0.75rem !important;
+}
+
+.kb-article-item small {
+    display: block !important;
+    margin-top: 0.5rem !important;
+    margin-left: 2rem !important;
+    color: #666 !important;
+}
+
+/* Article View */
+.article-content {
+    padding: 2rem !important;
+}
+
+.article-content h1 {
+    font-size: 1.75rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.article-tags {
+    margin-bottom: 1.5rem !important;
+}
+
+.article-tags .badge {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .kb-search {
+        padding: 0 1rem !important;
+    }
+    
+    .kb-search .form-control,
+    .kb-search .btn {
+        padding: 0.75rem 1rem !important;
+    }
+    
+    .kb-category .card-body {
+        padding: 1rem !important;
+    }
+    
+    .kb-article-item {
+        padding: 1rem !important;
+    }
+    
+    .article-content {
+        padding: 1.5rem !important;
+    }
 } 
