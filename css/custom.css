@@ -453,7 +453,7 @@ body {
     justify-content: flex-start;
     text-align: left;
     padding: 0 !important;
-    margin: 0 !important;
+    margin: -2px 0 0 0 !important;
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://picsum.photos/1920/1080') center/cover no-repeat !important;
     color: var(--si-white);
     z-index: 1;
