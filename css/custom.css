@@ -3033,4 +3033,57 @@ div[role="alert"],
     .btn-block-sm {
         width: 100% !important;
     }
+}
+
+/* Client Area Template Specific Styles */
+.clientarea .card,
+.ssl-config .card,
+.registration .card {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Table Containers */
+.table-container {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 1.5rem !important;
+    box-sizing: border-box !important;
+}
+
+/* Form Groups in Cards */
+.card .form-group {
+    margin-bottom: 1rem !important;
+}
+
+/* Alert Positioning */
+.alert {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Tab Content in Client Area */
+.tab-content .tab-pane {
+    padding: 1.5rem !important;
+}
+
+/* Responsive Table Adjustments */
+@media (max-width: 768px) {
+    .table-container,
+    .clientarea .card,
+    .ssl-config .card,
+    .registration .card {
+        padding: 1rem !important;
+    }
+    
+    .tab-content .tab-pane {
+        padding: 1rem !important;
+    }
 } 
