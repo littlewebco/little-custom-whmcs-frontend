@@ -79,12 +79,13 @@ body {
     padding-top: var(--navbar-height) !important;
 }
 
-/* Main Content Area */
+/* Main Content Area - Core Layout */
 .main-content {
     flex: 1 !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
+    align-items: center !important; /* Center content */
 }
 
 /* Container Constraints - Apply to all pages */
@@ -98,12 +99,35 @@ body {
     box-sizing: border-box !important;
 }
 
+/* Tab Content Styling */
+.tab-content {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+    box-sizing: border-box !important;
+}
+
+/* Client Area Specific Layouts */
+.clientarea .tab-content,
+.clientarea .card,
+.clientarea .tab-pane {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 1.5rem !important;
+    box-sizing: border-box !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .main-content > .container,
     .main-content > #main-body,
-    .clientarea #main-body > .container {
-        padding: 20px !important;
+    .clientarea #main-body > .container,
+    .clientarea .tab-content,
+    .tab-content {
+        padding: 1rem !important;
     }
 }
 
