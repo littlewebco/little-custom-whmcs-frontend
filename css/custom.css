@@ -3210,4 +3210,74 @@ div[role="alert"],
     .client-home-panels .list-group-item {
         padding: 1rem !important;
     }
+}
+
+/* Client Area Stats Cards */
+.tiles {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto 2rem auto !important;
+    padding: 0 1rem !important;
+}
+
+.tiles .row {
+    margin: 0 -1rem !important;
+}
+
+.tiles .card {
+    background: #fff !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.5rem !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.tiles .card-body {
+    padding: 2rem 1rem !important;
+}
+
+.tiles .fa-2x {
+    font-size: 2.5rem !important;
+    margin-bottom: 1.25rem !important;
+}
+
+.tiles .stat {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.tiles .title {
+    font-size: 0.875rem !important;
+    opacity: 0.8 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .tiles .card-body {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .tiles .fa-2x {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .tiles .stat {
+        font-size: 1.75rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .tiles .card-body {
+        padding: 1.25rem 0.75rem !important;
+    }
+    
+    .tiles .fa-2x {
+        font-size: 1.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .tiles .stat {
+        font-size: 1.5rem !important;
+    }
 } 
