@@ -3803,4 +3803,142 @@ div[role="alert"],
     .table-rounded td {
         padding: 0.75rem 1rem !important;
     }
+}
+
+/* Support Ticket Pages */
+.card .extra-padding {
+    padding: 2.5rem !important;
+}
+
+/* Support Ticket Headers */
+.card-title {
+    font-size: 1.75rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.5rem !important;
+    color: #1a1a1a !important;
+}
+
+/* Department Selection */
+.department-list a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 1.25rem !important;
+    margin-bottom: 1rem !important;
+    background: #f8f9fa !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.5rem !important;
+    color: #1a1a1a !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.department-list a:hover {
+    background: #fff !important;
+    border-color: #5599FF !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(85, 153, 255, 0.1) !important;
+}
+
+/* Form Controls */
+.form-group {
+    margin-bottom: 1.5rem !important;
+}
+
+.form-group label {
+    font-weight: 500 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.form-control {
+    padding: 0.75rem 1rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0.375rem !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.form-control:focus {
+    border-color: #5599FF !important;
+    box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1) !important;
+}
+
+/* File Attachments */
+.custom-file-label {
+    padding: 0.75rem 1rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0.375rem !important;
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+    border-color: #5599FF !important;
+    box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1) !important;
+}
+
+/* KB Suggestions */
+.kb-article-item {
+    padding: 1rem 1.25rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.375rem !important;
+    margin-bottom: 0.5rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.kb-article-item:hover {
+    background: #f8f9fa !important;
+    border-color: #5599FF !important;
+}
+
+.kb-article-item a {
+    color: #1a1a1a !important;
+    text-decoration: none !important;
+}
+
+.kb-article-item small {
+    display: block !important;
+    color: #666 !important;
+    margin-top: 0.5rem !important;
+}
+
+/* Ticket List Table */
+#tableTicketsList {
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+}
+
+#tableTicketsList thead th {
+    background: #f8f9fa !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08) !important;
+    padding: 1rem !important;
+    font-weight: 600 !important;
+    color: #1a1a1a !important;
+}
+
+#tableTicketsList tbody td {
+    padding: 1rem !important;
+    vertical-align: middle !important;
+}
+
+/* Status Labels */
+.label.status {
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.375rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card .extra-padding {
+        padding: 1.5rem !important;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem !important;
+    }
+    
+    #tableTicketsList thead th,
+    #tableTicketsList tbody td {
+        padding: 0.75rem !important;
+    }
 } 
