@@ -3086,4 +3086,67 @@ div[role="alert"],
     .tab-content .tab-pane {
         padding: 1rem !important;
     }
+}
+
+/* Verification Banners */
+.verification-banner {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto 1.5rem auto !important;
+    padding: 1rem !important;
+}
+
+/* Modal Styling */
+.modal-dialog {
+    max-width: 800px !important;
+    margin: 1.75rem auto !important;
+}
+
+.modal-content {
+    border-radius: 0.5rem !important;
+    border: none !important;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto 1.5rem auto !important;
+    padding: 1rem !important;
+    background-color: transparent !important;
+}
+
+/* Sidebar Components */
+.card-sidebar {
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+}
+
+.card-sidebar .card-header {
+    padding: 1rem !important;
+    background-color: #f8f9fa !important;
+    border-bottom: 1px solid rgba(0,0,0,0.125) !important;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1rem !important;
+}
+
+.input-group-wrapper {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .verification-banner,
+    .breadcrumb,
+    .modal-dialog {
+        padding: 0.75rem !important;
+    }
+    
+    .card-sidebar {
+        margin-bottom: 1rem !important;
+    }
 } 
