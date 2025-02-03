@@ -3941,4 +3941,86 @@ div[role="alert"],
     #tableTicketsList tbody td {
         padding: 0.75rem !important;
     }
+}
+
+/* Client Registration Form */
+#registration {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+}
+
+#registration .card {
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+#registration .card-body {
+    padding: 2rem !important;
+}
+
+#registration .card-title {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Form Fields */
+#registration .form-group {
+    margin-bottom: 1.25rem !important;
+    position: relative !important;
+}
+
+#registration .prepend-icon {
+    position: relative !important;
+}
+
+#registration .field-icon {
+    position: absolute !important;
+    top: 50% !important;
+    left: 1rem !important;
+    transform: translateY(-50%) !important;
+    color: #666 !important;
+    z-index: 2 !important;
+}
+
+#registration .field {
+    padding: 0.75rem 1rem 0.75rem 2.5rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0.375rem !important;
+    width: 100% !important;
+    transition: all 0.2s ease !important;
+}
+
+#registration .field:focus {
+    border-color: #5599FF !important;
+    box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1) !important;
+}
+
+/* Custom Fields */
+#registration .field-help-text {
+    display: block !important;
+    margin-top: 0.5rem !important;
+    font-size: 0.875rem !important;
+    color: #666 !important;
+}
+
+/* Password Strength */
+#registration .password-strength-meter {
+    margin-top: 0.5rem !important;
+    height: 4px !important;
+    background: #e9ecef !important;
+    border-radius: 2px !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #registration .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    #registration .form-group {
+        margin-bottom: 1rem !important;
+    }
 } 
