@@ -4126,3 +4126,30 @@ div[role="alert"],
     height: 48px !important;
     padding: 0 2rem !important;
 }
+
+/* Client Area Home Spacing and Layout */
+.tiles {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 2rem auto 3rem auto !important;
+    padding: 0 1rem !important;
+}
+
+.client-home-panels {
+    margin-top: 2rem !important;
+    margin-bottom: 4rem !important;
+}
+
+/* Add spacing for addons */
+.mb-4:has(.addon-content) {
+    margin-top: 2rem !important;
+    margin-bottom: 3rem !important;
+}
+
+/* Status Labels - Consolidated */
+.label.status {
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.375rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+}
