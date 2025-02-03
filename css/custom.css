@@ -80,20 +80,31 @@ body {
 }
 
 /* Main Content Area */
-#main-body {
-    flex: 1 0 auto !important;
+.main-content {
+    flex: 1 !important;
     width: 100% !important;
-    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
-}
-
-#main-body > .container {
     max-width: 1400px !important;
-    width: 100% !important;
     margin: 0 auto !important;
     padding: 40px !important;
     box-sizing: border-box !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px !important;
+    }
+}
+
+/* Ensure proper spacing for content blocks */
+.main-content > .container,
+.main-content > #main-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* Navigation */
