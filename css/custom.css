@@ -3585,4 +3585,114 @@ div[role="alert"],
         align-items: center !important;
         gap: 1rem !important;
     }
+}
+
+/* Two Factor Authentication Pages */
+.mw-540 {
+    width: 100% !important;
+    max-width: 540px !important;
+    margin: 2rem auto !important;
+    background: #fff !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.mw-540 .card-body {
+    padding: 2rem !important;
+}
+
+.mw-540 p {
+    color: #666 !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Account Selection List */
+.select-account {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    margin: 1.5rem 0 !important;
+}
+
+.select-account a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 1rem 1.25rem !important;
+    background: #f8f9fa !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.375rem !important;
+    color: #1a1a1a !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.select-account a:hover:not(.disabled) {
+    background: #fff !important;
+    border-color: #5599FF !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(85, 153, 255, 0.1) !important;
+}
+
+.select-account a.disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+}
+
+/* Account Labels */
+.select-account .label {
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 0.25rem !important;
+    margin-left: 0.5rem !important;
+}
+
+.select-account .label-info {
+    background: #5599FF !important;
+    color: #fff !important;
+}
+
+.select-account .label-default {
+    background: #e9ecef !important;
+    color: #666 !important;
+}
+
+/* Button Styling */
+.mw-540 .btn {
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 500 !important;
+    border-radius: 0.375rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.mw-540 .d-flex .btn {
+    min-width: 120px !important;
+}
+
+.mw-540 .btn i {
+    margin-left: 0.5rem !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .mw-540 {
+        margin: 1rem !important;
+    }
+    
+    .mw-540 .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    .mw-540 .d-flex {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+    
+    .mw-540 .d-flex .btn {
+        width: 100% !important;
+    }
 } 
