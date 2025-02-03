@@ -4024,3 +4024,70 @@ div[role="alert"],
         margin-bottom: 1rem !important;
     }
 } 
+
+/* Server Status Page */
+.server-status .card {
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    margin-bottom: 2rem !important;
+}
+
+.server-status .table {
+    margin-bottom: 0 !important;
+}
+
+.server-status .table th {
+    background: #f8f9fa !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08) !important;
+    padding: 1rem !important;
+    font-weight: 600 !important;
+    color: #1a1a1a !important;
+}
+
+.server-status .table td {
+    padding: 1rem !important;
+    vertical-align: middle !important;
+}
+
+/* Status Icons */
+.server-status .fa-check {
+    color: #10B981 !important;
+}
+
+.server-status .fa-times {
+    color: #EF4444 !important;
+}
+
+.server-status .fa-spinner {
+    color: #6B7280 !important;
+}
+
+/* Issue Cards */
+.server-status .card-header {
+    padding: 1rem 1.5rem !important;
+    background: #fff !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    font-weight: 500 !important;
+}
+
+/* Pagination */
+.pagination {
+    gap: 0.5rem !important;
+}
+
+.page-link {
+    border-radius: 0.375rem !important;
+    padding: 0.75rem 1rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.page-link:hover {
+    background: #f8f9fa !important;
+    border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.page-item.disabled .page-link {
+    background: #f8f9fa !important;
+    border-color: rgba(0, 0, 0, 0.05) !important;
+}
