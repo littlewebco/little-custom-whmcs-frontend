@@ -4091,3 +4091,38 @@ div[role="alert"],
     background: #f8f9fa !important;
     border-color: rgba(0, 0, 0, 0.05) !important;
 }
+
+/* Registration Form Refinements */
+#registration .form-group {
+    margin-bottom: 1.5rem !important;
+}
+
+#registration .form-control {
+    height: 48px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0.375rem !important;
+    width: 100% !important;
+    transition: all 0.2s ease !important;
+}
+
+#registration .form-control:focus {
+    border-color: #5599FF !important;
+    box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1) !important;
+}
+
+#registration label {
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+    color: #1a1a1a !important;
+}
+
+#registration .card {
+    margin-bottom: 2rem !important;
+}
+
+#registration .btn {
+    height: 48px !important;
+    padding: 0 2rem !important;
+}
