@@ -3486,4 +3486,103 @@ div[role="alert"],
     .article-content {
         padding: 1.5rem !important;
     }
+}
+
+/* Domain Search Container */
+.home-domain-search {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto 2rem auto !important;
+    padding: 3rem 1.5rem !important;
+    background: #fff !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.home-domain-search h2 {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 2rem !important;
+    color: #1a1a1a !important;
+}
+
+/* Search Input Group */
+.input-group-wrapper {
+    max-width: 800px !important;
+    margin: 0 auto 1.5rem auto !important;
+}
+
+.input-group {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+}
+
+.input-group .form-control {
+    border: none !important;
+    padding: 1.25rem 1.5rem !important;
+    font-size: 1.125rem !important;
+    height: auto !important;
+    box-shadow: none !important;
+}
+
+.input-group-append .btn {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+    border: none !important;
+    margin-left: 0 !important;
+}
+
+/* TLD Logos Section */
+.tld-logos {
+    max-width: 800px !important;
+    margin: 2rem auto !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 2rem !important;
+}
+
+.tld-logos li {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    font-size: 0.875rem !important;
+    color: #666 !important;
+}
+
+.tld-logos img {
+    height: 24px !important;
+    width: auto !important;
+    opacity: 0.8 !important;
+}
+
+/* Mobile Buttons */
+.d-sm-none .btn {
+    margin-top: 1rem !important;
+    width: 100% !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .home-domain-search {
+        padding: 2rem 1rem !important;
+    }
+    
+    .home-domain-search h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .input-group .form-control {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+    }
+    
+    .tld-logos {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+    }
 } 
