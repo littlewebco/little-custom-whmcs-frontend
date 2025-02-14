@@ -59,33 +59,53 @@
             progressBar.addClass("bg-success");
         }
         validatePassword2();
-});
+    });
 
-function validatePassword2() {
-    var password1 = jQuery("#inputNewPassword1").val(),
-        password2Input = jQuery("#inputNewPassword2"),
-        password2 = password2Input.val();
+    function validatePassword2() {
+        var password1 = jQuery("#inputNewPassword1").val(),
+            password2Input = jQuery("#inputNewPassword2"),
+            password2 = password2Input.val();
 
-    if (password2 && password1 !== password2) {
-        password2Input.removeClass('is-valid')
-            .addClass('is-invalid');
-        jQuery("#inputNewPassword2Msg").html(
-            '<p class="form-text text-muted" id="nonMatchingPasswordResult">{"{lang key='pwdoesnotmatch'}"|escape}</p>'
-        );
-        {if !isset($noDisable)}
-            jQuery('input[type="submit"]').attr('disabled', 'disabled');
-        {/if}
-    } else {
-        if (password2) {
-            password2Input.removeClass('is-invalid')
-                .addClass('is-valid');
-            {if !isset($noDisable)}jQuery('.primary-content input[type="submit"]').removeAttr('disabled');{/if}
+        if (password2 && password1 !== password2) {
+            password2Input.removeClass('is-valid')
+                .addClass('is-invalid');
+            jQuery("#inputNewPassword2Msg").html(
+                '<p class="form-text text-muted" id="nonMatchingPasswordResult">{"{lang key='pwdoesnotmatch'}"|escape}</p>'
+            );
+            {if !isset($noDisable)}
+                jQuery('input[type="submit"]').attr('disabled', 'disabled');
+            {/if}
         } else {
-            password2Input.removeClass('is-valid is-invalid');
+            if (password2) {
+                password2Input.removeClass('is-invalid')
+                    .addClass('is-valid');
+                {if !isset($noDisable)}jQuery('.primary-content input[type="submit"]').removeAttr('disabled');{/if}
+            } else {
+                password2Input.removeClass('is-valid is-invalid');
+            }
+            jQuery("#inputNewPassword2Msg").html('');
         }
-        jQuery("#inputNewPassword2Msg").html('');
     }
-}
+
+    function debugPasswordValidation() {
+        var password1 = jQuery("#inputNewPassword1").val();
+        var password2 = jQuery("#inputNewPassword2").val();
+        var pwstrength = calculatePasswordStrength(password1);
+        
+        console.log('Password Validation Debug:', {
+            'Password1 Exists': !!password1,
+            'Password2 Exists': !!password2,
+            'Passwords Match': password1 === password2,
+            'Password Strength': pwstrength,
+            'Error Threshold': pwStrengthErrorThreshold,
+            'Warning Threshold': pwStrengthWarningThreshold,
+            'Submit Button Disabled': jQuery('input[type="submit"]').prop('disabled')
+        });
+    }
+
+    jQuery("#inputNewPassword1, #inputNewPassword2").keyup(function() {
+        debugPasswordValidation();
+    });
 
     jQuery(document).ready(function() {
         {if !isset($noDisable)}
