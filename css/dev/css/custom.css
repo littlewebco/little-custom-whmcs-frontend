@@ -105,7 +105,7 @@
     --si-nav-link-font-weight: 600;
     --si-nav-link-color: #888888;
     --si-nav-link-hover-color: var(--si-navbar-hover-color);
-    --si-nav-link-disabled-color: #5599ff;
+    --si-nav-link-disabled-color: #1E90FF;
     display: flex;
     flex-direction: column;
     padding-left: 0;

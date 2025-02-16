@@ -546,7 +546,7 @@ body {
 }
 
 .search-box-text-primary {
-	color: #5599FF !important;
+	color: #1E90FF !important;
 }
 .search-box h1 {
     font-size: 4.5rem !important;
@@ -1571,9 +1571,9 @@ body.home {
     padding: 0.75rem 1.5rem !important;
     font-size: 1rem !important;
     font-weight: 600 !important;
-    color: #5599FF !important;
+    color: #1E90FF !important;
     background: transparent !important;
-    border: 1px solid #5599FF !important;
+    border: 1px solid #1E90FF !important;
     border-radius: 0.375rem !important;
     transition: all 0.2s ease-in-out !important;
     text-decoration: none !important;
@@ -1581,7 +1581,7 @@ body.home {
 
 .home .card .btn:hover {
     color: #fff !important;
-    background: #5599FF !important;
+    background: #1E90FF !important;
     transform: translateY(-2px) !important;
 }
 
@@ -2412,7 +2412,7 @@ body.page-type-full {
     padding: 0.875rem;
     font-size: 1rem;
     font-weight: 600;
-    background: #5599FF;
+    background: #1E90FF;
     border: none;
     border-radius: 0.375rem;
     height: 3.25rem;
@@ -3632,7 +3632,7 @@ div[role="alert"],
 
 .select-account a:hover:not(.disabled) {
     background: #fff !important;
-    border-color: #5599FF !important;
+    border-color: #1E90FF !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 4px 12px rgba(85, 153, 255, 0.1) !important;
 }
@@ -3652,7 +3652,7 @@ div[role="alert"],
 }
 
 .select-account .label-info {
-    background: #5599FF !important;
+    background: #1E90FF !important;
     color: #fff !important;
 }
 
@@ -3834,7 +3834,7 @@ div[role="alert"],
 
 .department-list a:hover {
     background: #fff !important;
-    border-color: #5599FF !important;
+    border-color: #1E90FF !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 4px 12px rgba(85, 153, 255, 0.1) !important;
 }
@@ -3858,7 +3858,7 @@ div[role="alert"],
 }
 
 .form-control:focus {
-    border-color: #5599FF !important;
+    border-color: #1E90FF !important;
     box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1) !important;
 }
 
@@ -3870,7 +3870,7 @@ div[role="alert"],
 }
 
 .custom-file-input:focus ~ .custom-file-label {
-    border-color: #5599FF !important;
+    border-color: #1E90FF !important;
     box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1) !important;
 }
 
@@ -3885,7 +3885,7 @@ div[role="alert"],
 
 .kb-article-item:hover {
     background: #f8f9fa !important;
-    border-color: #5599FF !important;
+    border-color: #1E90FF !important;
 }
 
 .kb-article-item a {
@@ -3994,7 +3994,7 @@ div[role="alert"],
 }
 
 #registration .field:focus {
-    border-color: #5599FF !important;
+    border-color: #1E90FF !important;
     box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1) !important;
 }
 
@@ -4108,7 +4108,7 @@ div[role="alert"],
 }
 
 #registration .form-control:focus {
-    border-color: #5599FF !important;
+    border-color: #1E90FF !important;
     box-shadow: 0 0 0 3px rgba(85, 153, 255, 0.1) !important;
 }
 

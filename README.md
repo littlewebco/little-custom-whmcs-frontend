@@ -93,7 +93,7 @@ To show only brand name:
 
 Default color palette (customizable in theme.yaml):
 ```yaml
-primary-color: "#5599FF"
+primary-color: "#1E90FF"
 secondary-color: "#8B5CF6"
 success-color: "#22c55e"
 info-color: "#4c82f7"
