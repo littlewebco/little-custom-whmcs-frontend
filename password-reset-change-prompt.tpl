@@ -27,3 +27,55 @@
     </div>
 
 </form>
+
+<script>
+function showValidationMessage(message) {
+    var msgContainer = jQuery("#inputNewPassword2Msg");
+    msgContainer.html('<p class="alert alert-danger">' + message + '</p>');
+}
+
+function validatePasswordSubmission() {
+    var password1 = jQuery("#inputNewPassword1").val();
+    var password2 = jQuery("#inputNewPassword2").val();
+    var pwstrength = calculatePasswordStrength(password1);
+    
+    if (!password1 || !password2) {
+        showValidationMessage("Both password fields are required");
+        return false;
+    }
+    
+    if (password1 !== password2) {
+        showValidationMessage("Passwords do not match");
+        return false;
+    }
+    
+    if (pwstrength < pwStrengthErrorThreshold) {
+        showValidationMessage("Password does not meet minimum strength requirements");
+        return false;
+    }
+    
+    return true;
+}
+
+jQuery(document).ready(function() {
+    // Remove the initial disabled state
+    jQuery('.using-password-strength input[type="submit"]').removeAttr('disabled');
+    
+    // Add form submission handler
+    jQuery('.using-password-strength').submit(function(e) {
+        var password1 = jQuery("#inputNewPassword1").val();
+        var password2 = jQuery("#inputNewPassword2").val();
+        var pwstrength = calculatePasswordStrength(password1);
+        
+        console.log('Form Submit Attempt:', {
+            'Passwords Match': password1 === password2,
+            'Password Strength': pwstrength
+        });
+        
+        if (password1 !== password2 || pwstrength < pwStrengthErrorThreshold) {
+            e.preventDefault();
+            console.log('Form submission prevented due to validation');
+        }
+    });
+});
+</script>
