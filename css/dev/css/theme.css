@@ -4,7 +4,7 @@
  * Copyright 2023 Little Cloud
  * Theme styles
 */
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
 .text-gradient-primary {
   background: linear-gradient(to right, #1E90FF, #8B5CF6, #D946EF);
   -webkit-background-clip: text;
@@ -55,7 +55,7 @@
   --si-black-rgb: 0, 0, 0;
   --si-body-color-rgb: 86, 89, 115;
   --si-body-bg-rgb: 255, 255, 255;
-  --si-font-sans-serif: "Manrope", sans-serif;
+  --si-font-sans-serif: "DM Sans", sans-serif;
   --si-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --si-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --si-body-font-family: var(--si-font-sans-serif);
