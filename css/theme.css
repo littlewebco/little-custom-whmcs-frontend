@@ -38,7 +38,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -49,7 +49,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: "DM Sans", sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -61,7 +61,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -471,7 +471,7 @@ mark,
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— "
 }
 
 .img-fluid {
@@ -5365,7 +5365,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5467,7 +5467,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -9196,7 +9196,7 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 html, body {
@@ -10044,90 +10044,6 @@ fieldset[disabled] .btn-default.focus {
   border-top: 3px solid #e671b8;
 }
 
-.card-accent-purple {
-  border-top: 3px solid #7b4f9d;
-}
-
-.card-accent-lime {
-  border-top: 3px solid #8cbf26;
-}
-
-.card-accent-magenta {
-  border-top: 3px solid #ff0097;
-}
-
-.card-accent-teal {
-  border-top: 3px solid #00aba9;
-}
-
-.card-accent-turquoise {
-  border-top: 3px solid #1abc9c;
-}
-
-.card-accent-emerald {
-  border-top: 3px solid #2ecc71;
-}
-
-.card-accent-amethyst {
-  border-top: 3px solid #9b59b6;
-}
-
-.card-accent-wet-asphalt {
-  border-top: 3px solid #004258;
-}
-
-.card-accent-midnight-blue {
-  border-top: 3px solid #2c3e50;
-}
-
-.card-accent-sun-flower {
-  border-top: 3px solid #f1c40f;
-}
-
-.card-accent-pomegranate {
-  border-top: 3px solid #c0392b;
-}
-
-.card-accent-silver {
-  border-top: 3px solid #bdc3c7;
-}
-
-.card-accent-asbestos {
-  border-top: 3px solid #7f8c8d;
-}
-
-.card-accent-brand-cpanel-orange {
-  border-top: 3px solid #ff6c2c;
-}
-
-.card-accent-brand-xovinow-blue {
-  border-top: 3px solid #10069F;
-}
-
-.bg-color-gold {
-  background-color: #f0ad4e;
-}
-
-.bg-color-green {
-  background-color: #5cb85c;
-}
-
-.bg-color-red {
-  background-color: #d9534f;
-}
-
-.bg-color-blue {
-  background-color: #5bc0de;
-}
-
-.bg-color-orange {
-  background-color: #ff6600;
-}
-
-.bg-color-pink {
-  background-color: #e671b8;
-}
-
 .bg-color-purple {
   background-color: #7b4f9d;
 }
@@ -10833,7 +10749,7 @@ div[menuitemname="Active Products/Services"] .btn-view-more.disabled {
   padding: 5px 10px;
   border-color: #ddd;
   min-width: 310px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 .popover-user-notifications .popover-body {
