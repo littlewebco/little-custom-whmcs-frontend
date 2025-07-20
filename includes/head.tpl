@@ -16,16 +16,11 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
-<!-- JavaScript Dependencies - Using modern CDN versions instead of bundled outdated ones -->
-<!-- Preload critical JavaScript -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" as="script">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" as="script">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" as="script">
-
+<!-- JavaScript Dependencies - Load jQuery synchronously first -->
 <!-- Load jQuery first (required by WHMCS components) -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
 <script>
     var csrfToken = '{$token}',
@@ -37,16 +32,16 @@
         requiredText = '{lang|addslashes key="orderForm.required"}',
         recaptchaSiteKey = "{if $captcha}{$captcha->recaptcha->getSiteKey()}{/if}";
 </script>
-<!-- Load only WHMCS-specific scripts, removing the large bundled library -->
-<script src="{$WEB_ROOT}/js/whmcs.js?v={$versionHash}" defer></script>
-<script src="{$WEB_ROOT}/js/bootstrap-init.js?v={$versionHash}" defer></script>
+<!-- Load WHMCS-specific scripts after jQuery is available -->
+<script src="{$WEB_ROOT}/js/whmcs.js?v={$versionHash}"></script>
+<script src="{$WEB_ROOT}/js/bootstrap-init.js?v={$versionHash}"></script>
 <!-- Load our optimized performance script -->
-<script src="{$WEB_ROOT}/js/performance-optimizer.js?v={$versionHash}" defer></script>
+<script src="{$WEB_ROOT}/js/performance-optimizer.js?v={$versionHash}"></script>
 <script>
-// Defer non-critical JavaScript execution
-document.addEventListener('DOMContentLoaded', function() {
-  $("[href*='whmcs.com']").each(function(){
-    $(this).parent().remove();
+// Ensure jQuery is available before executing
+jQuery(document).ready(function() {
+  jQuery("[href*='whmcs.com']").each(function(){
+    jQuery(this).parent().remove();
   });
 });
 </script>

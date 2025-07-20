@@ -287,16 +287,16 @@
 </div>
 
 <script>
-    $(document).ready(function() {
+    jQuery(document).ready(function() {
         var cartTotal = 0;
 
         var ssoServiceId = {if $ssoService}{$ssoService->id}{else}0{/if};
 
         var changeServiceMap = function(callback)
         {
-            var field = $('form[data-role="cart-form"]').find('input[name="servicemap"]');
+            var field = jQuery('form[data-role="cart-form"]').find('input[name="servicemap"]');
 
-            var value = $(field).val();
+            var value = jQuery(field).val();
 
             try {
                 value = JSON.parse(value);
@@ -304,54 +304,54 @@
                 value = {};
             }
 
-            $(field).val(
+            jQuery(field).val(
                 JSON.stringify(
                     callback(value)
                 )
             );
         };
 
-        $('.wp-toolkit .service-selector .btn-add-to-cart').click(function(e) {
+        jQuery('.wp-toolkit .service-selector .btn-add-to-cart').click(function(e) {
             e.preventDefault();
-            if ($(this).hasClass('disabled')) {
+            if (jQuery(this).hasClass('disabled')) {
                 return;
             }
 
-            var serviceId = $(this).data('serviceid'),
-                addonId = $(this).data('addonid');
+            var serviceId = jQuery(this).data('serviceid'),
+                addonId = jQuery(this).data('addonid');
 
-            var row = $('.wp-toolkit .cart-items .item.template').clone()
+            var row = jQuery('.wp-toolkit .cart-items .item.template').clone()
                 .removeClass('template')
-                .find('.product-name').text($(this).data('product-name')).end()
-                .find('.domain-name').text($(this).data('domain-name')).end()
-                .find('.price').text($(this).data('price')).end()
-                .attr('data-serviceid', $(this).data('serviceid'))
-                .attr('data-price', $(this).data('price'));
+                .find('.product-name').text(jQuery(this).data('product-name')).end()
+                .find('.domain-name').text(jQuery(this).data('domain-name')).end()
+                .find('.price').text(jQuery(this).data('price')).end()
+                .attr('data-serviceid', jQuery(this).data('serviceid'))
+                .attr('data-price', jQuery(this).data('price'));
 
             changeServiceMap(function(serviceMap) {
                 serviceMap[serviceId] = addonId;
                 return serviceMap;
             });
 
-            $('.wp-toolkit .cart-items').append(row);
-            $('.wp-toolkit .cart').slideDown();
+            jQuery('.wp-toolkit .cart-items').append(row);
+            jQuery('.wp-toolkit .cart').slideDown();
 
-            cartTotal += parseFloat($(this).data('price'));
-            $('.wp-toolkit .cart-total-amount').text(cartTotal.toFixed(2));
+            cartTotal += parseFloat(jQuery(this).data('price'));
+            jQuery('.wp-toolkit .cart-total-amount').text(cartTotal.toFixed(2));
 
-            $(this).closest('.service').addClass('in-cart');
+            jQuery(this).closest('.service').addClass('in-cart');
         });
 
-        $(document).on('click', '.wp-toolkit .cart-items .btn-remove', function (e) {
+        jQuery(document).on('click', '.wp-toolkit .cart-items .btn-remove', function (e) {
             e.preventDefault();
 
-            var $removeItem = $(this).closest('.item');
+            var $removeItem = jQuery(this).closest('.item');
             var serviceId = $removeItem.data('serviceid');
 
             cartTotal -= $removeItem.data('price');
-            $('.wp-toolkit .cart-total-amount').text(cartTotal.toFixed(2));
+            jQuery('.wp-toolkit .cart-total-amount').text(cartTotal.toFixed(2));
 
-            $('.serviceid-' + serviceId).removeClass('in-cart');
+            jQuery('.serviceid-' + serviceId).removeClass('in-cart');
 
             changeServiceMap(function(serviceMap) {
                 if (serviceMap.hasOwnProperty(serviceId)) {
@@ -361,20 +361,20 @@
                 return serviceMap;
             });
 
-            if ($('.wp-toolkit .cart-items .item:not(.template)').length <= 1) {
-                $('.wp-toolkit .cart').slideUp('', function() {
+            if (jQuery('.wp-toolkit .cart-items .item:not(.template)').length <= 1) {
+                jQuery('.wp-toolkit .cart').slideUp('', function() {
                     $removeItem.remove();
                 });
             } else {
                 $removeItem.slideUp('', function() {
-                    $(this).remove();
+                    jQuery(this).remove();
                 });
             }
         });
 
         // pre-add the service we used to SSO from
         if (ssoServiceId) {
-            $('.btn-add-to-cart[data-serviceid="' + ssoServiceId + '"]').click();
+            jQuery('.btn-add-to-cart[data-serviceid="' + ssoServiceId + '"]').click();
         }
     });
 </script>

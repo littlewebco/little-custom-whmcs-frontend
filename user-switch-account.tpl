@@ -36,10 +36,10 @@
 </form>
 
 <script>
-    $(document).ready(function() {
-        $('.select-account a').click(function(e) {
+    jQuery(document).ready(function() {
+        jQuery('.select-account a').click(function(e) {
             e.preventDefault();
-            $('#inputSwitchAcctId').val($(this).data('id'))
+            jQuery('#inputSwitchAcctId').val(jQuery(this).data('id'))
                 .parent('form').submit();
         });
     });
