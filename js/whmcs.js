@@ -1235,7 +1235,7 @@ var lastTicketMsg;
 function getTicketSuggestions() {
     var userMsg = jQuery("#inputMessage").val();
     if (userMsg !== lastTicketMsg && userMsg !== '') {
-        WHMCS.http.jqClient.post("submitticket.php", { action: "getkbarticles", text: userMsg },
+        WHMCS.http.jqClient.post("submitticket.php", { action: "getkbarticles", text: userMsg, token: csrfToken },
             function (data) {
                 var suggestions = jQuery("#autoAnswerSuggestions");
                 if (data) {

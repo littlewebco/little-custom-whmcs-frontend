@@ -47,7 +47,7 @@
                         {lang key="support.postedBy" name="<span class=\"posted-by-name\">{$reply.requestor.name}</span>" date="<span class=\"posted-on\">{$reply.date}</span>" requestorType="<span class=\"label requestor-badge requestor-type-{$reply.requestor.type_normalised} float-md-right\">{lang key='support.requestor.'|cat:$reply.requestor.type_normalised}</span>"}
                     </div>
                     <div class="message p-3">
-                        {$reply.message}
+                        {$reply.message|escape:'html'}
                         {if $reply.ipaddress}
                             <hr>
                             {lang key='support.ipAddress'}: {$reply.ipaddress}

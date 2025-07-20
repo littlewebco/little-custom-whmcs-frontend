@@ -18,26 +18,15 @@
             pwStrengthWarningThreshold = {if isset($pwStrengthWarningThreshold)}{$pwStrengthWarningThreshold}{else}75{/if},
             progressBar = jQuery("#passwordStrengthBar .progress-bar"),
             pw = jQuery("#inputNewPassword1").val(),
-            pwlength = (pw.length);
-        if (pwlength > 5) {
-            pwlength = 5;
-        }
-        var numnumeric = pw.replace(/[0-9]/g,""),
-            numeric = (pw.length - numnumeric.length);
-        if (numeric > 3) {
-            numeric = 3;
-        }
-        var symbols = pw.replace(/\W/g,""),
-            numsymbols = (pw.length-symbols.length);
-        if (numsymbols > 3) {
-            numsymbols = 3;
-        }
-        var numupper = pw.replace(/[A-Z]/g,""),
-            upper = (pw.length - numupper.length);
-        if (upper > 3) {
-            upper = 3;
-        }
-        var pwstrength = ((pwlength * 10) - 20) + (numeric * 10) + (numsymbols * 15) + (upper * 10);
+            pwlength = Math.min(pw.length, 8); // Cap at 8 for length scoring
+        var lengthScore = Math.max(0, (pwlength * 12.5) - 25); // Ensure non-negative
+        
+        var numeric = Math.min((pw.match(/[0-9]/g) || []).length, 4);
+        var symbols = Math.min((pw.match(/[^A-Za-z0-9]/g) || []).length, 4);
+        var upper = Math.min((pw.match(/[A-Z]/g) || []).length, 4);
+        var lower = Math.min((pw.match(/[a-z]/g) || []).length, 4);
+        
+        var pwstrength = lengthScore + (numeric * 5) + (symbols * 10) + (upper * 5) + (lower * 5);
         if (pwstrength < 0) {
             pwstrength = 0;
         }
@@ -85,6 +74,17 @@
             }
             jQuery("#inputNewPassword2Msg").html('');
         }
+    }
+
+    function calculatePasswordStrength(pw) {
+        var pwlength = Math.min(pw.length, 8);
+        var lengthScore = Math.max(0, (pwlength * 12.5) - 25);
+        var numeric = Math.min((pw.match(/[0-9]/g) || []).length, 4);
+        var symbols = Math.min((pw.match(/[^A-Za-z0-9]/g) || []).length, 4);
+        var upper = Math.min((pw.match(/[A-Z]/g) || []).length, 4);
+        var lower = Math.min((pw.match(/[a-z]/g) || []).length, 4);
+        var strength = lengthScore + (numeric * 5) + (symbols * 10) + (upper * 5) + (lower * 5);
+        return Math.min(100, Math.max(0, strength));
     }
 
     function debugPasswordValidation() {
