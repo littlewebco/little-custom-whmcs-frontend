@@ -4,6 +4,19 @@
     <meta charset="{$charset}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{if $kbarticle.title}{$kbarticle.title} - {/if}{$pagetitle} - {$companyname}</title>
+    
+    <!-- Critical CSS and performance optimizations -->
+    <style>
+        /* Critical above-the-fold styles for faster rendering */
+        .navbar { background: var(--bs-primary); transition: all 0.3s ease; }
+        .navbar.fixed-top { backdrop-filter: blur(10px); background: rgba(30, 144, 255, 0.95); }
+        .navbar-brand { font-weight: 700; color: white !important; }
+        .logo-img { height: 40px; width: auto; }
+        .main-content { margin-top: 76px; min-height: calc(100vh - 200px); }
+        /* Prevent layout shift */
+        img { max-width: 100%; height: auto; }
+    </style>
+    
     {include file="$template/includes/head.tpl"}
     {$headoutput}
 
@@ -41,7 +54,13 @@
         <div class="container">
             <a class="navbar-brand" href="{$WEB_ROOT}/index.php">
                
-                <img src='https://little.cloud/assets/img/logo.svg' alt="" class="logo-img">
+                <img src='https://little.cloud/assets/img/logo.svg' 
+                     alt="{$companyname} Logo" 
+                     class="logo-img"
+                     width="40" 
+                     height="40"
+                     loading="eager"
+                     fetchpriority="high">
                
                 <span class="brand-text">{$companyname}</span>
             </a>
