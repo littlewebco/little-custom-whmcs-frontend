@@ -4,6 +4,23 @@
     <meta charset="{$charset}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{if $kbarticle.title}{$kbarticle.title} - {/if}{$pagetitle} - {$companyname}</title>
+    
+    <!-- Critical performance optimizations -->
+    <style>
+        /* Critical layout styles to prevent CLS */
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .main-content { margin-top: 76px; min-height: calc(100vh - 200px); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        .sidebar { margin-bottom: 2rem; }
+        .primary-content { padding: 0; }
+        /* Loading states */
+        .spinner { display: inline-block; width: 20px; height: 20px; }
+        .spinner div { background-color: #007bff; }
+        /* Prevent layout shift for images */
+        img { max-width: 100%; height: auto; }
+        .logo-img { width: 40px; height: 40px; }
+    </style>
+    
     {include file="$template/includes/head.tpl"}
     {$headoutput}
 </head>
@@ -46,12 +63,13 @@
 
     {include file="$template/includes/footer.tpl"}
 
-    <div id="fullpage-overlay" class="w-hidden">
+    <!-- Optimized overlay with better UX -->
+    <div id="fullpage-overlay" class="w-hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.9); z-index: 9999; display: flex; align-items: center; justify-content: center;">
         <div class="outer-wrapper">
-            <div class="inner-wrapper">
-                <img src="{$WEB_ROOT}/assets/img/overlay-spinner.svg">
-                <br>
-                <span class="msg"></span>
+            <div class="inner-wrapper" style="text-align: center;">
+                <!-- Optimized spinner using CSS animation instead of SVG -->
+                <div style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #007bff; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
+                <span class="msg" style="color: #666; font-size: 14px;">Loading...</span>
             </div>
         </div>
     </div>
@@ -91,6 +109,25 @@
     </div>
 
     {include file="$template/includes/generate-password.tpl"}
+
+    <!-- Add spinner animation CSS -->
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Optimize modal animations */
+        .modal.fade .modal-dialog {
+            transition: transform 0.2s ease-out;
+        }
+        
+        /* Improve focus management */
+        .btn:focus, .form-control:focus {
+            outline: 2px solid #007bff;
+            outline-offset: 2px;
+        }
+    </style>
 
     {$footeroutput}
 </body>
