@@ -1,0 +1,28 @@
+# Allow access to JavaScript files
+<Files "*.js">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# Set proper MIME type for JavaScript files
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+</IfModule>
+
+# Enable compression for JavaScript files
+<IfModule mod_deflate.c>
+    <Files "*.js">
+        SetOutputFilter DEFLATE
+    </Files>
+</IfModule>
+
+# Set cache headers for better performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    <Files "*.js">
+        ExpiresDefault "access plus 1 month"
+    </Files>
+</IfModule>
+
+# Prevent directory listing but allow file access
+Options -Indexes
