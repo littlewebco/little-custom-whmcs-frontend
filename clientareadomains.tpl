@@ -42,7 +42,7 @@
                     </button>
                 {/if}
                 <div class="btn-group btn-group-sm" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       {lang key="more"}...
                     </button>
                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
