@@ -32,6 +32,8 @@
         requiredText = '{lang|addslashes key="orderForm.required"}',
         recaptchaSiteKey = "{if $captcha}{$captcha->recaptcha->getSiteKey()}{/if}";
 </script>
+<!-- Load WHMCS core scripts first -->
+<script src="{assetPath file='scripts.min.js'}?v={$versionHash}"></script>
 <!-- Load WHMCS-specific scripts after jQuery is available -->
 <script src="{$WEB_ROOT}/js/whmcs.js?v={$versionHash}"></script>
 <script src="{$WEB_ROOT}/js/bootstrap-init.js?v={$versionHash}"></script>
@@ -44,6 +46,65 @@ jQuery(document).ready(function() {
     jQuery(this).parent().remove();
   });
 });
+
+// SSO Callback Handler and WHMCS Error Prevention
+window.onerror = function(message, source, lineno, colno, error) {
+    // Prevent WHMCS is not defined errors from breaking SSO
+    if (message.includes('WHMCS is not defined')) {
+        console.warn('WHMCS object not yet loaded, initializing fallback...');
+        // Initialize minimal WHMCS object if not available
+        if (typeof window.WHMCS === 'undefined') {
+            window.WHMCS = {
+                http: {
+                    jqClient: {
+                        post: function(url, data, callback) {
+                            jQuery.post(url, data, callback);
+                        }
+                    }
+                },
+                utils: {},
+                hasModule: function(name) { return false; },
+                loadModule: function(name) { return false; }
+            };
+        }
+        return true; // Prevent error from propagating
+    }
+    return false;
+};
+
+// SSO Callback Handlers
+window.rs = window.rs || {};
+window.rs.onSignIn = function(response) {
+    console.log('SSO Sign-In callback triggered');
+    if (typeof window.WHMCS !== 'undefined' && window.WHMCS.http) {
+        // Process SSO response with WHMCS
+        try {
+            // Handle the SSO response properly
+            if (response && response.credential) {
+                // Redirect to SSO processing endpoint
+                window.location.href = whmcsBaseUrl + '/oauth/process.php?provider=google&token=' + encodeURIComponent(response.credential);
+            }
+        } catch (e) {
+            console.error('SSO processing error:', e);
+        }
+    } else {
+        // Fallback for when WHMCS is not loaded
+        console.warn('WHMCS not loaded, using fallback SSO handling');
+        setTimeout(function() {
+            if (response && response.credential) {
+                window.location.href = whmcsBaseUrl + '/oauth/process.php?provider=google&token=' + encodeURIComponent(response.credential);
+            }
+        }, 500);
+    }
+};
+
+// Generic error handler for SSO
+window.addEventListener('message', function(event) {
+    // Handle Cross-Origin-Opener-Policy postMessage errors
+    if (event.data && event.data.type === 'sso_callback') {
+        rs.onSignIn(event.data.response);
+    }
+}, false);
 </script>
 
 {if $templatefile == "viewticket" && !$loggedin}
