@@ -49,7 +49,7 @@
                                 {$upgradepackage.description}
                             </td>
                             <td width="300" class="text-center">
-                                <form method="post" action="{$smarty.server.PHP_SELF}">
+                                <form method="post" action="">
                                     <input type="hidden" name="step" value="2">
                                     <input type="hidden" name="type" value="{$type}">
                                     <input type="hidden" name="id" value="{$id}">
@@ -89,7 +89,7 @@
                     {include file="$template/includes/alert.tpl" type="error" errorshtml=$errormessage}
                 {/if}
 
-                <form method="post" action="{$smarty.server.PHP_SELF}">
+                <form method="post" action="">
                     <input type="hidden" name="step" value="2" />
                     <input type="hidden" name="type" value="{$type}" />
                     <input type="hidden" name="id" value="{$id}" />

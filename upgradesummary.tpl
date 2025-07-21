@@ -70,7 +70,7 @@
         <div class="row">
             <div class="col-sm-6">
 
-                <form method="post" action="{$smarty.server.PHP_SELF}" role="form">
+                <form method="post" action="" role="form">
                     <input type="hidden" name="step" value="2" />
                     <input type="hidden" name="type" value="{$type}" />
                     <input type="hidden" name="id" value="{$id}" />
@@ -104,7 +104,7 @@
             </div>
             <div class="col-sm-6">
 
-                <form method="post" action="{$smarty.server.PHP_SELF}">
+                <form method="post" action="">
                     <input type="hidden" name="step" value="3" />
                     <input type="hidden" name="type" value="{$type}" />
                     <input type="hidden" name="id" value="{$id}" />

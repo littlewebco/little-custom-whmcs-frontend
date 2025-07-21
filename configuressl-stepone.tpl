@@ -10,7 +10,7 @@
 
 {else}
 
-    <form method="post" action="{if $status == 'Awaiting Configuration'}{$smarty.server.PHP_SELF}?cert={$cert}&step=2{else}clientarea.php?action=productdetails{/if}">
+    <form method="post" action="{if $status == 'Awaiting Configuration'}?cert={$cert}&step=2{else}clientarea.php?action=productdetails{/if}">
         <div class="card">
             <div class="card-body">
                 {if $errormessage}

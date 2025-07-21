@@ -1,4 +1,4 @@
-<form method="post" action="{$smarty.server.PHP_SELF}?step=3" enctype="multipart/form-data" role="form">
+<form method="post" action="?step=3" enctype="multipart/form-data" role="form">
 
 <div class="card">
     <div class="card-body extra-padding">

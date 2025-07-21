@@ -26,7 +26,7 @@
 
 {if !$registrationDisabled}
     <div id="registration">
-        <form method="post" class="using-password-strength" action="{$smarty.server.PHP_SELF}" role="form" name="orderfrm" id="frmCheckout">
+        <form method="post" class="using-password-strength" action="" role="form" name="orderfrm" id="frmCheckout">
             <input type="hidden" name="register" value="true"/>
 
             <div id="containerNewUserSignup">

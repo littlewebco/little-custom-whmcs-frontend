@@ -120,7 +120,7 @@
         <div class="card-body">
             <h3 class="card-title">{lang key='supportticketsreply'}</h3>
 
-            <form method="post" action="{$smarty.server.PHP_SELF}?tid={$tid}&amp;c={$c}&amp;postreply=true" enctype="multipart/form-data" role="form" id="frmReply">
+            <form method="post" action="?tid={$tid}&amp;c={$c}&amp;postreply=true" enctype="multipart/form-data" role="form" id="frmReply">
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label for="inputName">{lang key='supportticketsclientname'}</label>

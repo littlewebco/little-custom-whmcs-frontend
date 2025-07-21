@@ -117,7 +117,7 @@
                     <strong>{lang key='paymentmethod'}</strong><br>
                     <span class="small-text float-sm-right" data-role="paymethod-info">
                         {if $status eq "Unpaid" && $allowchangegateway}
-                            <form method="post" action="{$smarty.server.PHP_SELF}?id={$invoiceid}" class="form-inline">
+                            <form method="post" action="?id={$invoiceid}" class="form-inline">
                                 {$tokenInput}
                                 <select name="gateway" class="custom-select" onchange="submit()">
                                     {foreach $availableGateways as $gatewayModule => $gatewayName}
@@ -147,7 +147,7 @@
                         <h3 class="card-subtitle"><strong>{lang key='invoiceaddcreditapply'}</strong></h3>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{$smarty.server.PHP_SELF}?id={$invoiceid}">
+                        <form method="post" action="?id={$invoiceid}">
                             <input type="hidden" name="applycredit" value="true" />
                             {lang key='invoiceaddcreditdesc1'} <strong>{$totalcredit}</strong>. {lang key='invoiceaddcreditdesc2'}. {lang key='invoiceaddcreditamount'}:
                             <div class="row">

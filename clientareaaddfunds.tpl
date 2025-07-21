@@ -34,7 +34,7 @@
         <div class="col-md-8 offset-md-2">
             <div class="card">
                 <div class="card-body">
-                    <form method="post" action="{$smarty.server.PHP_SELF}?action=addfunds">
+                    <form method="post" action="?action=addfunds">
                         <fieldset>
                             <div class="form-group">
                                 <label for="amount" class="col-form-label">{lang key='addfundsamount'}:</label>

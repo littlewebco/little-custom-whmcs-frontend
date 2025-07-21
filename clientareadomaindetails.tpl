@@ -105,7 +105,7 @@
 
         {include file="$template/includes/alert.tpl" type="info" msg="{lang key='domainnsexp'}"}
 
-        <form class="form-horizontal" role="form" method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails#tabNameservers">
+        <form class="form-horizontal" role="form" method="post" action="?action=domaindetails#tabNameservers">
             <input type="hidden" name="id" value="{$domainid}" />
             <input type="hidden" name="sub" value="savens" />
 

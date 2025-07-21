@@ -14,7 +14,7 @@
             </div>
         {else}
 
-            <form method="post" action="{$smarty.server.PHP_SELF}?action=domaindns">
+            <form method="post" action="?action=domaindns">
                 <input type="hidden" name="sub" value="save" />
                 <input type="hidden" name="domainid" value="{$domainid}" />
 

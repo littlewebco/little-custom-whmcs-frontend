@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
 
-        <form method="post" action="{$smarty.server.PHP_SELF}?action=domainaddons">
+        <form method="post" action="?action=domainaddons">
             <input type="hidden" name="{$action}" value="{$addon}">
             <input type="hidden" name="id" value="{$domainid}">
             <input type="hidden" name="confirm" value="1">
