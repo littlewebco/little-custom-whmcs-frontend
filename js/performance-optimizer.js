@@ -94,10 +94,16 @@
                         submitBtn.classList.add('loading');
                         submitBtn.disabled = true;
                         
+                        // Clear any existing timeout to prevent memory leaks
+                        if (submitBtn.fallbackTimeout) {
+                            clearTimeout(submitBtn.fallbackTimeout);
+                        }
+                        
                         // Re-enable after 30 seconds as fallback
-                        setTimeout(() => {
+                        submitBtn.fallbackTimeout = setTimeout(() => {
                             submitBtn.classList.remove('loading');
                             submitBtn.disabled = false;
+                            submitBtn.fallbackTimeout = null;
                         }, 30000);
                     }
                 });

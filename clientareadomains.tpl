@@ -68,7 +68,7 @@
                     </thead>
                     <tbody>
                     {foreach $domains as $domain}
-                        <tr onclick="clickableSafeRedirect(event, 'clientarea.php?action=domaindetails&amp;id={$domain.id}', false)">
+                        <tr class="clickable-row" data-href="clientarea.php?action=domaindetails&amp;id={$domain.id}&amp;token={$csrfToken}">
                             <td>
                                 <input type="checkbox" name="domids[]" class="domids stopEventBubble" value="{$domain.id}" />
                             </td>
