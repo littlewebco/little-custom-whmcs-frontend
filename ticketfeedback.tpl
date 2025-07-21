@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <form method="post" action="{$smarty.server.PHP_SELF}?tid={$tid}&c={$c}&feedback=1">
+            <form method="post" action="?tid={$tid}&c={$c}&feedback=1">
                 <input type="hidden" name="validate" value="true" />
 
                 {foreach $staffinvolved as $staffid => $staff}

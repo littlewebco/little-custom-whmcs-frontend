@@ -6,7 +6,7 @@
 
 <div class="card">
     <div class="card-body">
-        <form role="form" method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns">
+        <form role="form" method="post" action="?action=domainregisterns">
             <input type="hidden" name="sub" value="register" />
             <input type="hidden" name="domainid" value="{$domainid}" />
 
@@ -42,7 +42,7 @@
 
 <div class="card">
     <div class="card-body">
-        <form role="form" method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns">
+        <form role="form" method="post" action="?action=domainregisterns">
             <input type="hidden" name="sub" value="modify" />
             <input type="hidden" name="domainid" value="{$domainid}" />
 
@@ -84,7 +84,7 @@
 
 <div class="card">
     <div class="card-body">
-        <form role="form" method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns">
+        <form role="form" method="post" action="?action=domainregisterns">
             <input type="hidden" name="sub" value="delete" />
             <input type="hidden" name="domainid" value="{$domainid}" />
 

@@ -10,7 +10,7 @@
             <div class="col-sm-10 offset-sm-1">
                 {foreach $departments as $num => $department}
                     <p class="h5">
-                        <a href="{$smarty.server.PHP_SELF}?step=2&amp;deptid={$department.id}">
+                        <a href="?step=2&amp;deptid={$department.id}">
                             <i class="fas fa-envelope"></i>
                             &nbsp;{$department.name}
                         </a>

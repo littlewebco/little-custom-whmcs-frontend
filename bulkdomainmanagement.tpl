@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
 
-        <form method="post" action="{$smarty.server.PHP_SELF}?action=bulkdomain">
+        <form method="post" action="?action=bulkdomain">
             <input type="hidden" name="update" value="{$update}">
             <input type="hidden" name="save" value="1">
             {foreach $domainids as $domainid}

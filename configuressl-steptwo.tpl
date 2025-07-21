@@ -6,7 +6,7 @@
         {if $errormessage}
             {include file="$template/includes/alert.tpl" type="error" errorshtml=$errormessage}
         {/if}
-        <form method="post" action="{$smarty.server.PHP_SELF}?cert={$cert}&step=3">
+        <form method="post" action="?cert={$cert}&step=3">
 
             <h2 class="card-title">{lang key='ssl.selectValidation'}</h2>
             {if empty($approvalMethods) || (!empty($approvalMethods) && in_array('email', $approvalMethods))}

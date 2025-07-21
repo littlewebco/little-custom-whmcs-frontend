@@ -24,7 +24,7 @@
     <div class="card">
         <div class="card-body">
 
-            <form method="post" action="{$smarty.server.PHP_SELF}?action=cancel&amp;id={$id}" class="form-stacked">
+            <form method="post" action="?action=cancel&amp;id={$id}" class="form-stacked">
                 <input type="hidden" name="sub" value="submit" />
 
                 <fieldset>

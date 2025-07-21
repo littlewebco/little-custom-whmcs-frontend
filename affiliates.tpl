@@ -69,7 +69,7 @@
 
     {if !$withdrawrequestsent}
         <div class="text-center">
-            <form method="POST" action="{$smarty.server.PHP_SELF}">
+            <form method="POST" action="">
                 <input type="hidden" name="action" value="withdrawrequest" />
                 <button type="submit" class="btn btn-lg btn-danger{if !$withdrawlevel} disabled" disabled="disabled{/if}">
                     <i class="fas fa-university"></i> {lang key='affiliatesrequestwithdrawal'}

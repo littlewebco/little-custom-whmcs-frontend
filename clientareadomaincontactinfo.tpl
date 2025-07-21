@@ -24,7 +24,7 @@
 
         <p>{lang key='whoisContactWarning'}</p>
 
-        <form method="post" action="{$smarty.server.PHP_SELF}?action=domaincontacts" id="frmDomainContactModification">
+        <form method="post" action="?action=domaincontacts" id="frmDomainContactModification">
 
             <input type="hidden" name="sub" value="save" />
             <input type="hidden" name="domainid" value="{$domainid}" />
