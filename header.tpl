@@ -41,7 +41,8 @@
     {/if}
     <!-- End Google Tag Manager -->
 </head>
-<body class="{if $templatefile == 'homepage'}home{/if} {$language} {$templatefile}" data-phone-cc-input="{$phoneNumberInputStyle}">
+<body class="primary-bg-color {if $templatefile == 'homepage'}home{/if} {$language} {$templatefile}" data-phone-cc-input="{$phoneNumberInputStyle}">
+    {if $captcha}{$captcha->getMarkup()}{/if}
     {$headeroutput}
 
     <!-- Google Tag Manager (noscript) -->

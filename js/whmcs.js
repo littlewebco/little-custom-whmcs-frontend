@@ -940,6 +940,14 @@ jQuery(document).ready(function() {
         window.location.href = element.closest('.div-service-item').data('href');
         return false;
     });
+
+    try {
+        if (typeof WHMCS.client.tokenProcessor === 'object') {
+            WHMCS.client.tokenProcessor.processTokenSubmitters();
+        }
+    } catch (e) {
+        // do nothing
+    }
 });
 
 /**
@@ -1052,7 +1060,16 @@ function popupWindow(addr, popname, w, h, features) {
  * @param {Element} select The dropdown triggering the event
  */
 function selectChangeNavigate(select) {
-    window.location.href = $(select).val();
+    const url = $(select).val();
+
+    if (typeof WHMCS.client.tokenProcessor === 'object') {
+        if (WHMCS.client.tokenProcessor.isUrlEligibleForToken(url)) {
+            WHMCS.client.tokenProcessor.submitUrlViaPost(url);
+            return;
+        }
+    }
+
+    window.location.href = url;
 }
 
 /**
@@ -1425,6 +1442,11 @@ function customActionAjaxCall(event, element) {
     element.attr('disabled', 'disabled').addClass('disabled');
     loadingIcon.show();
     standardIcon.hide();
+
+    const redirectFn = ((jQuery(element).data('ca-target') === '_self') || (jQuery(element).attr('target') === '_self'))
+        ? function(url) { window.location.href = url; }
+        : window.open;
+
     WHMCS.http.jqClient.jsonPost({
         url: WHMCS.utils.getRouteUrl(
             '/clientarea/service/' + element.data('serviceid') + '/custom-action/' + element.data('identifier')
@@ -1434,13 +1456,16 @@ function customActionAjaxCall(event, element) {
         },
         success: function(data) {
             if (data.success) {
-                window.open(data.redirectTo);
+                redirectFn(data.redirectTo);
             } else {
-                window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_error=1');
+                redirectFn('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_error=1');
             }
         },
         fail: function () {
-            window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
+            redirectFn('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
+        },
+        error: function () {
+            redirectFn('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
         },
         always: function() {
             loadingIcon.hide();
