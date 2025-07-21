@@ -31,7 +31,7 @@
         </thead>
         <tbody>
             {foreach $services as $service}
-                <tr onclick="clickableSafeRedirect(event, 'clientarea.php?action=productdetails&amp;id={$service.id}', false)">
+                <tr class="clickable-row" data-href="clientarea.php?action=productdetails&amp;id={$service.id}&amp;token={$csrfToken}">
                     <td class="py-0 text-center{if $service.sslStatus} ssl-info{/if}" data-element-id="{$service.id}" data-type="service"{if $service.domain} data-domain="{$service.domain}"{/if}>
                         {if $service.sslStatus}
                                                             <img src="{$service.sslStatus->getImagePath()}" data-bs-toggle="tooltip" title="{$service.sslStatus->getTooltipContent()}" class="{$service.sslStatus->getClass()}" width="25">

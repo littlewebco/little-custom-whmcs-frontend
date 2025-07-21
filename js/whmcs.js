@@ -47,7 +47,25 @@ jQuery(document).ready(function() {
         template: '<div class="popover popover-user-notifications" role="tooltip"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-header"></h3><div class="popover-body"><p></p></div></div></div>',
         html: true,
         content: function() {
-            return jQuery("#accountNotificationsContent").html();
+            // Sanitize content to prevent XSS attacks
+            var content = jQuery("#accountNotificationsContent").html();
+            if (content) {
+                // Create a temporary element to sanitize the content
+                var temp = jQuery('<div>').html(content);
+                // Remove script tags and event handlers
+                temp.find('script').remove();
+                temp.find('*').each(function() {
+                    var element = jQuery(this);
+                    // Remove all on* event attributes
+                    jQuery.each(this.attributes, function() {
+                        if (this.name.indexOf('on') === 0) {
+                            element.removeAttr(this.name);
+                        }
+                    });
+                });
+                return temp.html();
+            }
+            return content;
         },
     });
 
@@ -386,6 +404,24 @@ jQuery(document).ready(function() {
 
     // Activate copy to clipboard functionality
     jQuery('.copy-to-clipboard').click(WHMCS.ui.clipboard.copy);
+
+    // Handle clickable rows safely without inline onclick
+    jQuery(document).on('click', '.clickable-row', function(e) {
+        // Only trigger if the click wasn't on an interactive element
+        if (!jQuery(e.target).is('a, button, input, select, textarea, .btn, [role="button"]')) {
+            var url = jQuery(this).data('href');
+            if (url) {
+                // Use POST for CSRF protection when tokens are involved
+                if (url.indexOf('token=') !== -1) {
+                    var form = jQuery('<form method="post" action="' + url.split('&token=')[0] + '">');
+                    form.append('<input type="hidden" name="token" value="' + jQuery(this).data('href').split('token=')[1].split('&')[0] + '">');
+                    form.appendTo('body').submit();
+                } else {
+                    window.location.href = url;
+                }
+            }
+        }
+    });
 
     // Handle Language Chooser modal
     jQuery('#modalChooseLanguage button[type=submit]').click(function(e) {
