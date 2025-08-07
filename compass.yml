@@ -1,0 +1,18 @@
+name: little-custom-whmcs-frontend
+id: ari:cloud:compass:d2ad1501-19f1-436f-9ec4-18b9abe12d97:component/ca9acbff-b932-4f29-ab88-7561e234f3f7/2b5ba91c-bffb-4989-a0e4-a6199e328519
+description: Custom WHMCS theme based on twenty one
+configVersion: 1
+typeId: UI_ELEMENT
+ownerId: null
+fields:
+  tier: 4
+links:
+  - name: null
+    type: REPOSITORY
+    url: https://github.com/littlewebco/little-custom-whmcs-frontend
+relationships:
+  DEPENDS_ON: []
+labels:
+  - language:javascript
+  - source:github
+customFields: null
