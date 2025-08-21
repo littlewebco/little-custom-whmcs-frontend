@@ -494,6 +494,10 @@
                                                 console.log('Inline script appended for execution after delay.');
                                             }, 100); // Small delay, can be adjusted if needed (e.g., 0 for next event loop, or 50-100ms)
 
+                                            // **CRITICAL DEBUG: Check Stripe global object immediately after its script is loaded**
+                                            console.log('DEBUG: typeof Stripe =', typeof Stripe);
+                                            console.log('DEBUG: window.Stripe =', window.Stripe);
+
                                         } else {
                                             console.warn('No inline script found to execute');
                                         }
@@ -532,6 +536,10 @@
                                             document.body.appendChild(inlineScriptElement); // Append to body to ensure it runs after DOM is ready and external scripts are loaded
                                             console.log('Inline script appended for execution after delay (no external Stripe.js).');
                                         }, 100);
+
+                                        // **CRITICAL DEBUG: Check Stripe global object immediately after its script is loaded**
+                                        console.log('DEBUG: typeof Stripe =', typeof Stripe);
+                                        console.log('DEBUG: window.Stripe =', window.Stripe);
 
                                     } else {
                                         console.error('No scripts found at all!');
