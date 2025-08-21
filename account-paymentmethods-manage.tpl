@@ -483,13 +483,14 @@
 
                                             console.log('Final script to execute (first 200 chars):', scriptContent.substring(0, 200));
 
-                                            // Execute the cleaned inline script
-                                            try {
-                                                eval(scriptContent);
-                                                console.log('Inline script executed successfully!');
-                                            } catch (e) {
-                                                console.error('Error executing Stripe inline script:', e);
-                                            }
+                                            // Execute the cleaned inline script by appending a new script element
+                                            var inlineScriptElement = document.createElement('script');
+                                            inlineScriptElement.type = 'text/javascript';
+                                            inlineScriptElement.textContent = scriptContent; // Use textContent for safety and correctness
+                                            document.body.appendChild(inlineScriptElement); // Append to body to ensure it runs after DOM is ready and external scripts are loaded
+
+                                            console.log('Inline script appended for execution.');
+
                                         } else {
                                             console.warn('No inline script found to execute');
                                         }
@@ -517,12 +518,15 @@
                                             scriptContent = cleanScript;
                                         }
                                         console.log('Executing inline script without external Stripe.js...');
-                                        try {
-                                            eval(scriptContent);
-                                            console.log('Inline script executed successfully!');
-                                        } catch (e) {
-                                            console.error('Error executing inline script:', e);
-                                        }
+
+                                        // Execute the cleaned inline script by appending a new script element
+                                        var inlineScriptElement = document.createElement('script');
+                                        inlineScriptElement.type = 'text/javascript';
+                                        inlineScriptElement.textContent = scriptContent;
+                                        document.body.appendChild(inlineScriptElement);
+
+                                        console.log('Inline script appended for execution.');
+
                                     } else {
                                         console.error('No scripts found at all!');
                                     }
