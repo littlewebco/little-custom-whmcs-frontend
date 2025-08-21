@@ -426,7 +426,18 @@
                             jQuery('.fieldgroup-remoteinput').show();
                         } else if (response.assistedOutput) {
                             jQuery('.fieldgroup-creditcard').show('fast', function () {
+                                // Debug: Log what we received
+                                console.log('=== STRIPE DEBUG ===');
+                                console.log('Full response:', response);
+                                console.log('Assisted output length:', response.assistedOutput.length);
+                                console.log('First 500 chars of assistedOutput:', response.assistedOutput.substring(0, 500));
+
                                 jQuery('#tokenGatewayAssistedOutput').html(response.assistedOutput);
+
+                                // CRITICAL DEBUG: Check Stripe global object immediately after its script is injected
+                                console.log('DEBUG (after html injection): typeof Stripe =', typeof Stripe);
+                                console.log('DEBUG (after html injection): window.Stripe =', window.Stripe);
+
                                 if (!paymentInitSingleton.has(module)) {
                                     WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
                                     WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
