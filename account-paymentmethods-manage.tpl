@@ -427,13 +427,75 @@
                             jQuery('.fieldgroup-remoteinput').show();
                         } else if (response.assistedOutput) {
                             jQuery('.fieldgroup-creditcard').show('fast', function () {
-                                jQuery('#tokenGatewayAssistedOutput').html(response.assistedOutput);
-                                if (!paymentInitSingleton.has(module)) {
-                                    WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
-                                    WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
-                                    paymentInitSingleton.set(module, true);
+                                // Parse the assistedOutput HTML to control script loading order
+                                var assistedHtml = jQuery('<div>').html(response.assistedOutput);
+                                var stripeJsScript = assistedHtml.find('script[src*="stripe.min.js"]');
+                                var stripeCssLink = assistedHtml.find('link[href*="stripe.css"]');
+                                var inlineScript = assistedHtml.find('script:not([src])');
+
+                                // Remove scripts and links from the HTML to be injected
+                                assistedHtml.find('script, link').remove();
+
+                                // Inject the remaining HTML (non-script/link) first
+                                jQuery('#tokenGatewayAssistedOutput').html(assistedHtml.html());
+
+                                // Load CSS if present
+                                if (stripeCssLink.length) {
+                                    jQuery('head').append(stripeCssLink);
                                 }
-                                WHMCS.payment.event.gatewaySelected(whmcsPaymentModuleMetadata, module, element);
+
+                                // Load Stripe.js and execute inline script after it loads
+                                if (stripeJsScript.length) {
+                                    jQuery.getScript(stripeJsScript.attr('src'), function() {
+                                        // Once Stripe.js is loaded, execute the inline script
+                                        if (inlineScript.length) {
+                                            // Clean up document.ready wrappers from inline script
+                                            var scriptContent = inlineScript.text();
+                                            var cleanScript = scriptContent.replace(/\$\(document\)\.ready\(function\(\) \{([\s\S]*)\}\);?/, '$1');
+                                            if (cleanScript !== scriptContent) {
+                                                scriptContent = cleanScript;
+                                            }
+
+                                            // Execute the cleaned inline script
+                                            try {
+                                                eval(scriptContent);
+                                            } catch (e) {
+                                                console.error('Error executing Stripe inline script:', e);
+                                            }
+                                        }
+
+                                        // Initialize payment events
+                                        if (!paymentInitSingleton.has(module)) {
+                                            WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
+                                            WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
+                                            paymentInitSingleton.set(module, true);
+                                        }
+                                        WHMCS.payment.event.gatewaySelected(whmcsPaymentModuleMetadata, module, element);
+                                    }).fail(function() {
+                                        console.error('Failed to load Stripe.js');
+                                    });
+                                } else {
+                                    // Fallback: no external script found, just execute inline script
+                                    if (inlineScript.length) {
+                                        var scriptContent = inlineScript.text();
+                                        var cleanScript = scriptContent.replace(/\$\(document\)\.ready\(function\(\) \{([\s\S]*)\}\);?/, '$1');
+                                        if (cleanScript !== scriptContent) {
+                                            scriptContent = cleanScript;
+                                        }
+                                        try {
+                                            eval(scriptContent);
+                                        } catch (e) {
+                                            console.error('Error executing inline script:', e);
+                                        }
+                                    }
+
+                                    if (!paymentInitSingleton.has(module)) {
+                                        WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
+                                        WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
+                                        paymentInitSingleton.set(module, true);
+                                    }
+                                    WHMCS.payment.event.gatewaySelected(whmcsPaymentModuleMetadata, module, element);
+                                }
                             });
                             jQuery('.fieldgroup-auxfields').show();
                         } else if (response.gatewayType === 'Bank') {
