@@ -512,7 +512,7 @@
                                     // Fallback: no external script found, just execute inline script
                                     if (inlineScript.length) {
                                         var scriptContent = inlineScript.text();
-                                        var cleanScript = scriptContent.replace(/\$\(document\)\.ready\(function\(\) \{([\s\S]*)\}\);?/, '$1');
+                                        {literal}var cleanScript = scriptContent.replace(/\$\(document\)\.ready\(function\(\) \{([\s\S]*)\}\);?/, '$1');{/literal}
                                         if (cleanScript !== scriptContent) {
                                             scriptContent = cleanScript;
                                         }
