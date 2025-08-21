@@ -427,15 +427,76 @@
                             jQuery('.fieldgroup-remoteinput').show();
                         } else if (response.assistedOutput) {
                             jQuery('.fieldgroup-creditcard').show('fast', function () {
-                                // Inject assistedOutput directly without attempting to re-execute scripts.
-                                // Stripe.js will be loaded via the loadStripeJs function.
-                                jQuery('#tokenGatewayAssistedOutput').html(response.assistedOutput);
-                                if (!paymentInitSingleton.has(module)) {
-                                    WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
-                                    WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
-                                    paymentInitSingleton.set(module, true);
+                                // Manually extract and load the Stripe JS and CSS to ensure correct loading order.
+                                var assistedHtml = jQuery('<div>').html(response.assistedOutput);
+                                var stripeJsScriptSrc = '';
+                                var stripeCssLinkHref = '';
+                                var inlineScriptContent = '';
+
+                                assistedHtml.find('script').each(function() {
+                                    var script = jQuery(this);
+                                    if (script.attr('src')) {
+                                        stripeJsScriptSrc = script.attr('src');
+                                    } else {
+                                        // Extract content and remove $(document).ready()
+                                        var scriptText = script.text().trim();
+                                        var match = scriptText.match(/\$\(document\)\.ready\(function\(\) {\s*((?:.|\n)*?)\s*}\);?/);
+                                        if (match && match[1]) {
+                                            inlineScriptContent += match[1];
+                                        } else {
+                                            inlineScriptContent += scriptText;
+                                        }
+                                    }
+                                });
+
+                                assistedHtml.find('link[rel="stylesheet"]').each(function() {
+                                    var link = jQuery(this);
+                                    if (link.attr('href') && link.attr('href').includes('stripe.css')) {
+                                        stripeCssLinkHref = link.attr('href');
+                                    }
+                                });
+
+                                // Remove scripts and links from the HTML to be injected into the div
+                                assistedHtml.find('script, link').remove();
+                                jQuery('#tokenGatewayAssistedOutput').html(assistedHtml.html());
+
+                                // Load CSS dynamically
+                                if (stripeCssLinkHref) {
+                                    var linkElement = document.createElement('link');
+                                    linkElement.rel = 'stylesheet';
+                                    linkElement.href = stripeCssLinkHref;
+                                    document.head.appendChild(linkElement);
                                 }
-                                WHMCS.payment.event.gatewaySelected(whmcsPaymentModuleMetadata, module, element);
+
+                                // Load Stripe JS dynamically and execute inline script on load
+                                if (stripeJsScriptSrc) {
+                                    var scriptElement = document.createElement('script');
+                                    scriptElement.type = 'text/javascript';
+                                    scriptElement.src = stripeJsScriptSrc;
+                                    scriptElement.onload = function() {
+                                        if (inlineScriptContent) {
+                                            eval(inlineScriptContent); // Using eval to execute in global scope
+                                        }
+                                        if (!paymentInitSingleton.has(module)) {
+                                            WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
+                                            WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
+                                            paymentInitSingleton.set(module, true);
+                                        }
+                                        WHMCS.payment.event.gatewaySelected(whmcsPaymentModuleMetadata, module, element);
+                                    };
+                                    document.body.appendChild(scriptElement);
+                                } else {
+                                    // Fallback if no external Stripe JS script is found (unlikely for Stripe)
+                                    if (inlineScriptContent) {
+                                        eval(inlineScriptContent);
+                                    }
+                                    if (!paymentInitSingleton.has(module)) {
+                                        WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
+                                        WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
+                                        paymentInitSingleton.set(module, true);
+                                    }
+                                    WHMCS.payment.event.gatewaySelected(whmcsPaymentModuleMetadata, module, element);
+                                }
                             });
                             jQuery('.fieldgroup-auxfields').show();
                         } else if (response.gatewayType === 'Bank') {
