@@ -427,60 +427,15 @@
                             jQuery('.fieldgroup-remoteinput').show();
                         } else if (response.assistedOutput) {
                             jQuery('.fieldgroup-creditcard').show('fast', function () {
-                                // Manually extract and load the Stripe JS and CSS to ensure correct loading order.
-                                var assistedHtml = jQuery('<div>').html(response.assistedOutput);
-                                var stripeJsScript = assistedHtml.find('script[src*="stripe.min.js"]');
-                                var stripeCssLink = assistedHtml.find('link[href*="stripe.css"]');
-                                var inlineScriptContent = '';
-
-                                assistedHtml.find('script:not([src])').each(function() {
-                                    var scriptText = jQuery(this).text().trim();
-                                    // Remove the outer jQuery(document).ready wrapper
-                                    var match = scriptText.match(/\$\(document\)\.ready\(function\(\) {\s*((?:.|\n)*?)\s*}\);?/);
-                                    if (match && match[1]) {
-                                        inlineScriptContent += match[1];
-                                    } else {
-                                        inlineScriptContent += scriptText;
-                                    }
-                                });
-
-                                // Remove the scripts/links from the HTML to be injected.
-                                assistedHtml.find('script, link').remove();
-
-                                // Inject the remaining HTML (non-script/link) first.
-                                jQuery('#tokenGatewayAssistedOutput').html(assistedHtml.html());
-
-                                // Load the CSS.
-                                if (stripeCssLink.length) {
-                                    jQuery('head').append(stripeCssLink);
+                                // Inject assistedOutput directly without attempting to re-execute scripts.
+                                // Stripe.js will be loaded via the loadStripeJs function.
+                                jQuery('#tokenGatewayAssistedOutput').html(response.assistedOutput);
+                                if (!paymentInitSingleton.has(module)) {
+                                    WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
+                                    WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
+                                    paymentInitSingleton.set(module, true);
                                 }
-
-                                // Load Stripe JS and then execute inline script.
-                                if (stripeJsScript.length) {
-                                    jQuery.getScript(stripeJsScript.attr('src'), function() {
-                                        // Once Stripe.js is loaded, execute the inline script content directly.
-                                        if (inlineScriptContent) {
-                                            jQuery.globalEval(inlineScriptContent);
-                                        }
-                                        if (!paymentInitSingleton.has(module)) {
-                                            WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
-                                            WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
-                                            paymentInitSingleton.set(module, true);
-                                        }
-                                        WHMCS.payment.event.gatewaySelected(whmcsPaymentModuleMetadata, module, element);
-                                    });
-                                } else {
-                                    // If no external Stripe JS, just execute the inline script if any.
-                                    if (inlineScriptContent) {
-                                        jQuery.globalEval(inlineScriptContent);
-                                    }
-                                    if (!paymentInitSingleton.has(module)) {
-                                        WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
-                                        WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
-                                        paymentInitSingleton.set(module, true);
-                                    }
-                                    WHMCS.payment.event.gatewaySelected(whmcsPaymentModuleMetadata, module, element);
-                                }
+                                WHMCS.payment.event.gatewaySelected(whmcsPaymentModuleMetadata, module, element);
                             });
                             jQuery('.fieldgroup-auxfields').show();
                         } else if (response.gatewayType === 'Bank') {
