@@ -2,7 +2,6 @@
 
 <div class="card">
     <div class="card-body">
-
         <h3 class="card-title">
             {if $editMode}
                 {lang key='paymentMethodsManage.editPaymentMethod'}
@@ -428,6 +427,9 @@
                         } else if (response.assistedOutput) {
                             jQuery('.fieldgroup-creditcard').show('fast', function () {
                                 jQuery('#tokenGatewayAssistedOutput').html(response.assistedOutput);
+                                // CRITICAL DEBUG: Check Stripe global object immediately after its script is injected
+                                console.log('DEBUG (after html injection): typeof Stripe =', typeof Stripe);
+                                console.log('DEBUG (after html injection): window.Stripe =', window.Stripe);
                                 if (!paymentInitSingleton.has(module)) {
                                     WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
                                     WHMCS.payment.event.gatewayOptionInit(whmcsPaymentModuleMetadata, module, element);
