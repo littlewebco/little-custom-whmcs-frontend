@@ -37,7 +37,7 @@
 <script src="{$WEB_ROOT}/js/whmcs.js?v={$versionHash}"></script>
 <script src="{$WEB_ROOT}/js/bootstrap-init.js?v={$versionHash}"></script>
 <!-- Load our optimized performance script -->
-<script src="{$WEB_ROOT}/js/performance-optimizer.js?v={$versionHash}"></script>
+{* <script src="{$WEB_ROOT}/js/performance-optimizer.js?v={$versionHash}"></script> *}
 <script>
 // Ensure jQuery is available before executing
 jQuery(document).ready(function() {
