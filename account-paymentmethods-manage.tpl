@@ -487,9 +487,12 @@
                                             var inlineScriptElement = document.createElement('script');
                                             inlineScriptElement.type = 'text/javascript';
                                             inlineScriptElement.textContent = scriptContent; // Use textContent for safety and correctness
-                                            document.body.appendChild(inlineScriptElement); // Append to body to ensure it runs after DOM is ready and external scripts are loaded
 
-                                            console.log('Inline script appended for execution.');
+                                            // Add a small delay to ensure Stripe is fully loaded and available
+                                            setTimeout(function() {
+                                                document.body.appendChild(inlineScriptElement); // Append to body to ensure it runs after DOM is ready and external scripts are loaded
+                                                console.log('Inline script appended for execution after delay.');
+                                            }, 100); // Small delay, can be adjusted if needed (e.g., 0 for next event loop, or 50-100ms)
 
                                         } else {
                                             console.warn('No inline script found to execute');
@@ -523,9 +526,12 @@
                                         var inlineScriptElement = document.createElement('script');
                                         inlineScriptElement.type = 'text/javascript';
                                         inlineScriptElement.textContent = scriptContent;
-                                        document.body.appendChild(inlineScriptElement);
 
-                                        console.log('Inline script appended for execution.');
+                                        // Add a small delay to ensure Stripe is fully loaded and available
+                                        setTimeout(function() {
+                                            document.body.appendChild(inlineScriptElement); // Append to body to ensure it runs after DOM is ready and external scripts are loaded
+                                            console.log('Inline script appended for execution after delay (no external Stripe.js).');
+                                        }, 100);
 
                                     } else {
                                         console.error('No scripts found at all!');
