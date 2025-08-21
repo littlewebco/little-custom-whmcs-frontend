@@ -475,14 +475,10 @@
                                             console.log('Original inline script (first 200 chars):', scriptContent.substring(0, 200));
 
                                             // Clean up document.ready wrappers from inline script
-                                            var regex = new RegExp('\$\ (document)\.ready\(function\(\) \{([\\s\\S]*)\}\);?');
-                                            var match = scriptContent.match(regex);
-                                            var cleanScript = scriptContent;
-                                            if (match && match[1]) {
-                                                cleanScript = match[1];
-                                            }
+                                            {literal}var cleanScript = scriptContent.replace(/\$\(document\)\.ready\(function\(\) \{([\s\S]*)\}\);?/, '$1');{/literal}
                                             if (cleanScript !== scriptContent) {
                                                 console.log('Removed document.ready wrapper');
+                                                scriptContent = cleanScript;
                                             }
 
                                             console.log('Final script to execute (first 200 chars):', scriptContent.substring(0, 200));
@@ -516,12 +512,7 @@
                                     // Fallback: no external script found, just execute inline script
                                     if (inlineScript.length) {
                                         var scriptContent = inlineScript.text();
-                                        var regex = new RegExp('\$\ (document)\.ready\(function\(\) \{([\\s\\S]*)\}\);?');
-                                        var match = scriptContent.match(regex);
-                                        var cleanScript = scriptContent;
-                                        if (match && match[1]) {
-                                            cleanScript = match[1];
-                                        }
+                                        {literal}var cleanScript = scriptContent.replace(/\$\(document\)\.ready\(function\(\) \{([\s\S]*)\}\);?/, '$1');{/literal}
                                         if (cleanScript !== scriptContent) {
                                             scriptContent = cleanScript;
                                         }
