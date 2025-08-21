@@ -427,8 +427,6 @@
                             jQuery('.fieldgroup-remoteinput').show();
                         } else if (response.assistedOutput) {
                             jQuery('.fieldgroup-creditcard').show('fast', function () {
-                                // Inject assistedOutput directly without attempting to re-execute scripts.
-                                // Stripe.js will be loaded via the loadStripeJs function.
                                 jQuery('#tokenGatewayAssistedOutput').html(response.assistedOutput);
                                 if (!paymentInitSingleton.has(module)) {
                                     WHMCS.payment.event.gatewayInit(whmcsPaymentModuleMetadata, module, element);
